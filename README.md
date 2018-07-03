@@ -38,10 +38,9 @@ ___
 * Report
 
 
-### paparan vendor
-___
-* "editprofile.php **Edit Profile**
-* "booking.php **Booking**
-* "status.php **Status**
-* "payment.php **Payment**
-* "logout.php **Logout**
+### paparan vendor ___
+* "editprofile.php" **Edit Profile**
+* "booking.php" **Booking**
+* "status.php" **Status**
+* "payment.php" **Payment**
+* "logout.php" **Logout**
