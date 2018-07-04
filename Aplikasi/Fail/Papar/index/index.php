@@ -6,7 +6,7 @@ echo "\n";
 ?>
 <!-- banner -->
 <div class="banner">
-<!-- end header -------------------------------------------------------------------------- -->
+<!-- start header -------------------------------------------------------------------------- -->
 	<div class="header">
 		<div class="container">
 			<div class="header-left">
