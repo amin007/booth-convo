@@ -4,17 +4,17 @@
 					Please complete the form below with the correct and valid data only.
 				</p>
 				<p><img src="<?php echo $url ?>images/peringatan.png" alt="" width="16" height="16" />
-				Any false information is strictly prohibited.
+					Any false information is strictly prohibited.
 				</p>
 				<p><img src="<?php echo $url ?>images/kunci.png" alt="" width="16" height="16" />
-					The space marked <font color="#FF0000"><strong>*</strong></font> 
+					The space marked <font color="#FF0000"><strong>*</strong></font>
 					is <strong>mandatory fields.</strong>
 				</p>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><br><div class="sub-tajuk-kuning2">
-				<strong>INFORMATION DETAILS</strong></div></td>
+				<td colspan="2" align="center" class="sub-tajuk-kuning2">
+				<strong>INFORMATION DETAILS</strong></td>
 			</tr>
 			<tr>
 				<td width="270" align="right"><br>Username  :</td>
