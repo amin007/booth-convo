@@ -10,6 +10,7 @@ namespace Aplikasi\Kitab; //echo __NAMESPACE__;
 class Peta
 {
 #==================================================================================================================
+#------------------------------------------------------------------------------------------------------------------
 	function __construct()
 	{
 		# 1. capai fungsi dpt_url() dan masukkan dalam $url
@@ -48,15 +49,15 @@ class Peta
 		else $this->sesat();
 
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	private function debugPembolehubah($failKawal, $fail, $url, $Url)
 	{
-		//echo '<hr>KAWAL=' . KAWAL . '<br>';
-		//echo '<pre>$failKawal='; print_r($failKawal) . '</pre>';
-		//echo '<hr>$fail->' . $fail . '<br>';
-		//echo '<hr>$url[0]->' . $Url[0] . '<br>';
+		echo '<hr>KAWAL=' . KAWAL . '<br>';
+		echo '<pre>$failKawal='; print_r($failKawal) . '</pre>';
+		echo '<hr>$fail->' . $fail . '<br>';
+		echo '<hr>$url[0]->' . $Url[0] . '<br>';
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	/**
 	 *  Cara membaca parameter url GET
 	 *
@@ -80,7 +81,7 @@ class Peta
 			$this->muatkanKawal($kawal, $panjang, $url);
 
     }
-
+#------------------------------------------------------------------------------------------------------------------
 	private function muatkanKawal($kawal, $panjang, $url)
 	{
 			# Tentukan apa yang dimuatkan
@@ -117,81 +118,74 @@ class Peta
 				default: $kawal->index(); break;
 			}
 	}
+#------------------------------------------------------------------------------------------------------------------
 #--- masuk fungsi campak ke pangkal jalan jika sesat
 	function sesat()
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->index();
 		return false;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	function parameter()
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->parameter();
 		return false;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	function methodRahsia()
 	{
 		$amaran = 'method Rahsia Alam katanya';
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->methodRahsia($amaran);
 		return false;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	function panjangSangatParam()
 	{
 		$amaran = 'parameter lebih daripada 8';
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->classTidakWujud($amaran);
 		return false;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	function classKawalTidakWujud($amaran)
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->classTidakWujud($amaran);
 		return false;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	public static function classTanyaTidakWujud($amaran)
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->classTidakWujud($amaran);
 		//return false;
 		exit;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	public static function methodTanyaTidakWujud($amaran,$class,$method)
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->methodTanyaTidakWujud($amaran,$class,$method);
 		//return false;
 		exit;
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	public static function folderPaparTidakWujud()
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->folderPaparTidakWujud();
 		return false;//*/
 	}
-
+#------------------------------------------------------------------------------------------------------------------
 	public static function failPaparTidakWujud()
 	{
-		require KAWAL . '/sesat.php';
 		$kawal = new \Aplikasi\Kawal\Sesat();
 		$kawal->failTidakWujud();
 		return false;
 	}
+#------------------------------------------------------------------------------------------------------------------
 #==================================================================================================================
 }
