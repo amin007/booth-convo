@@ -11,7 +11,7 @@ require FUNGSI . '/Fungsi.php';
 
 # Sentiasa menyediakan garis condong di belakang (/) pada hujung jalan
 define('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']) . '/');
-define('Tajuk_Muka_Surat', '***');
+fine('Tajuk_Muka_Surat', 'Event Convo System');
 
 # setkan jquery, bootstrap dan font awesome sama ada local atau cdn
 ## cdn
@@ -21,8 +21,8 @@ $bootstrapCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstr
  $ceruleanCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css';
  $fontawesome_cdn = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 ## local
-            $sumber = 'sumber/utama/';
-      $jquery_local = $sumber . 'jquery/jquery-2.2.3.min.js';
+            $sumber = URL . 'sumber/utama/';
+	  $jquery_local = $sumber . 'jquery/jquery-2.2.3.min.js';
  $bootstrapJS_local = $sumber . 'bootstrap/3.3.7/js/bootstrap.min.js';
 $bootstrapCSS_local = $sumber . 'bootstrap/3.3.7/css/bootstrap.min.css'; 
  $fontawesome_local = $sumber . 'font-awesome/4.7.0/css/font-awesome.min.css';
