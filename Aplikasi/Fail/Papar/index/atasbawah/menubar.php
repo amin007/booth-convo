@@ -24,7 +24,11 @@
 		role="button" aria-haspopup="true" aria-expanded="false">Exhibitors<span class="caret"></span></a>
 			<ul class="dropdown-menu">
 			<li><a class="hvr-bounce-to-bottom" href="<?php
-			echo URL . 'vendor/booking' ?>">Booking</a></li>
+			echo URL . 'index/registeration' ?>">Registeration</a></li>
+			<!-- li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'vendor/booking' ?>">Booking</a></li -->
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/boothfees' ?>">Booth Fees</a></li>
 			<li><a class="hvr-bounce-to-bottom" href="<?php
 			echo URL . 'index/floorplan' ?>">Floor Plan</a></li>
 			<li><a class="hvr-bounce-to-bottom" href="<?php
@@ -33,15 +37,7 @@
 		</li>
 		<li><a href="<?php echo URL . 'index/gallery' ?>">Gallery</a></li>
 		<li><a href="<?php echo URL . 'index/contact' ?>">Contact</a></li>
-		<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" 
-		role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			<li><a class="hvr-bounce-to-bottom" href="<?php
-			echo URL . 'index/login' ?>"><i class="icon-user"></i>Sign In</a></li>
-			<li><a class="hvr-bounce-to-bottom" href="<?php
-			echo URL . 'index/registeration' ?>">Sign Up</a></li>
-			</ul>
-		</li>
+		<li><a href="<?php echo URL . 'index/login' ?>"><i class="icon-user"></i>LOGIN</a></li>
 		</ul>
 		<div class="clearfix"> </div>
 	</div>	
