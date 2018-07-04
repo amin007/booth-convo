@@ -1,26 +1,22 @@
+<?php
+include('config.php');
+?>
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php
-session_start();
-include('config.php');
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Booth Convocation Management System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-	
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-	<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
-	<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-	<script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Events Venue Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
