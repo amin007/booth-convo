@@ -10,29 +10,36 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-		<li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="<?php echo URL ?>">Home</a></li>
 		<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown"
 		role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-			<li><a class="hvr-bounce-to-bottom" href="aboutbooth.php">About Booth</a></li>
-			<li><a class="hvr-bounce-to-bottom" href="#">Organization</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/aboutbooth' ?>">About Booth</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/organization' ?>">Organization</a></li>
 			</ul>
 		</li>
 		<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" 
 		role="button" aria-haspopup="true" aria-expanded="false">Exhibitors<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-			<li><a class="hvr-bounce-to-bottom" href="vendor/booking.php">Registeration</a></li>
-			<li><a class="hvr-bounce-to-bottom" href="floorplan.php">Floor Plan</a></li>
-			<li><a class="hvr-bounce-to-bottom" href="rulesregulations.php">Rules & Regulations</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'vendor/booking' ?>">Booking</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/floorplan' ?>">Floor Plan</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/rulesregulations' ?>">Rules & Regulations</a></li>
 			</ul>
 		</li>
-		<li><a href="gallery.php">Gallery</a></li>
-		<li><a href="contact.php">Contact</a></li>
+		<li><a href="<?php echo URL . 'index/gallery' ?>">Gallery</a></li>
+		<li><a href="<?php echo URL . 'index/contact' ?>">Contact</a></li>
 		<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" 
 		role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-			<li><a class="hvr-bounce-to-bottom" href="login.php"><i class="icon-user"></i>Sign In</a></li>
-			<li><a class="hvr-bounce-to-bottom" href="registeration.php">Sign Up</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/login' ?>"><i class="icon-user"></i>Sign In</a></li>
+			<li><a class="hvr-bounce-to-bottom" href="<?php
+			echo URL . 'index/registeration' ?>">Sign Up</a></li>
 			</ul>
 		</li>
 		</ul>
