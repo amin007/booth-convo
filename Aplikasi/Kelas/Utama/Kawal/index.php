@@ -71,7 +71,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('aboutbooth');
+		$fail = array('02-aboutbooth');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -84,7 +84,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('organization');
+		$fail = array('03-organization');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -97,7 +97,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('registeration');
+		$fail = array('04-registeration');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
