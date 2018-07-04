@@ -3,23 +3,8 @@ Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
+https://w3layouts.com/preview/?l=%2Fevents-venue-wedding-category-bootstrap-responsive-web-template%2F
 -->
-<?php
-session_start();
-//Checking User Logged or Not
-if(empty($_SESSION['login'])){
- header('location:index.html');
-}
-//Restrict User or Moderator to Access Admin.php page
-if($_SESSION['login']['status']=='user'){
- header('location:user.php');
-}
-if($_SESSION['login']['status']=='moderator'){
- header('location:moderator.php');
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
