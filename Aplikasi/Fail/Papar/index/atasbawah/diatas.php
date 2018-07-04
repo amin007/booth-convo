@@ -9,11 +9,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Booth Convocation Management System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo $url ?>css/style.css" />
-<link href="<?php echo $url ?>SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $url ?>SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo $url ?>SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-<script src="<?php echo $url ?>SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Events Venue Responsive web template, Bootstrap Web Templates, Flat Web Templates, 
@@ -27,6 +22,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--// bootstrap-css -->
 <!-- css -->
 <link rel="stylesheet" href="<?php echo $url ?>css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $url ?>css/style1.css" />
 <!--// css -->
 <!-- font-awesome icons -->
 <link href="<?php echo $url ?>css/font-awesome.css" rel="stylesheet"> 
