@@ -31,7 +31,7 @@ if(isset($_POST['login']))
 			}
 			else
 			{
-				echo "<script language=javascript>alert('Pendaftaran tidak berjaya. Sila cuba lagi.');".
+				echo "<script language=javascript>alert('Pendaftaran tidak berjaya. Sila cuba lagi.');"
 				."window.location='registeration.php';</script>";
 			}
 		}
