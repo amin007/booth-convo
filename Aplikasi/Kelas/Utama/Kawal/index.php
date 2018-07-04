@@ -58,7 +58,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('home');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -71,7 +71,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('aboutbooth');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -84,7 +84,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('organization');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -97,7 +97,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('registeration');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -110,7 +110,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('boothfees');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -123,7 +123,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('floorplan');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -136,7 +136,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('rulesregulations');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -149,7 +149,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('gallery');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -162,7 +162,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('contact');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -175,20 +175,20 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('login');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
-	public function registeration()
-	{# Account - "registeration.php" **Sign Up**
+	public function signup()
+	{# Account - "signup.php" **Sign Up**
 		# Set pemboleubah utama
 		//$this->papar->tajuk = namaClass($this);
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('index');
+		$fail = array('signup');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
