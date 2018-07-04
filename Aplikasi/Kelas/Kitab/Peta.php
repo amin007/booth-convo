@@ -25,7 +25,7 @@ class Peta
 		 */
 		$failKawal = GetMatchingFiles(GetContents(KAWAL),$url[0] . '.php');
 		$fail = $failKawal[0];
-		$this->debugPembolehubah($failKawal, $fail, $url, $Url);
+		//$this->debugPembolehubah($failKawal, $fail, $url, $Url);
 
 		/* 4. semak sama ada dalam folder KAWAL $fail benar2 wujud
 		 * jika ya : masukkan $fail dan isytihar class tersebut
@@ -33,7 +33,6 @@ class Peta
 		 */
 		if (file_exists($fail))
 		{
-			require $fail;
 			$kawal = new $Url[0];
 			$kawal->jemaahTaskil($url[0]);
 			# jika $url[1] tak disetkan, bagi $method='index'
@@ -78,45 +77,44 @@ class Peta
 		{
 			if (!method_exists($kawal, $url[1])) {$this->parameter();}
 		}
-			$this->muatkanKawal($kawal, $panjang, $url);
-
+		$this->muatkanKawal($kawal, $panjang, $url);
     }
 #------------------------------------------------------------------------------------------------------------------
 	private function muatkanKawal($kawal, $panjang, $url)
 	{
-			# Tentukan apa yang dimuatkan
-			switch ($panjang)
-			{
-				case 8: # Kawal->Kaedah(Param2, Param3, Param4, Param5, Param6, Param7)
-				$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5], $url[6], $url[7]);
-				break;
+		# Tentukan apa yang dimuatkan
+		switch ($panjang)
+		{
+			case 8: # Kawal->Kaedah(Param2, Param3, Param4, Param5, Param6, Param7)
+			$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5], $url[6], $url[7]);
+			break;
 
-				case 7: # Kawal->Kaedah(Param2, Param3, Param4, Param5,, Param6)
-				$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5], $url[6]);
-				break;
+			case 7: # Kawal->Kaedah(Param2, Param3, Param4, Param5,, Param6)
+			$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5], $url[6]);
+			break;
 
-				case 6: # Kawal->Kaedah(Param2, Param3, Param4, Param5)
-				$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5]);
-				break;
+			case 6: # Kawal->Kaedah(Param2, Param3, Param4, Param5)
+			$kawal->{$url[1]}($url[2], $url[3], $url[4], $url[5]);
+			break;
 
-				case 5: # Kawal->Kaedah(Param2, Param3, Param4)
-				$kawal->{$url[1]}($url[2], $url[3], $url[4]);
-				break;
+			case 5: # Kawal->Kaedah(Param2, Param3, Param4)
+			$kawal->{$url[1]}($url[2], $url[3], $url[4]);
+			break;
 
-				case 4: # Kawal->Kaedah(Param2, Param3)
-				$kawal->{$url[1]}($url[2], $url[3]);
-				break;
+			case 4: # Kawal->Kaedah(Param2, Param3)
+			$kawal->{$url[1]}($url[2], $url[3]);
+			break;
 
-				case 3: # Kawal->Kaedah(Param2)
-				$kawal->{$url[1]}($url[2]);
-				break;
+			case 3: # Kawal->Kaedah(Param2)
+			$kawal->{$url[1]}($url[2]);
+			break;
 
-				case 2: # Kawal->Kaedah()
-				$kawal->{$url[1]}();
-				break;
+			case 2: # Kawal->Kaedah()
+			$kawal->{$url[1]}();
+			break;
 
-				default: $kawal->index(); break;
-			}
+			default: $kawal->index(); break;
+		}
 	}
 #------------------------------------------------------------------------------------------------------------------
 #--- masuk fungsi campak ke pangkal jalan jika sesat
