@@ -7,7 +7,7 @@ $icon['Barcode'] = '<span class="glyphicon glyphicon-barcode"></span>';
 $icon['Filter'] = '<span class="glyphicon glyphicon-filter"></span>';
 $icon['Stats'] = '<span class="glyphicon glyphicon-stats"></span>';
 
-$pilihMenu = 1;
+$pilihMenu = 2;
 
 if($pilihMenu == '1'): echo "\n";?>
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
@@ -148,4 +148,5 @@ if($pilihMenu == '1'): echo "\n";?>
 	Displin</a></li>
 </ul>
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ --><?php 
+else: echo '';
 endif; echo "\n";?>
