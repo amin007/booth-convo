@@ -27,6 +27,7 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 </div><!-- //banner -->
 
 <!-- start - section body ----------------------------------------------------------------------- -->
+<?php //echo $url ?>
 <!-- ended - section body ----------------------------------------------------------------------- -->
 
 <!-- footer -->
