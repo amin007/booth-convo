@@ -57,9 +57,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('home');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -70,9 +68,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('02-aboutbooth');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -83,9 +79,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('03-organization');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -96,9 +90,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('04-registeration');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -109,9 +101,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('05-boothfees');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -122,9 +112,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('06-floorplan');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -135,9 +123,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('rulesregulations');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -148,9 +134,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('gallery');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -161,9 +145,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('contact');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -174,9 +156,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('login');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -187,9 +167,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		//$fail = array('index','login','login_automatik');
 		$fail = array('signup');
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
