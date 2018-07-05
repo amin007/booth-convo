@@ -145,6 +145,6 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 
 <!-- footer -->
 <?php
-include 'atasbawah/dibawah-jquery.php'; echo "\n";
+//include 'atasbawah/dibawah-jquery.php'; echo "\n";
 include 'atasbawah/footer.php'; echo "\n";
 include 'atasbawah/dibawah.php';
