@@ -123,7 +123,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		$fail = array('rulesregulations');
+		$fail = array('07-rulesregulations');
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
