@@ -123,7 +123,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('floorplan');
+		$fail = array('06-floorplan');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
