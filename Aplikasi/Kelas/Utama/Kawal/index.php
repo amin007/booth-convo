@@ -110,7 +110,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$fail = array('index','login','login_automatik');
-		$fail = array('boothfees');
+		$fail = array('05-boothfees');
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
