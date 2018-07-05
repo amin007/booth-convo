@@ -27,10 +27,12 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 </div><!-- //banner -->
 
 <!-- start - section body ----------------------------------------------------------------------- -->
-	<br><center>
-	<img src="<?php echo $url ?>images/planfloor.jpg">
+	<center>
+	<img src="<?php echo $url ?>images/planfloor.jpg" width="90%" height"90%">
 	</center>
 <!-- ended - section body ----------------------------------------------------------------------- -->
+
+<br><br><br><br><br><br>
 
 <!-- footer -->
 <?php
