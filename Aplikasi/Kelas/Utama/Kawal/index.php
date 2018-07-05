@@ -134,7 +134,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		$fail = array('gallery');
+		$fail = array('08-gallery');
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -145,7 +145,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		$fail = array('contact');
+		$fail = array('09-contact');
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '<hr>';
 
 		# Pergi papar kandungan
-		$fail = array('login');
+		$fail = array('10-login');
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #------------------------------------------------------------------------------------------
