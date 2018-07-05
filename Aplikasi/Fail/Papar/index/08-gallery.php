@@ -137,7 +137,7 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<script src="js/jzBox.js"></script>
+			<script src="<?php echo $url ?>js/jzBox.js"></script>
 		</div>
 	</div>
 	<!-- //gallery --> 
@@ -145,5 +145,6 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 
 <!-- footer -->
 <?php
+include 'atasbawah/dibawah-jquery.php'; echo "\n";
 include 'atasbawah/footer.php'; echo "\n";
 include 'atasbawah/dibawah.php';
