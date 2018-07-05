@@ -22,7 +22,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--// bootstrap-css -->
 <!-- css -->
 <link rel="stylesheet" href="<?php echo $url ?>css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" type="text/css" href="<?php echo $url ?>css/style1.css" />
 <!--// css -->
 <!-- font-awesome icons -->
 <link href="<?php echo $url ?>css/font-awesome.css" rel="stylesheet"> 
