@@ -27,7 +27,6 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 </div><!-- //banner -->
 
 <!-- start - section body ----------------------------------------------------------------------- -->
-<?php //echo $url ?>
 	<!-- gallery -->
 	<div class="gallery">
 		<div class="container"> 
@@ -48,8 +47,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 			<div class="gallery-grids-row">
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g1.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g1.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g1.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g1.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -58,8 +57,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g2.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g2.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g2.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g2.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -68,8 +67,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g3.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g3.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g3.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g3.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -78,8 +77,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g4.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g4.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g4.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g4.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -88,8 +87,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g5.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g5.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g5.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g5.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -98,8 +97,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g6.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g6.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g6.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g6.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -108,8 +107,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g7.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g7.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g7.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g7.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -118,8 +117,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g3.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g3.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g3.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g3.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
@@ -128,8 +127,8 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 				</div>  
 				<div class="col-md-4 gallery-grid">
 					<div class="wpf-demo-4">  
-						<a href="images/g1.jpg" class="jzBoxLink item-hover" title="Events Venue">  
-							<img src="images/g1.jpg" alt=" " class="img-responsive" />
+						<a href="<?php echo $url ?>images/g1.jpg" class="jzBoxLink item-hover" title="Events Venue">  
+							<img src="<?php echo $url ?>images/g1.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
 								<p>Full View</p>
 							</div> 
