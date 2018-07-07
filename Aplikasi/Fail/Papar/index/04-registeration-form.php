@@ -9,7 +9,7 @@
 	<td valign="top" bgcolor="#ffffff">
 <!-- start - booking table --------------------------------------------------------------------------------------- -->
 	<form id="borang_pengesahan_pembayaran" name="borang_pengesahan_pembayaran"
-	method="post" class="borang" style="padding-top:20px">	<fieldset>
+	method="post" action="<?php echo URL ?>borang/daftarpengguna" class="borang" style="padding-top:20px"><fieldset>
 <?php echo "\n"; include '04-registeration-table.php'; echo "\n"; ?>
 	</fieldset></form>
 <!-- end - booking table ----------------------------------------------------------------------------------------- -->
