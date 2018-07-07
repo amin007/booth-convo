@@ -66,9 +66,9 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		$senaraiData = $this->tanya->ubahPosmen($posmen, $myTable);//*/
 
 		# sql insert
-		$this->tanya->tambahSqlBanyakNilai($myTable, $medan, $senaraiData);
-		//$this->tanya->tambahBanyakNilai($myTable, $medan, $senaraiData); 
-		//$this->log_sql($myTable, $medan, $senaraiData);
+		//$this->tanya->tambahSqlBanyakNilai($myTable, $medan, $senaraiData);
+		$this->tanya->tambahBanyakNilai($myTable, $medan, $senaraiData);
+		$this->log_sql($myTable, $medan, $senaraiData);
 		# Semak data
 			//$this->semakPost();
 			//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
@@ -76,8 +76,22 @@ class Borang extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		$lokasi = '';
-		echo '<br>location: ' . URL . $lokasi;
-		//header('location: ' . URL . $lokasi); //*/
+		//echo '<br>location: ' . URL . $lokasi;
+		header('location: ' . URL . $lokasi); //*/
+	}
+#------------------------------------------------------------------------------------------
+	function log_sql($myTable, $medan, $senaraiData)
+	{
+		# log sql
+		$jadual2 = 'log_sql';
+		$pengguna = 'index/registeration';
+		$log['pengguna'] = $pengguna;
+		$log['sql'] = $this->tanya->tambahArahanSqlBanyakNilai($myTable, $medan, $senaraiData);
+		$log['arahan'] = 'tambah user baru level vendor';
+		$log['tarikhmasa'] = date("Y-m-d H:i:s");
+		$this->tanya->tambahData
+		//$this->tanya->tambahSql
+			($jadual2, $log);
 	}
 #------------------------------------------------------------------------------------------
 	function semakSenarai($myTable, $medan01, $medan02, $medan)
