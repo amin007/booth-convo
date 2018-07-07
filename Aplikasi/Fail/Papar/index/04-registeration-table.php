@@ -20,7 +20,8 @@
 				<td width="270" align="right"><br>Username  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield1">
-					<br><input name="id" type="text" class="input" id="id" value="" size="45" placeholder="Iffah"/>
+					<br><input name="login[username]" type="text" class="input" id="id" 
+					value="" size="45" placeholder="Iffah"/>
 					<font color="#FF0000"><strong>*</strong></font><br/>
 					<span class="textfieldRequiredMsg">Username is required.</span>
 					</span>
@@ -30,7 +31,7 @@
 				<td width="270" align="right"><br>Full Name  :</td>
 				<td width="480" align="left">
 				<span id="sprytextfield2">
-					<br><input name="namevendor" type="text" class="input" id="namevendor" value="" 
+					<br><input name="login[namevendor]" type="text" class="input" id="namevendor" value="" 
 					size="45" placeholder="Nur Iffah Binti Sazali"/>
 				</span>
 				</td>
@@ -39,7 +40,8 @@
 				<td width="270" align="right"><br>Password  :</td>
 				<td width="480" align="left">
 					<span id="sprypassword1">
-					<br><input name="password" type="password" class="input" id="password" value="" size="45" />
+					<br><input name="login[password]" type="password" class="input" id="password" 
+					value="" size="45" />
 					<font color="#FF0000"><strong>*</strong></font><br/>
 					<span class="passwordRequiredMsg">Password is required.</span>
 					</span>
@@ -49,7 +51,7 @@
 				<td width="270" align="right"><br>Confirm Password  :</td>
 				<td width="480" align="left">
 					<span id="spryconfirm1">
-					<br><input name="cpassword" type="password" class="input" id="cpassword" value="" size="45" />
+					<br><input name="login[passwordX]" type="password" class="input" id="cpassword" value="" size="45" />
 					<font color="#FF0000"><strong>*</strong></font><br/>
 					<span class="confirmRequiredMsg">Confirmation password is required.</span>
 					<span class="confirmInvalidMsg">Confirmation password doesn't match.</span>
@@ -60,7 +62,7 @@
 				<td width="270" align="right"><br>Email  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield3">
-					<br><input name="email" type="text" class="input" id="email" value="" 
+					<br><input name="login[email]" type="text" class="input" id="email" value="" 
 					size="45" placeholder="Iffah@gmail.com" />
 					<font color="#FF0000"><strong>*</strong></font><br/>
 					<span class="textfieldRequiredMsg">Email is required.</span>
@@ -72,7 +74,7 @@
 				<td width="270" align="right"><br>Phone Number  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield4">
-					<br><input name="phoneno" type="text" class="input" id="phoneno" value="" 
+					<br><input name="login[phoneno]" type="text" class="input" id="phoneno" value="" 
 					size="45" placeholder="0123456789" /><br/>
 					<span class="textfieldInvalidFormatMsg">Invalid Phone Number.</span>
 					<span class="textfieldMinCharsMsg">Invalid Phone Number.</span>
@@ -84,7 +86,7 @@
 				<td width="270" align="right"><br>Address1  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield5">
-					<br><input name="address1" type="text" class="input" id="address1" 
+					<br><input name="login[address1]" type="text" class="input" id="address1" 
 					value="" size="45" placeholder="No.4 Jalan TPS 3" />
 					</span>
 				</td>
@@ -93,7 +95,7 @@
 				<td width="270" align="right"><br>Address2  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield6">
-					<br><input name="address2" type="text" class="input" id="address2" 
+					<br><input name="login[address2]" type="text" class="input" id="address2" 
 					value="" size="45" placeholder="Taman Putra Saujana Fasa 2" />
 					</span>
 				</td>
@@ -102,7 +104,7 @@
 				<td width="270" align="right"><br>City  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield7">
-					<br><input name="city" type="text" class="input" id="city" value="" 
+					<br><input name="login[city]" type="text" class="input" id="city" value="" 
 					size="45" placeholder="Kajang"/>
 					</span>
 				</td>
@@ -111,8 +113,8 @@
 				<td width="270" align="right"><br>Postcode  :</td>
 				<td width="480" align="left">
 					<span id="sprytextfield8">
-						<br><input name="postcode" type="text" class="input" id="postcode" value="" 
-						size="45" placeholder="12345" /><br/>
+						<br><input name="login[postcode]" type="text" class="input" id="postcode" 
+						value="" size="45" placeholder="12345" /><br/>
 						<span class="textfieldInvalidFormatMsg">Invalid Postcode.</span>
 						<span class="textfieldMinCharsMsg">Invalid Postcode.</span>
 						<span class="textfieldMaxCharsMsg">Invalid Postcode.</span>
@@ -123,7 +125,7 @@
 				<td width="270" align="right"><br>State  :</td>
 				<td width="480" align="left">
 					<span id="spryselect1">
-					<br><select name="state" id="state" class="input">
+					<br><select name="login[state]" id="state" class="input">
 						<option value="" selected="selected">-- Choose State --</option>
 						<option value="Johor">Johor</option>
 						<option value="Melaka">Melaka</option>
@@ -131,6 +133,7 @@
 						<option value="Selangor">Selangor</option>
 						<option value="Putrajaya">Putrajaya</option>
 						<option value="Kuala Lumpur">Kuala Lumpur</option>
+						<option value="Labuan">Labuan</option>
 						<option value="Perak">Perak</option>
 						<option value="Pulau Pinang">Pulau Pinang</option>
 						<option value="Kedah">Kedah</option>
