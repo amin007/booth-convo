@@ -1,3 +1,26 @@
+<style>
+.sub-tajuk-hijau {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#EEFFFF;
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:20 20 20px;
+	padding:8px 8px 8px 8px;
+	vertical-align:middle;
+	width:98%;
+}
+.sub-tajuk-kuning2 {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color:#FFFFEE;
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:20 20 20px;
+	padding:8px 8px 8px 8px;
+	vertical-align:middle;
+}
+</style>
 			<table width="750" border="0" align="center" cellpadding="3" cellspacing="1">
 			<tr><td colspan="2" class="sub-tajuk-hijau">
 				<p><img src="<?php echo $url ?>images/tanda.png" width="16" height="16" alt="" />
@@ -150,9 +173,14 @@
 			</tr>
 			<tr>
 				<td align="right">&nbsp;</td>
-				<td align="left">
+				<!-- td align="left">
 					<br><button type="submit" name="login" class="butangadmin"><span>SUBMIT</span></button>
 					<button type="reset" class="butangadmin"><span>CLEAR</span></button>
+				</td -->
+				<td>
+					<!-- input type="hidden" name="jadual" value="<?php //echo $myTable ?>" -->
+					<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
+					<input type="reset" name="Reset" value="Reset" class="btn btn-default btn-large">
 				</td>
 			</tr>
 			</table>
