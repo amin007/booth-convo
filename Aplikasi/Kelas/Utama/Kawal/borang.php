@@ -68,16 +68,16 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		# sql insert
 		//$this->tanya->tambahSqlBanyakNilai($myTable, $medan, $senaraiData);
 		$this->tanya->tambahBanyakNilai($myTable, $medan, $senaraiData);
-		$this->log_sql($myTable, $medan, $senaraiData);
+		//$this->log_sql($myTable, $medan, $senaraiData);
 		# Semak data
 			//$this->semakPost();
 			//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 			//echo '<pre>$senaraiData='; print_r($senaraiData); echo '</pre>';
 
 		# Pergi papar kandungan
-		$lokasi = '';
+		//$lokasi = '';
 		//echo '<br>location: ' . URL . $lokasi;
-		header('location: ' . URL . $lokasi); //*/
+		header('location: ' . URL . ''); //*/
 	}
 #------------------------------------------------------------------------------------------
 	function log_sql($myTable, $medan, $senaraiData)
