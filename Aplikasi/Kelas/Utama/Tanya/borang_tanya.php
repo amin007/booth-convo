@@ -67,7 +67,7 @@ class Borang_Tanya extends \Aplikasi\Kitab\Tanya
 		$password2 = $posmen[$myTable][0]['password2'];
 		$password = ($password1 == $password2) ? $password1: NULL;
 		$password = \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $password);
-		$level = 'user';
+		$level = 'vendor';
 
 		return array($password, $level);
 	}
