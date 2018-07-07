@@ -42,9 +42,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 ##-----------------------------------------------------------------------------------------
 	public function semakPost()
 	{
-		echo '<pre>Test $_POST->:<br>';
-		print_r($_POST);
-		echo '</pre>|';//*/
+		echo '<pre>Test $_POST->:<br>';	print_r($_POST); echo '</pre>|';
 	}
 ##-----------------------------------------------------------------------------------------
 	function logout()
@@ -58,9 +56,8 @@ class Borang extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------
 	public function daftarpengguna()
 	{
-		# debug $_POST
-		$this->semakPost();
-		/*# Set pemboleubah utama
+		# debug $_POST #$this->semakPost();
+		# Set pemboleubah utama
 		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
 		$senarai = array($myTable);
 		# Bentuk tatasusunan
@@ -72,7 +69,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		//$this->tanya->tambahBanyakNilai($myTable, $medan, $senaraiData); 
 		//$this->log_sql($myTable, $medan, $senaraiData);
 		# Semak data
-			//echo '<pre>$_POST='; print_r($_POST) . '</pre>';
+			$this->semakPost();
 			//echo '<pre>$posmen='; print_r($posmen) . '</pre>';
 			//echo '<pre>$senaraiData='; print_r($senaraiData) . '</pre>';
 
