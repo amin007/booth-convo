@@ -83,8 +83,9 @@ define('MSICBARU', serialize (
 		$e.'msic',$e.'msic_nota_kaki')
 	));	
 # namaPenuh,namaPendek,kataLaluan,level 
-$loginMedan01 = '`full_name` as namaPenuh,`user` as namaPendek,'
-. '`password`,`level`';	
+$medanLogin = '`username`,`namevendor`,`password`,`level`,'
+	. '`email`,`phoneno`,`address1`,`address2`,'
+	. '`city`,`postcode`,`state`';
 define('JADUAL_LOGIN', serialize( 
-	array ('biodata','email','password',$loginMedan01)
+	array('login', 'username', 'password', $medanLogin)
 	));
