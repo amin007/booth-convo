@@ -59,24 +59,34 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		# debug $_POST #$this->semakPost();
 		# Set pemboleubah utama
 		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		//$this->semakSenarai($myTable, $medan01, $medan02, $medan);
 		$senarai = array($myTable);
 		# Bentuk tatasusunan
-		$posmen = $this->tanya->semakPOST($myTable, $senarai, $_POST);
+		$posmen = $this->tanya->semakPOST($myTable, $senarai);
 		$senaraiData = $this->tanya->ubahPosmen($posmen, $myTable);//*/
 
 		# sql insert
-		//$this->tanya->tambahSqlBanyakNilai($myTable, $medan, $senaraiData); 
+		$this->tanya->tambahSqlBanyakNilai($myTable, $medan, $senaraiData);
 		//$this->tanya->tambahBanyakNilai($myTable, $medan, $senaraiData); 
 		//$this->log_sql($myTable, $medan, $senaraiData);
 		# Semak data
-			$this->semakPost();
-			//echo '<pre>$posmen='; print_r($posmen) . '</pre>';
-			//echo '<pre>$senaraiData='; print_r($senaraiData) . '</pre>';
+			//$this->semakPost();
+			//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+			//echo '<pre>$senaraiData='; print_r($senaraiData); echo '</pre>';
 
 		# Pergi papar kandungan
 		$lokasi = '';
 		echo '<br>location: ' . URL . $lokasi;
 		//header('location: ' . URL . $lokasi); //*/
+	}
+#------------------------------------------------------------------------------------------
+	function semakSenarai($myTable, $medan01, $medan02, $medan)
+	{
+		echo '<br>$myTable : ' . $myTable;
+		echo '<br>$medan01 : ' . $medan01;
+		echo '<br>$medan02 : ' . $medan02;
+		echo '<br>$medan : '; $this->semakPembolehubah($medan);
+		echo '<br>';
 	}
 #------------------------------------------------------------------------------------------
 	function salah()
