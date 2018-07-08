@@ -161,10 +161,10 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		# semak pembolehubah
 		//echo '<pre>Test $_POST->'; print_r($_POST); echo '</pre>';
 		//echo '<pre>password->'; print_r($password); echo '</pre>';
-		echo '<pre>$cariNama::'; print_r($cariNama); echo '</pre>';
-		echo '<hr>$data->' . sizeof($cariNama) . '<hr>';
+		//echo '<pre>$cariNama::'; print_r($cariNama); echo '</pre>';
+		//echo '<hr>$data->' . sizeof($cariNama) . '<hr>';
 
-		//$this->kunciPintu($kira, $cariNama); # pilih pintu masuk
+		$this->kunciPintu($kira, $cariNama); # pilih pintu masuk
 	}
 #------------------------------------------------------------------------------------------
 	function kunciPintu($kira, $data)
@@ -172,9 +172,9 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		if ($kira == 1) 
 		{	# login berjaya
 			\Aplikasi\Kitab\Sesi::init(); # setkan $_SESSION utk 
-			# namaPenuh,namaPendek,email,kataLaluan,level 
-			\Aplikasi\Kitab\Sesi::set('namaPendek', $data[0]['namaPendek']);
-			\Aplikasi\Kitab\Sesi::set('namaPenuh', $data[0]['namaPenuh']);
+			# username,fullusername,email,kataLaluan,level
+			\Aplikasi\Kitab\Sesi::set('namaPendek', $data[0]['username']);
+			\Aplikasi\Kitab\Sesi::set('namaPenuh', $data[0]['fullusername']);
 			\Aplikasi\Kitab\Sesi::set('email', $data[0]['email']);
 			\Aplikasi\Kitab\Sesi::set('levelPengguna', $data[0]['level']);
 			\Aplikasi\Kitab\Sesi::set('loggedIn', true);
@@ -194,8 +194,8 @@ class Borang extends \Aplikasi\Kitab\Kawal
 			header('location:' . URL . 'admin');
 		elseif ($level == 'admin2')
 			header('location:' . URL . 'admin2');
-		elseif ($level == 'user')
-			header('location:' . URL . 'dashboard');
+		elseif ($level == 'vendor')
+			header('location:' . URL . 'vendor');
 		else
 			header('location:' . URL . ''); //*/
 	}
