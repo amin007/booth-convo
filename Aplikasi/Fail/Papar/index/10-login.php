@@ -31,7 +31,7 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr><td>
 <form id="borang_pelanggan_masuk" name="borang_pelanggan_masuk" style="padding-top:20px"
-method="POST" action="<?php echo URL ?>borang/login">
+method="POST" action="<?php echo URL ?>borang/loginid">
 <table border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
 <tr>
 	<td width="23"><img src="<?php echo $url ?>images/kotak_01_01.png" width="23" height="21" alt="" /></td>
@@ -47,7 +47,7 @@ method="POST" action="<?php echo URL ?>borang/login">
 		<tr>
 			<td>
 			<span id="sprytextfield1">
-			<input name="login[0][username]" type="text" class="input" size="45" id="username" /><br/>
+			<input name="username" type="text" class="input" size="45" id="username" /><br/>
 			<span class="textfieldRequiredMsg">ID Pengguna diperlukan.</span>
 			</span>
 			</td>
@@ -56,7 +56,7 @@ method="POST" action="<?php echo URL ?>borang/login">
 		<tr>
 			<td>
 				<span id="sprypassword1">
-				<input name="login[0][password]" type="password" class="input" size="45" id="password" /><br/>
+				<input name="password" type="password" class="input" size="45" id="password" /><br/>
 				<span class="passwordRequiredMsg">Kata laluan diperlukan.</span>
 				</span>
 			</td>
