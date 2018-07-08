@@ -56,33 +56,16 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//exit;
 	}
 #==========================================================================================
-	public function pelawat()
-	{
-		# Set pemboleubah utama
-		$this->papar->tajuk = 'Ruangtamu';
-		$this->papar->senarai['modul'] = $this->tanya->jadualModul();
-
-		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'pelawat', $noInclude=0);
-	}
 #-------------------------------------------------------------------------------------------
-	function keluar()
-	{
-		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
-		\Aplikasi\Kitab\Sesi::init();
-		\Aplikasi\Kitab\Sesi::destroy();
-		header('location: ' . URL);
-		//exit;
-	}
+	public function staffAdd() {}
 #-------------------------------------------------------------------------------------------
-	function semaknama($nama)
-	{
-		# Semak data $_POST
-		echo '<pre>$_POST->'; print_r($_POST) . '</pre>| ';
-		echo '<pre>$nama->'; print_r($nama) . '</pre>| ';
-		echo 'Kod:' . \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $nama) . ': ';
-		//echo 'Kod:' . RahsiaHash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY) . ': ';
-	}
+	public function staffView() {}
+#-------------------------------------------------------------------------------------------
+	public function productAdd() {}
+#-------------------------------------------------------------------------------------------
+	public function productView() {}
+#-------------------------------------------------------------------------------------------
+	public function report() {}
+#-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
