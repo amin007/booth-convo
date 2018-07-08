@@ -45,3 +45,9 @@ ___
 * "status.php" **Status**
 * "payment.php" **Payment**
 * "logout.php" **Logout**
+
+# Standard
+http://www.php-fig.org/psr/psr-4/
+
+# Sumber ilham dari
+https://github.com/iliyaliyana
