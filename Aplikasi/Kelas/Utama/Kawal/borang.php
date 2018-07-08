@@ -200,5 +200,37 @@ class Borang extends \Aplikasi\Kitab\Kawal
 			header('location:' . URL . ''); //*/
 	}
 #------------------------------------------------------------------------------------------
+	public function ubah($myTable, $medanID, $dataID)
+	{
+		# Set pemboleubah utama
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($myTable, $medanID, $dataID);
+		$this->papar->senarai[$myTable] = $this->tanya->
+			cariSemuaData //cariSql
+			($myTable, $medan, $carian, $susun);
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparanUbah($myTable, $medanID, $dataID);
+
+		# Pergi papar kandungan
+		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_ubah'); $this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
+#------------------------------------------------------------------------------------------
+	function kandunganPaparanUbah($myTable, $medanID, $dataID)
+	{
+		list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($myTable, $medanID, $dataID);
+		$this->papar->myTable = $myTable;
+		//$this->papar->carian = $carian;
+		$this->papar->c1 = $this->papar->c2 = null;
+		//$this->papar->template = 'biasa';
+		//$this->papar->template = 'bootstrap_table';
+		//$this->papar->template = 'bootstrap';
+		$this->papar->template = 'khas01';
+		//*/
+	}
+#------------------------------------------------------------------------------------------
 #==========================================================================================
 }
