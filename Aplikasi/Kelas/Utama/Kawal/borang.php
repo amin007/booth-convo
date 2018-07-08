@@ -159,12 +159,12 @@ class Borang extends \Aplikasi\Kitab\Kawal
 				//$this->tanya->cariSql("`$myTable`", $medan, $carian, null);
 				$kira = sizeof($cariNama);//*/
 		# semak pembolehubah
-		//echo '<pre>Test $_POST->'; print_r($_POST) . '</pre>';
+		//echo '<pre>Test $_POST->'; print_r($_POST); echo '</pre>';
 		//echo '<pre>password->'; print_r($password); echo '</pre>';
-		//echo '<pre>$cariNama::'; print_r($cariNama) . '<pre>';
-		//echo '<hr>$data->' . sizeof($cariNama) . '<hr>';
+		echo '<pre>$cariNama::'; print_r($cariNama); echo '</pre>';
+		echo '<hr>$data->' . sizeof($cariNama) . '<hr>';
 
-		$this->kunciPintu($kira, $cariNama); # pilih pintu masuk
+		//$this->kunciPintu($kira, $cariNama); # pilih pintu masuk
 	}
 #------------------------------------------------------------------------------------------
 	function kunciPintu($kira, $data)
@@ -190,14 +190,12 @@ class Borang extends \Aplikasi\Kitab\Kawal
 	function levelPengguna($kira, $data, $level)
 	{
 		//header('location:' . URL . 'ruangtamu');
-		if ($level == 'kawal')
-			header('location:' . URL . 'ruangtamu');
-		elseif ($level == 'fe')
-			header('location:' . URL . 'ruangtamu');
-		elseif ($level == 'pegawai')
-			header('location:' . URL . 'ruangtamu');
-		elseif($level == 'pegawai2')
-			header('location:' . URL . 'homeadmin');
+		if ($level == 'admin')
+			header('location:' . URL . 'admin');
+		elseif ($level == 'admin2')
+			header('location:' . URL . 'admin2');
+		elseif ($level == 'user')
+			header('location:' . URL . 'dashboard');
 		else
 			header('location:' . URL . ''); //*/
 	}
