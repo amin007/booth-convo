@@ -1,5 +1,5 @@
 <?php
-namespace Aplikasi\Tanya; //echo __NAMESPACE__; 
+namespace Aplikasi\Tanya; //echo __NAMESPACE__;
 class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 {
 #=====================================================================================================
