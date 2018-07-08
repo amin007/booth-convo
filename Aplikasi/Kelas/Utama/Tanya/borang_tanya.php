@@ -162,12 +162,13 @@ class Borang_Tanya extends \Aplikasi\Kitab\Tanya
 	
 		foreach ($huruf as $jenis=>$key): foreach ($key as $v=>$kekunci):
 		if (isset($posmen[$myTable][0][$kekunci])):
+			$poslaju = $posmen[$myTable][0][$kekunci];
 			if ($jenis == 'kecil') # huruf('kecil', )
-				$posmen[$myTable][0][$kekunci] = huruf('kecil', $posmen[$myTable][0][$kekunci]);
+				$posmen[$myTable][0][$kekunci] = huruf('kecil', $poslaju);
 			if ($jenis == 'BESAR') # huruf('Besar', )
-				$posmen[$myTable][0][$kekunci] = huruf('Besar', $posmen[$myTable][0][$kekunci]);
+				$posmen[$myTable][0][$kekunci] = huruf('Besar', $poslaju);
 			if ($jenis == 'Depan') # huruf('Besar_Depan', )
-				$posmen[$myTable][0][$kekunci] = huruf('Besar_Depan', $posmen[$myTable][0][$kekunci]);
+				$posmen[$myTable][0][$kekunci] = huruf('Besar_Depan', $poslaju);
 		endif; endforeach; endforeach; //echo '<hr><hr>';
 
 		return $posmen; # pulangkan nilai
@@ -204,10 +205,17 @@ class Borang_Tanya extends \Aplikasi\Kitab\Tanya
 	}
 #---------------------------------------------------------------------------------------------------#
 /*
+$sql00 = "INSERT INTO login
+(`username`,`namevendor`,`password`,`level`,`email`,`phoneno`,
+`address1`,`address2`,`city`,`postcode`,`state`) VALUES
+('admin', 'Admin Besar', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin@duduk.mana', '0123456789',
+'No 1, Jalan 2', 'Taman 3', 'Kajang', '12345', 'Selangor');
+";
+
 $sql01 = "INSERT INTO login
 (`username`,`namevendor`,`password`,`level`,`email`,`phoneno`,
 `address1`,`address2`,`city`,`postcode`,`state`) VALUES 
-('Iliya', 'Iliya Mustaffa', 'f5ca2d0fea818f7c46b004aa04214791', 'vendor', 'liyana@gmail.com', '0192962215', 
+('Iliya', 'Iliya Mustaffa', 'f5ca2d0fea818f7c46b004aa04214791', 'vendor', 'liyana@gmail.com', '0192962215',
 'No.4 Jalan St5', 'Taman St', 'Semenyih', '43500', 'Selangor');
 ";
 
@@ -220,14 +228,14 @@ $sql02 = "NSERT INTO login
 $sql03 = "INSERT INTO login
 (`username`,`namevendor`,`password`,`level`,`email`,`phoneno`,
 `address1`,`address2`,`city`,`postcode`,`state`) VALUES 
-('ahmad', 'Ahmad', '0a7493ffaab7ba78eae39d21ab19e99f', 'admin', 'ahmad@gmail.com', '192962215', 
+('ahmad', 'Ahmad', '0a7493ffaab7ba78eae39d21ab19e99f', 'admin2', 'ahmad@gmail.com', '192962215',
 'No.4 Jalan St5', 'Taman St', 'Air Itam', '43500', 'Selangor');
 ";
 
 $sql04 = "INSERT INTO login
 (`username`,`namevendor`,`password`,`level`,`email`,`phoneno`,
 `address1`,`address2`,`city`,`postcode`,`state`) VALUES 
-('abdul', 'Abdul', 'aded4390a46d14d81fd1b6d25d7ae49e', 'admin', 'abdul@yahoo.com', '182673189', 
+('abdul', 'Abdul', 'aded4390a46d14d81fd1b6d25d7ae49e', 'admin2', 'abdul@yahoo.com', '182673189',
 'No.9 Jalan Bunga2', 'Taman Bunga', 'Kuala Kangsar', '33020', 'Perak');
 ";
 */
