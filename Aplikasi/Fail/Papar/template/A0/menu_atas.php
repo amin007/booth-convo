@@ -19,7 +19,7 @@ $iconFA['video'] = '<i class="fas fa-video"></i>';
 $iconFA['search'] = '<i class="fas fa-search"></i>';
 
 echo "\n\n";
-//if ($paras == null): else: ?>
+if ($paras == null): else: ?>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 	<a class="navbar-brand" href="<?php echo URL ?>">
 		<?php echo $iconFA['video'] . Tajuk_Muka_Surat . ':' . $paras ?></a>
@@ -31,9 +31,9 @@ echo "\n\n";
 		<span class="navbar-toggler-icon"></span>
 	</button>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<?php include 'menubar_atas.php'; ?>
+<?php //include 'menubar_atas.php'; ?>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 </nav>
 <?php
-// endif;
+endif;
