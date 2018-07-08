@@ -9,6 +9,7 @@ class Tanya
 		$this->db = new \Aplikasi\Kitab\DB_Pdo(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
 		//$this->db = new \Aplikasi\Kitab\DB_Mysqli(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
 		$this->sql = new \Aplikasi\Kitab\Sql();
+		$this->createSql = new \Aplikasi\Kitab\Sql_Create();
 		$this->insertSql = new \Aplikasi\Kitab\Sql_Insert();
 	}
 #-------------------------------------------------------------------------------------------------
@@ -86,6 +87,14 @@ class Tanya
 
 		//echo '$sql-><pre>'; print_r($sql); echo '</pre>';
 		$this->db->selectAll($sql);
+	}
+	#---------------------------------------------------------------------------------------------
+	public function buatSqlJadual($myTable, $medan)
+	{
+		# set sql
+		$sql = $this->createSql->buatBaru($myTable, $medan);
+
+		echo '$sql-><pre>'; print_r($sql); echo '</pre>';
 	}
 	#---------------------------------------------------------------------------------------------
 	public function salinJadual($myTableNew, $medan, $myTableOld)
