@@ -240,6 +240,22 @@ $sql04 = "INSERT INTO login
 ";
 */
 #---------------------------------------------------------------------------------------------------#
+	public function susunPembolehubah($myTable, $medanID, $dataID)
+	{
+		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login2');
+		$carian = $susun = null;
+		# semak database
+			$carian[] = array('fix'=>'like', # cari x= atau %like%
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => $medanID, # cari dalam medan apa
+				'apa' => $dataID); # benda yang dicari
+			/*$carian[] = array('fix'=>'like', # cari x= atau %like%
+				'atau'=>'AND', # WHERE / OR / AND
+				'medan' => 'level', # cari dalam medan apa
+				'apa' => 'admin2'); # benda yang dicari//*/
+
+		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
 #---------------------------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------------------------#
