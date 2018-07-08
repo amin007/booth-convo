@@ -21,7 +21,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'index', $noInclude=0);
+		$fail = array('index0'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 ##-----------------------------------------------------------------------------------------
 	public function paparKandungan($folder, $fail, $noInclude)
@@ -57,15 +58,65 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	}
 #==========================================================================================
 #-------------------------------------------------------------------------------------------
-	public function staffAdd() {}
+	public function staffAdd()
+	{
+		# Set pemboleubah utama
+		$this->papar->tajuk = namaClass($this);
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
 #-------------------------------------------------------------------------------------------
-	public function staffView() {}
+	public function staffView()
+	{
+		# Set pemboleubah utama
+		$this->papar->tajuk = namaClass($this);
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'index';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
 #-------------------------------------------------------------------------------------------
-	public function productAdd() {}
+	public function productAdd()
+	{
+		# Set pemboleubah utama
+		$this->papar->tajuk = namaClass($this);
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
 #-------------------------------------------------------------------------------------------
-	public function productView() {}
+	public function productView()
+	{
+		# Set pemboleubah utama
+		$this->papar->tajuk = namaClass($this);
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'index';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
 #-------------------------------------------------------------------------------------------
-	public function report() {}
+	public function report()
+	{
+		# Set pemboleubah utama
+		$this->papar->tajuk = namaClass($this);
+		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'index';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
