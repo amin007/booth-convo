@@ -46,7 +46,7 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 		<tr>
 			<td>
 			<span id="sprytextfield1">
-			<input name="id" type="text" class="input" size="45" id="username" /><br/>
+			<input name="login[0][username]" type="text" class="input" size="45" id="username" /><br/>
 			<span class="textfieldRequiredMsg">ID Pengguna diperlukan.</span>
 			</span>
 			</td>
@@ -55,15 +55,17 @@ echo "\n"; include 'atasbawah/menubar.php'; echo "\n"; ?></div>
 		<tr>
 			<td>
 				<span id="sprypassword1">
-				<input name="password" type="password" class="input" size="45" id="password" /><br/>
+				<input name="login[0][password]" type="password" class="input" size="45" id="password" /><br/>
 				<span class="passwordRequiredMsg">Kata laluan diperlukan.</span>
 				</span>
 			</td>
 		</tr>
 		<tr>
-			<td align="left"><br>
-				<button type="submit" name="login" class="butangkecil"><span>SUBMIT</span></button>
-				<button type="reset" name="reset" class="butangkecil"><span>CLEAR</span></button>
+			<td align="left">
+				<input type="submit" name="Simpan" value="Login" class="btn btn-primary btn-large">
+				<input type="reset" name="Reset" value="Reset" class="btn btn-default btn-large">
+				<!-- button type="submit" name="login" class="butangkecil"><span>SUBMIT</span></button -->
+				<!-- button type="reset" name="reset" class="butangkecil"><span>CLEAR</span></button -->
 			</td>
 		</tr>
 		</table>
