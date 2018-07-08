@@ -17,8 +17,10 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 			aria-haspopup="true" aria-expanded="false">
 				<?php echo $iconFA['User'] ?> Staff</a>
 			<div class="dropdown-menu" aria-labelledby="dropdown01">
-			<a class="dropdown-item" href="#"><?php echo $iconFA['UserAdd'] ?> Staff Add</a>
-			<a class="dropdown-item" href="#"><?php echo $iconFA['UserView'] ?> Staff View</a>
+			<a class="dropdown-item" href="<?php echo URL ?>admin/staffAdd"><?php
+				echo $iconFA['UserAdd'] ?> Staff Add</a>
+			<a class="dropdown-item" href="<?php echo URL ?>admin/staffView"><?php
+				echo $iconFA['UserView'] ?> Staff View</a>
 			</div>
 		</li>
 		<li class="nav-item dropdown">
@@ -26,12 +28,15 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 			aria-haspopup="true" aria-expanded="false">
 				<?php echo $iconFA['CartPlus'] ?> Product</a>
 			<div class="dropdown-menu" aria-labelledby="dropdown01">
-			<a class="dropdown-item" href="#"><?php echo $iconFA['Barcode'] ?> Product Add</a>
-			<a class="dropdown-item" href="#"><?php echo $iconFA['Image'] ?> Product View</a>
+			<a class="dropdown-item" href="<?php echo URL ?>admin/productAdd"><?php
+				echo $iconFA['Barcode'] ?> Product Add</a>
+			<a class="dropdown-item" href="<?php echo URL ?>admin/productView"><?php
+				echo $iconFA['Image'] ?> Product View</a>
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#"><?php echo $iconFA['Stats'] ?> Report</a>
+			<a class="nav-link" href="<?php echo URL ?>admin/report"><?php
+				echo $iconFA['Stats'] ?> Report</a>
 		</li>
 		</ul>
 	</div>
