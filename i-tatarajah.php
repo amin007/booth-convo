@@ -82,10 +82,16 @@ define('MSICBARU', serialize (
 		$e.'msic_v1',$e.'msic_bandingan',
 		$e.'msic',$e.'msic_nota_kaki')
 	));	
-# namaPenuh,namaPendek,kataLaluan,level 
-$medanLogin = '`username`,`namevendor`,`password`,`level`,'
+# namaPenuh,namaPendek,kataLaluan,level
+$medanLogin = '`username`,`fullusername`,`password`,`level`,'
 	. '`email`,`phoneno`,`address1`,`address2`,'
 	. '`city`,`postcode`,`state`';
 define('JADUAL_LOGIN', serialize( 
 	array('login', 'username', 'password', $medanLogin)
+	));
+$medanLogin02 = '`id`,`username`,`fullusername`,`password`,`level`,'
+	. '`email`,`phoneno`,`address1`,`address2`,'
+	. '`city`,`postcode`,`state`,`gambar`';
+define('JADUAL_LOGIN2', serialize(
+	array('login', 'username', 'password', $medanLogin02)
 	));
