@@ -41,6 +41,7 @@ class Borang02_Ubah
 			<input type="hidden" name="jadual" value="<?php echo $myTable ?>">
 			<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
 			<!-- input type="reset" name="Reset" value="Reset" class="btn btn-default btn-large" -->
+			<a href="<?php echo URL ?>" class="btn btn-outline-dark btn-large">Home</a>
 		</span>
 		</div>
 	</div>
