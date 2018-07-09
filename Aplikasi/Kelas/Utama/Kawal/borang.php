@@ -267,7 +267,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 	public function ubahSimpan($dataID)
 	{
 		# ubahsuai $posmen
-		list($posmen,$senaraiJadual,$medanID) = $this->ubahsuaiPost($dataID);
+		list($posmen,$senaraiJadual,$myTable,$medanID) = $this->ubahsuaiPost($dataID);
 		//echo '<br>$dataID=' . $dataID . '<br>';
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
@@ -281,7 +281,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		}# tamat ulang table
 
 		# pergi papar kandungan
-		$lokasi = 'borang/ubah/' . $jadual . '/' . $medanID . '/' . $dataID;
+		$lokasi = 'borang/ubah/' . $myTable . '/' . $medanID . '/' . $dataID;
 		//echo '<br>location: ' . URL . $lokasi;
 		header('location: ' . URL . $lokasi); //*/
 	}
@@ -309,7 +309,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		$posmen = $this->kataLaluanX($senaraiJadual[0], $posmen);
 		$posmen = $this->tanya->semakPosmen($senaraiJadual[0], $posmen, $pass, $pass2);
 
-		return array($posmen,$senaraiJadual,$medanID); # pulangkan nilai
+		return array($posmen,$senaraiJadual,$senaraiJadual[0],$medanID); # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
 	public function kataLaluanX($myTable, $posmen)
