@@ -262,7 +262,7 @@ $sql04 = "INSERT INTO login
 		$medanAsal = '`id`,`username`,`fullusername`,`password`,`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`';
-		$medanLogin = '`id`,`username`,`fullusername`,`level`,'
+		$medanLogin = '`id`,`username`,`fullusername`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`';
 
