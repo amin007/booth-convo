@@ -105,7 +105,8 @@ class Borang02_Ubah
 		$dataType = myGetType($data);
 		# css
 		list($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
-			$classInput,$komenInput) = $this->ccs();
+			$classInput,$komenInput,$medanLogin) = $this->ccs();
+		$tab = array($tab2,$tab3,$tab4);
 
 		//if ( in_array($key,array(...)) )
 		if(in_array($key,array('nota','nota_prosesan','catatan','CatatNota')))
@@ -113,8 +114,8 @@ class Borang02_Ubah
 		elseif ( in_array($key,array('password','kataLaluan')) )
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
 				$classInput, $komenInput, $jadual, $key);
-		elseif(in_array($key,dpt_senarai('jadual_login2') )) #senarai medan untuk login
-			$input = $this->inputBiodata($tab2, $tab3, $name, $data,
+		elseif(in_array($key,$medanLogin )) #senarai medan untuk login
+			$input = $this->inputBiodata($tab, $name, $data,
 				$classInput, $komenInput);
 		elseif ( in_array($key,array('keterangan')) ) # kod html untuk bukan input type
 			$input = $this->inputJadual($paparSahaja);
@@ -161,10 +162,17 @@ class Borang02_Ubah
 		$birutua = 'btn btn-primary btn-mini';
 		$birumuda = 'btn btn-info btn-mini';
 		$merah = 'btn btn-danger btn-mini';
-		$classInput = 'input-group input-group';
-		$komenInput = '<!-- / "input-group input-group" -->';
+		//$classInput = 'input-group input-group'; # 3.3.7
+		//$komenInput = '<!-- / "input-group input-group" -->';
+		$classInput = 'input-group mb-3'; # 4.1.1
+		$komenInput = '<!-- / "input-group mb-3" -->';
+		# tatasusunan
+		$medanLogin = array('username','fullusername','password','level',
+		'phoneno','address1','address2',
+		'city','postcode');
 
-		return array($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,$classInput,$komenInput);
+		return array($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
+		$classInput,$komenInput,$medanLogin);
 	}
 #------------------------------------------------------------------------------------------
 	function labelBawah($data)
@@ -172,9 +180,24 @@ class Borang02_Ubah
 		$input2 = null;
 		$tab2 = "\n\t\t";
 		$input2 = ($data==null) ? '' :
-				'<span class="input-group-addon">'
-				. $data . '</span>'
-				. $tab2;
+			'<span class="input-group-text" id="basic-addon2">'
+			. $data . '</span>'
+			. $tab2;
+
+		return $input2;
+	}
+#------------------------------------------------------------------------------------------
+	function labelBawah3($data)
+	{
+		$input2 = null;
+		$tab2 = "\n\t\t";
+		$tab3 = "\n\t\t\t";
+		$input2 = ($data==null) ? '' :
+			'<div class="input-group-append">'
+			. '<span class="input-group-text" id="basic-addon2">'
+			. $tab3 . $data . $tab3 . '</span>'
+			. '</div><!-- / class="input-group-append" -->'
+			. $tab2;
 
 		return $input2;
 	}
@@ -206,14 +229,15 @@ class Borang02_Ubah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
-	function inputBiodata($tab2, $tab3, $name, $data, $classInput, $komenInput)
+	function inputBiodata($tab, $name, $data, $classInput, $komenInput)
 	{
+		list($tab2,$tab3,$tab4) = $tab;
 		return $tab2
 		. '<div class="'.$classInput.'">' . $tab3
 		//. '<span class="input-group-addon"></span>' . $tab3
 		. '<input type="text" ' . $name  . ' value="' . $data . '"'
-		. ' class="form-control">'
-		. $tab2 . $this->labelBawah($data)
+		. ' class="form-control">' . $tab3
+		. $this->labelBawah3($data)
 		. '</div>' . $komenInput
 		. '';
 	}
