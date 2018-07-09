@@ -6,7 +6,7 @@ $class2 = 'col-sm-6'; # untuk $data
 $html->medanCarian(
 	array($this->_method, $myTable, $this->senarai, $this->cariID, $this->_jadual)
 );?>
-<div class="jumbotron">
+<div class="container">
 <form method="POST" action="<?php echo $aksi ?>"><?php echo "\n";
 for ($kira=0; $kira < count($row); $kira++)
 {	foreach ( $row[$kira] as $key=>$data )
@@ -24,4 +24,4 @@ for ($kira=0; $kira < count($row); $kira++)
 }$html->medanHantar($this->_jadual, $class1);
 /*<!-- / class="container" -->*/ ?>
 </form><!-- / class="form-horizontal" -->
-</div><!-- / class="container" -->
+</div><!-- / class="container" / class="jumbotron" -->
