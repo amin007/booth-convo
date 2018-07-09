@@ -4,10 +4,17 @@
 //$pilihJadual = 'ubah_medan01'; # borang biodata berasaskan table
 $pilihJadual = 'ubah_medan02'; # borang ubah berasaskan bootstrap
 
-# untuk kod baru
-//echo '<pre>$carian='; print_r($this->carian); echo '</pre>';
-//echo '<pre>$senarai='; print_r($this->senarai); echo '</pre>';
-//echo '<pre>$_cariIndustri='; print_r($this->_cariIndustri); echo '</pre>';
+# untuk debug $this->papar
+/*echo '<pre>';
+echo '<br>$this->medanID::'; print_r($this->medanID);
+echo '<br>$this->cariID::'; print_r($this->cariID);
+echo '<br>$this->carian::'; print_r($this->carian);
+echo '<br>$this->_jadual::'; print_r($this->_jadual);
+echo '<br>$this->senarai::'; print_r($this->senarai);
+echo '<br>$this->_cariIndustri::'; print_r($this->_cariIndustri);
+echo '<br>$this->_method::'; print_r($this->_method);
+echo '<br>$template='; print_r($this->template);
+echo '</pre>';/*/
 
 # papar hasil carian
 $cari1 = '&nbsp;|&nbsp;'; $cari2 = '';
@@ -22,3 +29,4 @@ if(!isset($this->cariID))
 	echo '<h1>data kosong daa</h1>';
 else # jenis template
 	include 'template_' . $this->template . '.php';
+//*/
