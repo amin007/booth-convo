@@ -27,7 +27,8 @@ class Kebenaran
 
 		if ($kunci == true && in_array($level,$senaraiLevel))
 		{
-			header('location:' . URL . 'ruangtamu');
+			//header('location:' . URL . 'ruangtamu');
+			header('location:' . URL . $level);
 			exit;
 		}
 		//*/
