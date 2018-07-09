@@ -139,37 +139,32 @@ jQuery(document).ready(function($) {
 });
 </script>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
-<script src="sumber/rangka-dawai/w3-event-venue/js/responsiveslides.min.js"></script>
-<script>
-// You can also use "$(window).load(function() {"
-	$(function () {
-		// Slideshow 4
-		$("#slider4").responsiveSlides({
-			auto: true,
-			pager:true,
-			nav:false,
-			speed: 500,
-			namespace: "callbacks",
-			before: function () {
-				$('.events').append("<li>before event fired.</li>");
-			},
-			after: function () {
-				$('.events').append("<li>after event fired.</li>");
-			}
-		});
+<script src="../sumber/rangka-dawai/w3-event-venue/js/responsiveslides.min.js"></script>
+<script>// You can also use "$(window).load(function() {"
+$(function () {
+	// Slideshow 4
+	$("#slider4").responsiveSlides({
+		auto: true,
+		pager:true,
+		nav:false,
+		speed: 500,
+		namespace: "callbacks",
+		before: function () { $('.events').append("<li>before event fired.</li>"); },
+		after:  function () { $('.events').append("<li>after event fired.</li>");  }
 	});
+});
 </script>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
 <script src="../sumber/rangka-dawai/w3-event-venue/js/responsiveslides.min.js"></script>
 <script src="../sumber/rangka-dawai/w3-event-venue/js/jarallax.js"></script>
 <script src="../sumber/rangka-dawai/w3-event-venue/js/SmoothScroll.min.js"></script>
 <script type="text/javascript">
-	/* init Jarallax */
-	$('.jarallax').jarallax({
-		speed: 0.5,
-		imgWidth: 1366,
-		imgHeight: 768
-	})
+/* init Jarallax */
+$('.jarallax').jarallax({
+	speed: 0.5,
+	imgWidth: 1366,
+	imgHeight: 768
+})
 </script>
 <script type="text/javascript" src="sumber/rangka-dawai/w3-event-venue/js/move-top.js"></script>
 <script type="text/javascript" src="sumber/rangka-dawai/w3-event-venue/js/easing.js"></script>
