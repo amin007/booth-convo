@@ -404,7 +404,7 @@ class Borang02_Ubah
 #------------------------------------------------------------------------------------------
 	function selectNg($name,$data)
 	{
-		$negeri = array('Johor','Melak','Negeri Sembilan',
+		$negeri = array('Johor','Melaka','Negeri Sembilan',
 			'Selangor','Putrajaya','Kuala Lumpur','Labuan',
 			'Perak','Pulau Pinang','Kedah','Perlis',
 			'Kelantan','Terengganu','Pahang',
@@ -412,8 +412,8 @@ class Borang02_Ubah
 		//$select .= '<option value="" selected="selected">-- Choose State --</option>';
 		$option = '';
 		foreach($negeri as $ng):
-			$selected = ($ng == $data) ? ' selected="selected">*' : '>';
-			$option .= '<option value="' . $ng .'"' . $selected
+			$terpilih = ($ng == $data) ? ' selected="selected">*' : '>';
+			$option .= '<option value="' . $ng .'"' . $terpilih
 			. $ng . '</option>';
 		endforeach;
 		$select = '<select  ' . $name . ' class="form-control">'
