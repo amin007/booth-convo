@@ -264,5 +264,68 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		//*/
 	}
 #------------------------------------------------------------------------------------------
+	public function ubahSimpan($dataID)
+	{
+		# ubahsuai $posmen
+		list($posmen,$senaraiJadual,$medanID) = $this->ubahsuaiPost($dataID);
+		//echo '<br>$dataID=' . $dataID . '<br>';
+		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		# mula ulang $senaraiJadual
+		foreach ($senaraiJadual as $kunci => $jadual)
+		{# mula ulang table
+			$this->tanya->//ubahSqlSimpan
+			ubahSimpan
+			($posmen[$jadual], $jadual, $medanID);
+		}# tamat ulang table
+
+		# pergi papar kandungan
+		$lokasi = 'borang/ubah/' . $jadual . '/' . $medanID . '/' . $dataID;
+		//echo '<br>location: ' . URL . $lokasi;
+		header('location: ' . URL . $lokasi); //*/
+	}
+#-------------------------------------------------------------------------------------------
+	function ubahsuaiPost($dataID)
+	{
+		//list($medanID,$senaraiJadual,$pass,$pass2) = dpt_senarai('jadual_biodata3');
+		list($medanID,$senaraiJadual,$pass,$pass2) = $this->tanya->jadualLogin();
+
+		$posmen = array();
+		foreach ($_POST as $myTable => $value):
+			if ( in_array($myTable,$senaraiJadual) ):
+				foreach ($value as $kekunci => $papar)
+				{
+					$posmen[$myTable][$kekunci] = bersih($papar);
+					$posmen[$myTable][$medanID] = $dataID;
+				}//*/
+		endif; endforeach;
+
+		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
+		//echo '<pre>$medanID='; print_r($medanID); echo '</pre>';
+		//echo '<pre>$dataID='; print_r($dataID); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		$posmen = $this->kataLaluanX($senaraiJadual[0], $posmen);
+		$posmen = $this->tanya->semakPosmen($senaraiJadual[0], $posmen, $pass, $pass2);
+
+		return array($posmen,$senaraiJadual,$medanID); # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
+	public function kataLaluanX($myTable, $posmen)
+	{
+		$surat = array('kataLaluan');
+		foreach ($surat as $kekunci)
+		if(isset($posmen[$myTable][$kekunci . 'X']))
+			if(empty($posmen[$myTable][$kekunci . 'X'])):
+				unset($posmen[$myTable][$kekunci . 'X']);
+			else:
+				unset($posmen[$myTable][$kekunci . 'X']);
+			endif;
+
+		return $posmen; # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
