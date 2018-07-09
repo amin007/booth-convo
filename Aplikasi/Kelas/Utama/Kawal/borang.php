@@ -202,33 +202,65 @@ class Borang extends \Aplikasi\Kitab\Kawal
 #------------------------------------------------------------------------------------------
 	public function ubah($myTable, $medanID, $dataID)
 	{
+		//echo '<hr> Nama class : ' .  __METHOD__ . '<hr>';
 		# Set pemboleubah utama
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		$this->cariPangkalanData($myTable, $medanID, $dataID);
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_ubah'); $this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=0);
+	}
+#------------------------------------------------------------------------------------------
+	function semakDataJadual($senarai)
+	{
+		echo '<hr>Nama class :' . __METHOD__ . '<hr>';
+		echo '<pre>';
+		//echo '<br>Test $_POST->'; print_r($_POST);
+		//echo '<br>$senarai::'; print_r($senarai);
+		//echo '<hr>$kira=' . sizeof($senarai) . '<hr>';
+		# semak pembolehubah dari jadual lain
+		echo '<br>$this->papar->medanID::'; print_r($this->papar->medanID);
+		echo '<br>$this->papar->cariID::'; print_r($this->papar->cariID);
+		echo '<br>$this->papar->carian::'; print_r($this->papar->carian);
+		echo '<br>$this->papar->_jadual::'; print_r($this->papar->_jadual);
+		echo '<br>$this->papar->senarai::'; print_r($this->papar->senarai);
+		echo '<br>$this->papar->_cariIndustri::'; print_r($this->papar->_cariIndustri);
+		echo '<br>$this->papar->_method::'; print_r($this->papar->_method);
+		echo '<br>$this->papar->template::'; print_r($this->papar->template);
+		echo '</pre>';
+	}
+#-------------------------------------------------------------------------------------------
+	function umpukNilai($umpuk)
+	{
+		//echo '<hr> Nama class : ' .  __METHOD__ . '<hr>';
+		list($senarai, $medanID, $dataID, $myTable) = $umpuk;
+		$this->papar->medanID = $medanID;
+		$this->papar->cariID = $dataID;
+		$this->papar->carian[] = $dataID;
+		$this->papar->_jadual = $myTable;
+		$this->papar->senarai = $senarai;
+		$this->papar->_cariIndustri = null;
+		$this->papar->_method = huruf('kecil', namaClass($this));
+		# untuk template
+		$this->papar->template = 'biasa';
+		//$this->papar->template = 'bootstrap_table';
+		//$this->papar->template = 'bootstrap';
+		//$this->papar->template = 'khas01';
+		//$this->semakDataJadual($senarai); # semak Pembolehubah
+		//*/
+	}
+#------------------------------------------------------------------------------------------
+	function cariPangkalanData($myTable, $medanID, $dataID)
+	{
+		//echo '<hr> Nama class : ' .  __METHOD__ . '<hr>';
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah($myTable, $medanID, $dataID);
-		$this->papar->senarai[$myTable] = $this->tanya->
+		$senarai[$myTable] = $this->tanya->
 			cariSemuaData //cariSql
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
-		$this->kandunganPaparanUbah($myTable, $medanID, $dataID);
-
-		# Pergi papar kandungan
-		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('b_ubah'); $this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
-	}
-#------------------------------------------------------------------------------------------
-	function kandunganPaparanUbah($myTable, $medanID, $dataID)
-	{
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah($myTable, $medanID, $dataID);
-		$this->papar->myTable = $myTable;
-		//$this->papar->carian = $carian;
-		$this->papar->c1 = $this->papar->c2 = null;
-		//$this->papar->template = 'biasa';
-		//$this->papar->template = 'bootstrap_table';
-		//$this->papar->template = 'bootstrap';
-		$this->papar->template = 'khas01';
+		$this->umpukNilai(array($senarai, $medanID, $dataID, $myTable));
 		//*/
 	}
 #------------------------------------------------------------------------------------------
