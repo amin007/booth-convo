@@ -22,8 +22,8 @@ class Borang02_Ubah
 	{
 		echo "\n"; $class = 'col-sm-8';
 ?><div class="container">
-<div class="form-group"><div class="<?php echo $class ?>">
-	<div class="input-group input-group-lg">
+<div class="form-group row"><div class="<?php echo $class ?>">
+	<div class="input-group mb-3">
 	<span class="input-group-addon">Jadual <?php echo $myTable ?></span>
 	</div>
 </div></div>
@@ -33,10 +33,10 @@ class Borang02_Ubah
 	public function medanHantar($myTable, $class = 'col-sm-7')
 	{
 		$class = 'col-sm-8';
-		?><div class="form-group">
+		?><div class="form-group row">
 	<div class="<?php echo $class ?>">
 		<!--label for="inputSubmit" class="col-sm-3 control-label"><?=$myTable?></label -->
-		<div class="input-group input-group-lg">
+		<div class="input-group mb-3">
 		<span class="input-group-addon">
 			<input type="hidden" name="jadual" value="<?php echo $myTable ?>">
 			<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
@@ -142,6 +142,9 @@ class Borang02_Ubah
 				$classInput, $komenInput);
 		elseif(in_array($key,array('pecah5P')))
 			$input = $this->inputTeksTakData($tab2, $tab3, $name);
+		elseif(in_array($key,array('state','negeri')))
+			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
+			$classInput, $komenInput, $key);
 		else
 		{#kod untuk lain2
 			$input = $tab2 . '<p class="form-control-static text-info">'
@@ -167,9 +170,8 @@ class Borang02_Ubah
 		$classInput = 'input-group mb-3'; # 4.1.1
 		$komenInput = '<!-- / "input-group mb-3" -->';
 		# tatasusunan
-		$medanLogin = array('username','fullusername','password','level',
-		'phoneno','address1','address2',
-		'city','postcode');
+		$medanLogin = array('username','fullusername','level',
+		'phoneno','address1','address2','city','postcode');
 
 		return array($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
 		$classInput,$komenInput,$medanLogin);
@@ -387,6 +389,37 @@ class Borang02_Ubah
 		. '</select>'
 		. $tab2 . '</div>'
 		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function inputDropmenuNg($tab2, $tab3, $name, $data, $classInput, $komenInput,
+		$key)
+	{
+		return $tab2
+		. '<div class="'.$classInput.'">' . $tab3
+		. $this->selectNg($name,$data) . $tab3
+		. $this->labelBawah3($data)
+		. '</div>' . $komenInput
+		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function selectNg($name,$data)
+	{
+		$negeri = array('Johor','Melak','Negeri Sembilan',
+			'Selangor','Putrajaya','Kuala Lumpur','Labuan',
+			'Perak','Pulau Pinang','Kedah','Perlis',
+			'Kelantan','Terengganu','Pahang',
+			'Sabah','Sarawak','Lain-lain');
+		//$select .= '<option value="" selected="selected">-- Choose State --</option>';
+		$option = '';
+		foreach($negeri as $ng):
+			$selected = ($ng == $data) ? ' selected="selected">*' : '>';
+			$option .= '<option value="' . $ng .'"' . $selected
+			. $ng . '</option>';
+		endforeach;
+		$select = '<select  ' . $name . ' class="form-control">'
+		. $option . '</select>';
+
+		return $select;
 	}
 #------------------------------------------------------------------------------------------
 ###########################################################################################
