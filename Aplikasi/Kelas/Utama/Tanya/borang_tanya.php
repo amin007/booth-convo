@@ -242,7 +242,7 @@ $sql04 = "INSERT INTO login
 #---------------------------------------------------------------------------------------------------#
 	public function susunPembolehubah($myTable, $medanID, $dataID)
 	{
-		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login2');
+		$medan = $this->pilihMedanKhas($myTable);
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'like', # cari x= atau %like%
@@ -255,6 +255,18 @@ $sql04 = "INSERT INTO login
 				'apa' => 'admin2'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
+	function pilihMedanKhas($myTable)
+	{
+		$medanAsal = '`id`,`username`,`fullusername`,`password`,`level`,'
+		. '`email`,`phoneno`,`address1`,`address2`,'
+		. '`city`,`postcode`,`state`,`gambar`';
+		$medanLogin = '`id`,`username`,`fullusername`,`level`,'
+		. '`email`,`phoneno`,`address1`,`address2`,'
+		. '`city`,`postcode`,`state`,`gambar`';
+
+		return $medanLogin;
 	}
 #---------------------------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------------------------#
