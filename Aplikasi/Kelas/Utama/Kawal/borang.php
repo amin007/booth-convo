@@ -140,7 +140,7 @@ class Borang extends \Aplikasi\Kitab\Kawal
 	function loginid()
 	{
 		# semak data $_POST
-		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login2');
 		$email = $_POST['username'];
 		$passwordAsal = $_POST['password'];
 		$password = \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $passwordAsal);
@@ -172,7 +172,8 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		if ($kira == 1) 
 		{	# login berjaya
 			\Aplikasi\Kitab\Sesi::init(); # setkan $_SESSION utk 
-			# username,fullusername,email,kataLaluan,level
+			# id,username,fullusername,email,kataLaluan,level
+			\Aplikasi\Kitab\Sesi::set('idUser', $data[0]['id']);
 			\Aplikasi\Kitab\Sesi::set('namaPendek', $data[0]['username']);
 			\Aplikasi\Kitab\Sesi::set('namaPenuh', $data[0]['fullusername']);
 			\Aplikasi\Kitab\Sesi::set('email', $data[0]['email']);
