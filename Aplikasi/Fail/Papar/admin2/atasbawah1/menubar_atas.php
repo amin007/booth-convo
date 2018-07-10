@@ -30,7 +30,7 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 				<span class="small ml-1 d-md-down-none"><?php echo ucwords($userName) . " ($userID)";?></span>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right">
-				<a href="<?php echo URL ?>admin/logout" class="dropdown-item"><i class="fa fa-lock"></i> Logout</a>
+				<a href="<?php echo URL ?>admin2/logout" class="dropdown-item"><i class="fa fa-lock"></i> Logout</a>
 			</div>
 		</li>
 		</ul>
