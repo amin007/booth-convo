@@ -21,8 +21,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('index'); //$this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=0);
+		$fail = array('index1'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 ##-----------------------------------------------------------------------------------------
 	public function paparKandungan($folder, $fail, $noInclude)
@@ -68,14 +68,13 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function staffAdd()
 	{
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = namaClass($this);
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function staffView()
@@ -98,14 +97,13 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function productAdd()
 	{
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = namaClass($this);
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function productView()
@@ -128,7 +126,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function reportView()
 	{
-		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah('report');
@@ -141,7 +139,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'index';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
