@@ -35,6 +35,16 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//*/
 	}
 ##-----------------------------------------------------------------------------------------
+	public function paparKandungan0($folder, $fail, $noInclude)
+	{	# Pergi papar kandungan
+		$jenis = $this->papar->pilihTemplate($template=0);
+		$this->papar->bacaTemplate(
+		//$this->papar->paparTemplate(
+			$this->_folder . '/' . $fail, $jenis, $noInclude); # $noInclude=0
+			//'mobile/mobile',$jenis,0); # $noInclude=0
+		//*/
+	}
+##-----------------------------------------------------------------------------------------
 	public function semakPembolehubah($senarai)
 	{
 		echo '<pre>$senarai:<br>';
@@ -179,7 +189,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		$fail = array('z_form-list-website'); //$this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$this->paparKandungan0($this->_folder, $fail[0], $noInclude=0);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
