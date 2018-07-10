@@ -19,13 +19,13 @@ define('Tajuk_Muka_Surat', 'Event Convo System');
  $bootstrapJS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js';
 $bootstrapCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css';
  $ceruleanCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootswatch/4.1.1/cerulean/bootstrap.min.css';
- $fontawesome_cdn = 'https://maxcdn.bootstrapcdn.com/font-awesome/5.1.0/css/font-awesome.min.css';
+ $fontawesome_cdn = 'https://maxcdn.bootstrapcdn.com/font-awesome/5.1.0/css/all.css';
 ## local
             $sumber = URL . 'sumber/utama/';
 	  $jquery_local = $sumber . 'jquery/jquery-2.2.3.min.js';
  $bootstrapJS_local = $sumber . 'bootstrap/4.1.1/js/bootstrap.min.js';
 $bootstrapCSS_local = $sumber . 'bootstrap/4.1.1/css/bootstrap.min.css';
- $fontawesome_local = $sumber . 'font-awesome/5.1.0/css/font-awesome.min.css';
+ $fontawesome_local = $sumber . 'font-awesome/5.1.0/css/all.css';
 ############################################################################################
 ## isytihar konsan MYSQL dan GAMBAR ikut lokasi $server
 $ip = $_SERVER['REMOTE_ADDR'];
