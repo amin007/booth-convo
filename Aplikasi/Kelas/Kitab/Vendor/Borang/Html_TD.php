@@ -47,6 +47,28 @@ class Html_TD
 		return $p;
 	}
 #==========================================================================================
+	function updateKey($key, $data, $myTable = null)
+	{
+		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
+
+		$b = URL . "borang/ubahID/$cacb/$data";
+		$p = '<a href="' . $b . '" class="' . $merah
+		. '">Kosong</a><br>' . $cacb;
+
+		return $p;
+	}
+#==========================================================================================
+	function deleteKey($key, $data, $myTable = null)
+	{
+		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
+
+		$b = URL . "borang/buangID/$myTable/$key/$data";
+		$p = '<a href="' . $b . '" class="' . $birutua
+		. '">Kosong</a><br>' . $cacb;
+
+		return $p;
+	}
+#==========================================================================================
 	function paparURL($key, $data, $myTable = null, $ca = null, $cb = null)
 	{
 		if ($key=='username')
@@ -54,10 +76,11 @@ class Html_TD
 			$k1 = $this->primaryKey($key,$data,$myTable,$ca,$cb);
 			?><td><?php echo $k1 ?></td><?php
 		}
-		elseif(in_array($key,array('batchAwal')))
+		elseif(in_array($key,array('Action')))
 		{
-			$k1 = $this->buangKey($data,$myTable);
-			?><td><?php echo $k1 ?></td><?php
+			$k1 = $this->updateKey($key,$data,$myTable);
+			$k2 = $this->deleteKey($key,$data,$myTable);
+			?><td><?php echo $k1 . $key2 ?></td><?php
 		}
 		elseif(in_array($key,array('batchX')))
 		{
