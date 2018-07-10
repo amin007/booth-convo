@@ -69,8 +69,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah('staff');
-		$this->papar->senarai[$myTable] = $this->tanya->
-			cariSemuaData //cariSql
+		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
+			cariSemuaData
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan();
