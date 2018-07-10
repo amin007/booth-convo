@@ -81,14 +81,28 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//*/
 	}
 #-------------------------------------------------------------------------------------------
+	function tambahMedanDB($myTable)
+	{
+		$this->papar->senarai[$myTable] = $this->tanya->paparMedan
+			//paparMedan02
+			($myTable);
+		if( count($this->papar->senarai[$myTable]) == 0 ):
+			//echo 'jumlah $senarai kosong';
+			$this->papar->senarai = null;
+		endif;
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparan($pilih, $myTable);
+	}
+#-------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------
 	public function staffAdd()
 	{
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
+		$this->tambahMedanDB('login'); # panggil medan dalam jadual
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'cari';
 		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -109,6 +123,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
+		$this->tambahMedanDB('product'); # panggil medan dalam jadual
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
