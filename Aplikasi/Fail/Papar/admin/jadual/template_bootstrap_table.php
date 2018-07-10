@@ -9,8 +9,8 @@ foreach ($this->senarai as $myTable => $row)
 <!-- Jadual <?php echo $myTable ?> ########################################### -->
 <?php 
 include 'pilih_a_tajuk.php';
-//include 'pilih_b_carian.php';
 include 'pilih_c_muatnaik.php';
+include 'pilih_b_carian.php';
 include 'pilih_' . $pilihJadual . '.php'; 
 ?>
 <!-- Jadual <?php echo $myTable ?> ########################################### -->
