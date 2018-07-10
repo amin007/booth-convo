@@ -100,9 +100,9 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->panggilDB('login'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
-		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('jadual'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function productAdd()
@@ -123,9 +123,9 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->panggilDB('product'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
-		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('jadual'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function reportView()
