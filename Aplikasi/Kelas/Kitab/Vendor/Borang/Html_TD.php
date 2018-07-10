@@ -115,12 +115,19 @@ class Html_TD
 		$pengguna = \Aplikasi\Kitab\Sesi::get('namaPendek');
 		$level = \Aplikasi\Kitab\Sesi::get('levelPengguna');
 		//echo "<br> \$pengguna : $pengguna | \$level = $level";
-		# butang
+		list($birutua,$birumuda,$merah) = $this->warnaButang(); # butang
+
+		return array($pengguna,$level,$birutua,$birumuda,$merah);
+	}
+#==========================================================================================
+	public function warnaButang()
+	{
 		$birutua = 'btn btn-primary btn-mini';
 		$birumuda = 'btn btn-info btn-mini';
 		$merah = 'btn btn-danger btn-mini';
+		$merah2 = 'badge badge-pill badge-danger';
 
-		return array($pengguna,$level,$birutua,$birumuda,$merah);
+		return array($birutua,$birumuda,$merah);
 	}
 #==========================================================================================
 	public function butang($warna = 'info',$saiz = 'kecil')
