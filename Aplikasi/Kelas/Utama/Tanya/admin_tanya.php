@@ -22,13 +22,14 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	public function susunPembolehubah($pilih)
 	{
-		if($pilih == 'login'):
+		$pilih = null;
+		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualLogin();
-		elseif($pilih == 'product'):
+		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualProduct();
-		elseif($pilih == 'report'):
+		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualReport();
-		else:
+		else: //echo "\$pilih = $pilih <br>";
 			$myTable = $medan = $carian= $susun = null;
 		endif;
 
