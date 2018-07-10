@@ -65,7 +65,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function staffView()
 	{
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah('staff');
