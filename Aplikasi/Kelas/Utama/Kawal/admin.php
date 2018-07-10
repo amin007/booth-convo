@@ -87,7 +87,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan();
+		$this->kandunganPaparan('staff');
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
@@ -108,7 +108,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function productView()
 	{
-		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah('product');
@@ -116,7 +116,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan();
+		$this->kandunganPaparan('product');
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
@@ -134,7 +134,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan();
+		$this->kandunganPaparan('product');
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
