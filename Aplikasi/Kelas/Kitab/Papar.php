@@ -129,6 +129,12 @@ class Papar
 	{
 		switch ($template)
 		{
+			case 7: $jenis = 'w3-carbon-dashboard-admin';
+			break;
+
+			case 6: $jenis = 'w3-event-venue';
+			break;
+
 			case 5: $jenis = 'miminium';
 			break;
 
