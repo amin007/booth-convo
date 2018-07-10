@@ -158,5 +158,29 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
+	public function websiteView()
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pemboleubah utama
+		//$this->tambahMedanDB('product'); # panggil medan dalam jadual
+		//$this->panggilDB('product'); # panggil fungsi panggilDB
+
+		# untuk add form
+		$this->papar->myTable = 'admin_website';
+		$this->papar->medan = array('website_name','website_link','note');
+		$medan = '`website_id`,`website_name`,`website_link`,`note`';
+		# untuk list data dari myTable
+			$carian[] = array('fix'=>'x=','atau'=>'WHERE',
+			'medan'=>'delete_status','apa'=>'0');
+			$this->papar->senarai[$this->papar->myTable] = $this->tanya->
+				//cariSql(
+				cariSemuaData(
+				$this->papar->myTable, $medan, $carian, NULL);
+
+		# Pergi papar kandungan
+		$fail = array('z_form-list-website'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
+#-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
