@@ -81,15 +81,18 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//*/
 	}
 #-------------------------------------------------------------------------------------------
-	function tambahMedanDB($myTable)
+	function tambahMedanDB($pilih)
 	{
-		$this->papar->senarai[$myTable] = $this->tanya->paparMedan
+		list($myTable) = $this->tanya->tambahPembolehubah($pilih);
+		$this->papar->senarai[$myTable] = $this->tanya->//paparMedan
 			//paparMedan02
+			//pilihMedan
+			pilihMedan02
 			($myTable);
-		if( count($this->papar->senarai[$myTable]) == 0 ):
+		/*if( count($this->papar->senarai[$myTable]) == 0 ):
 			//echo 'jumlah $senarai kosong';
 			$this->papar->senarai = null;
-		endif;
+		endif;//*/
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
 	}
