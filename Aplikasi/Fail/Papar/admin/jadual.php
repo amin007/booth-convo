@@ -21,10 +21,11 @@ include 'atasbawah1/menu_atas.php';
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12">
-<!-- div class="card"><?php
+<div class="card"><?php
+include 'z_template-login.php';
 //include 'z_template-admin.php';
 ?>
-</div> -- / class="card" -->
+</div><!-- / class="card" -->
 <div class="card">
 <?php
 //include 'jadual/template_atas.php';
