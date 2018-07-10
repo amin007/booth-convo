@@ -191,7 +191,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->kandunganPaparan('website',$this->papar->myTable);
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('z_form-list-website'); //$this->_folder = 'cari';
-		$this->paparKandungan0($this->_folder, $fail[0], $noInclude=0);
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
