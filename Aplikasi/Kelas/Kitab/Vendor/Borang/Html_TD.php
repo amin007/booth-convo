@@ -52,7 +52,7 @@ class Html_TD
 		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
 
 		$b = URL . "borang/buangID/$myTable/$key/$data";
-		$p = '<a href="' . $b . '" class="' . $merah
+		$p = '<a href="' . $b . '" class="' . $birutua
 		. '">Update</a> | ';
 
 		return $p;
@@ -63,7 +63,7 @@ class Html_TD
 		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
 
 		$b = URL . "borang/buangID/$myTable/$key/$data";
-		$p = '<a href="' . $b . '" class="' . $birutua
+		$p = '<a href="' . $b . '" class="' . $merah
 		. '">Delete</a><br>';
 
 		return $p;
@@ -123,11 +123,12 @@ class Html_TD
 	public function warnaButang()
 	{
 		$birutua = 'btn btn-primary btn-mini';
+		$birutua2 = 'btn btn-primary';
 		$birumuda = 'btn btn-info btn-mini';
-		$merah = 'btn btn-danger btn-mini';
+		$merah = 'btn btn-danger'; //btn-outline-secondary
 		$merah2 = 'badge badge-pill badge-danger';
 
-		return array($birutua,$birumuda,$merah);
+		return array($birutua2,$birumuda,$merah);
 	}
 #==========================================================================================
 	public function butang($warna = 'info',$saiz = 'kecil')
