@@ -103,6 +103,13 @@ class Papar
 			\Aplikasi\Kitab\Peta::failPaparTidakWujud();
 			//echo 'failPaparTidakWujud()';
 		}
+		//elseif (in_array($nama,$cariJQM))
+		elseif ( $namafail[0]=='mobile')
+		{
+			require PAPAR . $lokasiTemplate . '/diatas-jqm.php';
+			require $paparFail;
+			require PAPAR . $lokasiTemplate . '/dibawah-jqm.php';
+		}
 		elseif ($noInclude == true)
 		{
 			require $paparFail;
