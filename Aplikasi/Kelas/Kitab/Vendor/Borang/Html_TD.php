@@ -51,9 +51,9 @@ class Html_TD
 	{
 		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
 
-		$b = URL . "borang/ubahID/$cacb/$data";
+		$b = URL . "borang/buangID/$myTable/$key/$data";
 		$p = '<a href="' . $b . '" class="' . $merah
-		. '">Kosong</a><br>' . $cacb;
+		. '">Update</a> | ';
 
 		return $p;
 	}
@@ -64,7 +64,7 @@ class Html_TD
 
 		$b = URL . "borang/buangID/$myTable/$key/$data";
 		$p = '<a href="' . $b . '" class="' . $birutua
-		. '">Kosong</a><br>' . $cacb;
+		. '">Delete</a><br>';
 
 		return $p;
 	}
@@ -80,7 +80,7 @@ class Html_TD
 		{
 			$k1 = $this->updateKey($key,$data,$myTable);
 			$k2 = $this->deleteKey($key,$data,$myTable);
-			?><td><?php echo $k1 . $key2 ?></td><?php
+			?><td><?php echo $k1 . $k2 ?></td><?php
 		}
 		elseif(in_array($key,array('batchX')))
 		{
