@@ -1,4 +1,4 @@
-	<table border="1" class="table">
+	<table class="table">
 	<?php echo '<h3>'. $tajukjadual . '</h3>';
 	$printed_headers = false; # mula bina jadual
 	#-----------------------------------------------------------------
