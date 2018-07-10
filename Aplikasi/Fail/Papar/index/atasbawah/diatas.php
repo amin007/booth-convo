@@ -14,15 +14,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Events Venue Responsive web template, Bootstrap Web Templates, Flat Web Templates, 
 Android Compatible web template, Smartphone Compatible web template, free webdesigns for 
 Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<!-- bootstrap-css -->
-<link href="<?php echo $url ?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!--// bootstrap-css -->
 <!-- css -->
-<link rel="stylesheet" href="<?php echo $url ?>css/style.css" type="text/css" media="all" />
+<link href="<?php echo $url ?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $url ?>css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $url ?>css/font-awesome.css" rel="stylesheet">
 <!--// css -->
-<!-- font-awesome icons -->
-<link href="<?php echo $url ?>css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
 <!-- font -->
 <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
