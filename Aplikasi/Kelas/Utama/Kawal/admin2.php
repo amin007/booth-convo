@@ -21,12 +21,13 @@ class Admin2 extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'index', $noInclude=0);
+		$fail = array('index1'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 ##-----------------------------------------------------------------------------------------
 	public function paparKandungan($folder, $fail, $noInclude)
 	{	# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
+		$jenis = $this->papar->pilihTemplate($template=7);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
 			$this->_folder . '/' . $fail, $jenis, $noInclude); # $noInclude=0
@@ -41,14 +42,7 @@ class Admin2 extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 	}
 ##-----------------------------------------------------------------------------------------
-	public function semakRujuk($senarai)
-	{
-		//echo '<pre>$senarai:<br>';
-		print_r($senarai);
-		//echo '</pre>|';//*/
-	}
-##-----------------------------------------------------------------------------------------
-	function logout()
+	public function logout()
 	{
 		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
 		\Aplikasi\Kitab\Sesi::destroy();
@@ -56,33 +50,95 @@ class Admin2 extends \Aplikasi\Kitab\Kawal
 		//exit;
 	}
 #==========================================================================================
-	public function pelawat()
+#-------------------------------------------------------------------------------------------
+	function panggilDB($pilih)
 	{
+		# Set pembolehubah utama
+		list($myTable, $medan, $carian, $susun) = $this->tanya->susunPembolehubah($pilih);
+		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
+			cariSemuaData
+			($myTable, $medan, $carian, $susun);
+		if( count($this->papar->senarai[$myTable]) == 0 ):
+			//echo 'jumlah $senarai kosong';
+			$this->papar->senarai = null;
+		endif;
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparan($pilih, $myTable);
+	}
+#-------------------------------------------------------------------------------------------
+	function kandunganPaparan($pilih, $myTable)
+	{
+		/*list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($pilih);*/
+		$this->papar->myTable = $myTable;
+		$this->papar->carian[] = 'semua';
+		$this->papar->c1 = $this->papar->c2 = null;
+		$this->papar->_pilih = $pilih;
+		//$this->papar->template = 'biasa';
+		$this->papar->template = 'bootstrap_table';
+		//$this->papar->template = 'bootstrap';
+		//$this->papar->template = 'khas01';
+		//*/
+	}
+#-------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
+	public function staffAdd()
+	{
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = 'Ruangtamu';
-		$this->papar->senarai['modul'] = $this->tanya->jadualModul();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'pelawat', $noInclude=0);
+		$fail = array('b_baru'); $this->_folder = 'cari';
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
-	function keluar()
+	public function staffView()
 	{
-		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
-		\Aplikasi\Kitab\Sesi::init();
-		\Aplikasi\Kitab\Sesi::destroy();
-		header('location: ' . URL);
-		//exit;
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		$this->panggilDB('login'); # panggil fungsi panggilDB
+
+		# Pergi papar kandungan
+		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('jadual'); //$this->_folder = 'cari';
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
-	function semaknama($nama)
+	public function productAdd()
 	{
-		# Semak data $_POST
-		echo '<pre>$_POST->'; print_r($_POST) . '</pre>| ';
-		echo '<pre>$nama->'; print_r($nama) . '</pre>| ';
-		echo 'Kod:' . \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $nama) . ': ';
-		//echo 'Kod:' . RahsiaHash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY) . ': ';
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pemboleubah utama
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('b_baru'); $this->_folder = 'cari';
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
+#-------------------------------------------------------------------------------------------
+	public function productView()
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		$this->panggilDB('product'); # panggil fungsi panggilDB
+
+		# Pergi papar kandungan
+		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('jadual'); //$this->_folder = 'cari';
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
+#-------------------------------------------------------------------------------------------
+	public function reportView()
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		$this->panggilDB('report'); # panggil fungsi panggilDB
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('jadual'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}
+#-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
