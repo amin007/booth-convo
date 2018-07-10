@@ -22,7 +22,7 @@ include 'atasbawah1/menu_atas.php';
 <div class="row">
 <div class="col-md-12">
 <div class="card"><?php
-include 'z_template-login.php';
+//include 'z_template-login.php';
 //include 'z_template-admin.php';
 ?>
 </div><!-- / class="card" -->
