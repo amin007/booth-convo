@@ -109,9 +109,15 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function productView()
 	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = namaClass($this);
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah('product');
+		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
+			cariSemuaData
+			($myTable, $medan, $carian, $susun);
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
@@ -121,9 +127,15 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function report()
 	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = namaClass($this);
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah('report');
+		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
+			cariSemuaData
+			($myTable, $medan, $carian, $susun);
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
