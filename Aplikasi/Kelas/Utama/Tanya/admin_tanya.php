@@ -57,7 +57,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_product');
 		$myTable = 'test_product'; $medan = '*';
 		$carian = $susun = null;
-		# semak database
+		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
