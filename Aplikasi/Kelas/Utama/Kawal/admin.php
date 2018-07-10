@@ -53,12 +53,14 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	function panggilDB($pilih)
 	{
-		# Set pemboleubah utama
+		# Set pembolehubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah($pilih);
 		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
+		# Set pembolehubah untuk Papar
+		$this->kandunganPaparan($pilih);
 	}
 #-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih)
@@ -90,9 +92,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	public function staffView()
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
-		$this-> panggilDB('staff') # panggil fungsi panggilDB
-		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan('staff');
+		# Set pembolehubah utama
+		$this->panggilDB('staff'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
