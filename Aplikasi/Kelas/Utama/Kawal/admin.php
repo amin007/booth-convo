@@ -51,6 +51,9 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	}
 #==========================================================================================
 #-------------------------------------------------------------------------------------------
+	function panggilDB($pilih)
+	{}
+#-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih)
 	{
 		list($myTable, $medan, $carian, $susun) =
@@ -126,7 +129,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function reportView()
 	{
-		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah('report');
@@ -138,8 +141,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('b_baru'); $this->_folder = 'index';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$fail = array('index'); $this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
