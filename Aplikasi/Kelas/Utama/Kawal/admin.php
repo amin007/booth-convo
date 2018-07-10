@@ -21,13 +21,13 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('index0'); //$this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$fail = array('index'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=0);
 	}
 ##-----------------------------------------------------------------------------------------
 	public function paparKandungan($folder, $fail, $noInclude)
 	{	# Pergi papar kandungan
-		$jenis = $this->papar->pilihTemplate($template=0);
+		$jenis = $this->papar->pilihTemplate($template=7);
 		$this->papar->bacaTemplate(
 		//$this->papar->paparTemplate(
 			$this->_folder . '/' . $fail, $jenis, $noInclude); # $noInclude=0
@@ -42,7 +42,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 	}
 ##-----------------------------------------------------------------------------------------
-	function logout()
+	public function logout()
 	{
 		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
 		\Aplikasi\Kitab\Sesi::destroy();
