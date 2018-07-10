@@ -23,7 +23,7 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 			<a href="<?php echo URL ?>admin/staffAdd" class="nav-link"><i class="icon icon-puzzle"></i> Add New Admin</a>
 		</li>
 		<li class="nav-item">
-			<a href="<?php echo URL ?>admin/staffAdd" class="nav-link"><i class="icon icon-puzzle"></i> View Admin</a>
+			<a href="<?php echo URL ?>admin/staffView" class="nav-link"><i class="icon icon-puzzle"></i> View Admin</a>
 		</li>
 		</ul>
 	<li class="nav-item nav-dropdown">
