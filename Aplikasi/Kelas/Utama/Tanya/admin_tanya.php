@@ -22,6 +22,11 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	public function susunPembolehubah($pilih)
 	{
+		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
+	function jadualLogin()
+	{
 		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
 		$carian = $susun = null;
 		# semak database
@@ -36,9 +41,6 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
-#---------------------------------------------------------------------------------------------------#
-	function jadualLogin()
-	{}
 #---------------------------------------------------------------------------------------------------#
 	function jadualProduct()
 	{}
