@@ -6,19 +6,19 @@
 	<div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
 		<div class="text-center">
 			<div class="text-muted small">Total Traffic</div>
-			<div>12,457 Users (40%)</div>
+			<div class="btn btn-outline-success">12,457 Users (40%)</div>
 		</div>
 		<div class="text-center">
 			<div class="text-muted small">Banned Users</div>
-			<div>95,333 Users (5%)</div>
+			<div class="btn btn-outline-primary">95,333 Users (5%)</div>
 		</div>
 		<div class="text-center">
 			<div class="text-muted small">Page Views</div>
-			<div>957,565 Pages (50%)</div>
+			<div class="btn btn-outline-info">957,565 Pages (50%)</div>
 		</div>
 		<div class="text-center">
 			<div class="text-muted small">Total Downloads</div>
-			<div>957,565 Files (100 TB)</div>
+			<div  class="btn btn-outline-dark">957,565 Files (100 TB)</div>
 		</div>
 		</div>
 </div>
