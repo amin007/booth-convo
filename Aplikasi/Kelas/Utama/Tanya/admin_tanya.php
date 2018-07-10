@@ -92,6 +92,21 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
+	public function tambahPembolehubah($pilih)
+	{
+		//$pilih = null;
+		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'login';
+		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_product';
+		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_report';
+		else: //echo "\$pilih = $pilih <br>";
+			$myTable = null;
+		endif;
+
+		return array($myTable); # pulangkan nilai
+	}
 #---------------------------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------------------------#
 #=====================================================================================================
