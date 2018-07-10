@@ -125,7 +125,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
-	public function report()
+	public function reportView()
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
