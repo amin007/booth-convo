@@ -22,7 +22,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	public function susunPembolehubah($pilih)
 	{
-		$pilih = null;
+		//$pilih = null;
 		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualLogin();
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
@@ -42,7 +42,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 		$medan = $medan . ', id as Action';
 		$carian = $susun = null;
 		# semak database
-			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
+			$carian[] = array('fix'=>'xlike', # cari x= / %like% / xlike
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
 				'apa' => 'admin'); # benda yang dicari
