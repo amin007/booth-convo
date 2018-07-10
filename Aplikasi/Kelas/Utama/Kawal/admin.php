@@ -176,18 +176,20 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//$this->panggilDB('product'); # panggil fungsi panggilDB
 
 		# untuk add form
-		$this->papar->myTable = 'admin_website';
+		$this->papar->myTable = 'test_website';
 		$this->papar->medan = array('website_name','website_link','note');
 		$medan = '`website_id`,`website_name`,`website_link`,`note`';
 		# untuk list data dari myTable
-			$carian[] = array('fix'=>'x=','atau'=>'WHERE',
-			'medan'=>'delete_status','apa'=>'0');
+			/*$carian[] = array('fix'=>'x=','atau'=>'WHERE',
+			'medan'=>'delete_status','apa'=>'0');*/
 			$this->papar->senarai[$this->papar->myTable] = $this->tanya->
 				//cariSql(
 				cariSemuaData(
-				$this->papar->myTable, $medan, $carian, NULL);
+				$this->papar->myTable, $medan, NULL, NULL);
 
 		# Pergi papar kandungan
+		$this->kandunganPaparan('website',$this->papar->myTable);
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('z_form-list-website'); //$this->_folder = 'cari';
 		$this->paparKandungan0($this->_folder, $fail[0], $noInclude=0);
 	}
