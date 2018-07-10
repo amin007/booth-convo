@@ -146,6 +146,9 @@ class Borang02_Ubah
 		elseif(in_array($key,array('state','negeri')))
 			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
+		elseif(in_array($key,array('Action')))
+			$input = $this->inputButangAction($tab2, $tab3, $name, $data,
+			$classInput, $komenInput, $key);
 		else
 		{#kod untuk lain2
 			$input = $tab2 . '<p class="form-control-static text-info">'
