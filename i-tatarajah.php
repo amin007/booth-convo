@@ -11,21 +11,21 @@ require FUNGSI . '/Fungsi.php';
 
 # Sentiasa menyediakan garis condong di belakang (/) pada hujung jalan
 define('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']) . '/');
-fine('Tajuk_Muka_Surat', 'Event Convo System');
+define('Tajuk_Muka_Surat', 'Event Convo System');
 
 # setkan jquery, bootstrap dan font awesome sama ada local atau cdn
 ## cdn
       $jquery_cdn = 'https://code.jquery.com/jquery-2.2.3.min.js';
- $bootstrapJS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js';
-$bootstrapCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';
- $ceruleanCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css';
- $fontawesome_cdn = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+ $bootstrapJS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js';
+$bootstrapCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css';
+ $ceruleanCSS_cdn = 'https://maxcdn.bootstrapcdn.com/bootswatch/4.1.1/cerulean/bootstrap.min.css';
+ $fontawesome_cdn = 'https://maxcdn.bootstrapcdn.com/font-awesome/5.1.0/css/font-awesome.min.css';
 ## local
             $sumber = URL . 'sumber/utama/';
 	  $jquery_local = $sumber . 'jquery/jquery-2.2.3.min.js';
- $bootstrapJS_local = $sumber . 'bootstrap/3.3.7/js/bootstrap.min.js';
-$bootstrapCSS_local = $sumber . 'bootstrap/3.3.7/css/bootstrap.min.css'; 
- $fontawesome_local = $sumber . 'font-awesome/4.7.0/css/font-awesome.min.css';
+ $bootstrapJS_local = $sumber . 'bootstrap/4.1.1/js/bootstrap.min.js';
+$bootstrapCSS_local = $sumber . 'bootstrap/4.1.1/css/bootstrap.min.css';
+ $fontawesome_local = $sumber . 'font-awesome/5.1.0/css/font-awesome.min.css';
 ############################################################################################
 ## isytihar konsan MYSQL dan GAMBAR ikut lokasi $server
 $ip = $_SERVER['REMOTE_ADDR'];
