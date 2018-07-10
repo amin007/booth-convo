@@ -38,6 +38,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualLogin()
 	{
 		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		$medan = $medan . ', id as Action';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
@@ -55,7 +56,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualProduct()
 	{
 		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_product');
-		$myTable = 'test_product'; $medan = '*';
+		$myTable = 'test_product'; $medan = '*, id as Action';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
@@ -73,7 +74,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualReport()
 	{
 		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_report');
-		$myTable = 'test_report'; $medan = '*';
+		$myTable = 'test_report'; $medan = '*, id as Action';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
