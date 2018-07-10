@@ -1,5 +1,4 @@
 <!-- h1> Ini Template Bootstrap Table </h1 -->
-<div class="">
 <?php
 foreach ($this->senarai as $myTable => $row)
 {
@@ -14,4 +13,3 @@ foreach ($this->senarai as $myTable => $row)
 	} // if ( count($row)==0 )
 }
 ?>
-</div><!-- class="tab-content" -->
