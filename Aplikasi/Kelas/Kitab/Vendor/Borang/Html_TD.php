@@ -51,7 +51,7 @@ class Html_TD
 	{
 		list($pengguna,$level,$birutua,$birumuda,$merah) = $this->setPencam();
 
-		$b = URL . "borang/buangID/$myTable/$key/$data";
+		$b = URL . "borang/ubahID/$myTable/$key/$data";
 		$p = '<a href="' . $b . '" class="' . $birutua
 		. '">Update</a> | ';
 
