@@ -48,7 +48,7 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
 				'apa' => 'admin'); # benda yang dicari
-			$carian[] = array('fix'=>'like', # cari x= atau %like%
+			/*$carian[] = array('fix'=>'like', # cari x= atau %like%
 				'atau'=>'AND', # WHERE / OR / AND
 				'medan' => 'level', # cari dalam medan apa
 				'apa' => 'admin2'); # benda yang dicari//*/
