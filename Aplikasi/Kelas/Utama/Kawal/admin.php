@@ -60,15 +60,15 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan($pilih);
+		$this->kandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
-	function kandunganPaparan($pilih)
+	function kandunganPaparan($pilih, $myTable)
 	{
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah($pilih);
+		/*list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($pilih);*/
 		$this->papar->myTable = $myTable;
-		//$this->papar->carian = $carian;
+		$this->papar->carian[] = 'semua';
 		$this->papar->c1 = $this->papar->c2 = null;
 		//$this->papar->template = 'biasa';
 		$this->papar->template = 'bootstrap_table';
