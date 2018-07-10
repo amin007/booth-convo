@@ -54,11 +54,14 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	function panggilDB($pilih)
 	{
 		# Set pembolehubah utama
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah($pilih);
+		list($myTable, $medan, $carian, $susun) = $this->tanya->susunPembolehubah($pilih);
 		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
 			cariSemuaData
 			($myTable, $medan, $carian, $susun);
+		if( count($this->papar->senarai[$myTable]) == 0 ):
+			//echo 'jumlah $senarai kosong';
+			$this->papar->senarai = null;
+		endif;
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
 	}
@@ -96,9 +99,9 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->panggilDB('login'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
-		$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('jadua1'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('jadual'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function productAdd()
