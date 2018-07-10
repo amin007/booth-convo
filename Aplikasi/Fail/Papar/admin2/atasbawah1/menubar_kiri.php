@@ -16,31 +16,19 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 	</li>
 	<li class="nav-item nav-dropdown">
 		<a href="#" class="nav-link nav-dropdown-toggle">
-			<i class="icon icon-target"></i> Admin <i class="fa fa-caret-left"></i>
-		</a>
-		<ul class="nav-dropdown-items">
-		<li class="nav-item">
-			<a href="<?php echo URL ?>admin/staffAdd" class="nav-link"><i class="icon icon-puzzle"></i> Add New Admin</a>
-		</li>
-		<li class="nav-item">
-			<a href="<?php echo URL ?>admin/staffView" class="nav-link"><i class="icon icon-puzzle"></i> View Admin</a>
-		</li>
-		</ul>
-	<li class="nav-item nav-dropdown">
-		<a href="#" class="nav-link nav-dropdown-toggle">
 			<i class="icon icon-energy"></i> Product <i class="fa fa-caret-left"></i>
 		</a>
 		<ul class="nav-dropdown-items">
 		<li class="nav-item">
-			<a href="<?php echo URL ?>admin/productAdd" class="nav-link"><i class="icon icon-energy"></i> Add New Product</a>
+			<a href="<?php echo URL ?>admin2/productAdd" class="nav-link"><i class="icon icon-energy"></i> Add New Product</a>
 		</li>
 		<li class="nav-item">
-			<a href="<?php echo URL ?>admin/productView" class="nav-link"><i class="icon icon-energy"></i> View Product</a>
+			<a href="<?php echo URL ?>admin2/productView" class="nav-link"><i class="icon icon-energy"></i> View Product</a>
 		</li>
 		</ul>
 	</li>
 	<li class="nav-item">
-		<a href="<?php echo URL ?>admin/reportView" class="nav-link"><i class="icon icon-grid"></i> Report</a>
+		<a href="<?php echo URL ?>admin2/reportView" class="nav-link"><i class="icon icon-grid"></i> Report</a>
 	</li>
 	</ul>
 	</nav>
