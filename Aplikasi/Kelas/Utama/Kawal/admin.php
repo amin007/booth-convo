@@ -51,6 +51,21 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	}
 #==========================================================================================
 #-------------------------------------------------------------------------------------------
+	function kandunganPaparan($pilih)
+	{
+		list($myTable, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($pilih);
+		$this->papar->myTable = $myTable;
+		//$this->papar->carian = $carian;
+		$this->papar->c1 = $this->papar->c2 = null;
+		//$this->papar->template = 'biasa';
+		$this->papar->template = 'bootstrap_table';
+		//$this->papar->template = 'bootstrap';
+		//$this->papar->template = 'khas01';
+		//*/
+	}
+#-------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
 	public function staffAdd()
 	{
 		# Set pemboleubah utama
@@ -79,20 +94,6 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('index0'); $this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
-	}
-#-------------------------------------------------------------------------------------------
-	function kandunganPaparan($pilih)
-	{
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah($pilih);
-		$this->papar->myTable = $myTable;
-		//$this->papar->carian = $carian;
-		$this->papar->c1 = $this->papar->c2 = null;
-		//$this->papar->template = 'biasa';
-		$this->papar->template = 'bootstrap_table';
-		//$this->papar->template = 'bootstrap';
-		//$this->papar->template = 'khas01';
-		//*/
 	}
 #-------------------------------------------------------------------------------------------
 	public function productAdd()
