@@ -115,14 +115,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	public function productView()
 	{
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
-		# Set pemboleubah utama
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah('product');
-		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
-			cariSemuaData
-			($myTable, $medan, $carian, $susun);
-		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan('product');
+		# Set pembolehubah utama
+		$this->panggilDB('product'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
@@ -133,14 +127,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	public function reportView()
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
-		# Set pemboleubah utama
-		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah('report');
-		$this->papar->senarai[$myTable] = $this->tanya->//cariSql
-			cariSemuaData
-			($myTable, $medan, $carian, $susun);
-		# Set pembolehubah untuk Papar
-		$this->kandunganPaparan('product');
+		# Set pembolehubah utama
+		$this->panggilDB('report'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
