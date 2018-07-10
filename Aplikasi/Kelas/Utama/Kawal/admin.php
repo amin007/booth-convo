@@ -42,13 +42,6 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		echo '</pre>|';//*/
 	}
 ##-----------------------------------------------------------------------------------------
-	public function semakRujuk($senarai)
-	{
-		//echo '<pre>$senarai:<br>';
-		print_r($senarai);
-		//echo '</pre>|';//*/
-	}
-##-----------------------------------------------------------------------------------------
 	function logout()
 	{
 		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
@@ -72,10 +65,10 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function staffView()
 	{
-		# Set pemboleubah utama
 		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		# Set pemboleubah utama
 		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah();
+			$this->tanya->susunPembolehubah('staff');
 		$this->papar->senarai[$myTable] = $this->tanya->
 			cariSemuaData //cariSql
 			($myTable, $medan, $carian, $susun);
@@ -88,10 +81,10 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
-	function kandunganPaparan()
+	function kandunganPaparan($pilih)
 	{
 		list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah();
+			$this->tanya->susunPembolehubah($pilih);
 		$this->papar->myTable = $myTable;
 		//$this->papar->carian = $carian;
 		$this->papar->c1 = $this->papar->c2 = null;
