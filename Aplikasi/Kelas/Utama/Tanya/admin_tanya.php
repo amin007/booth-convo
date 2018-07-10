@@ -39,7 +39,9 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualLogin()
 	{
 		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
-		$medan = $medan . ', id as Action';
+		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
+		. '`email`,`phoneno`,`address1`,`address2`,'
+		. '`city`,`postcode`,`state`,`gambar`, id as Action';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= / %like% / xlike
