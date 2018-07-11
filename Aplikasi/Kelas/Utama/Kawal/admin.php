@@ -178,14 +178,6 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# untuk add form
 		$this->papar->myTable = 'test_website';
 		$this->papar->medan = array('website_name','website_link','note');
-		$medan = '`website_id`,`website_name`,`website_link`,`note`';
-		# untuk list data dari myTable
-			/*$carian[] = array('fix'=>'x=','atau'=>'WHERE',
-			'medan'=>'delete_status','apa'=>'0');*/
-			$this->papar->senarai[$this->papar->myTable] = $this->tanya->
-				//cariSql(
-				cariSemuaData(
-				$this->papar->myTable, $medan, NULL, NULL);
 
 		# Pergi papar kandungan
 		$this->kandunganPaparan('website',$this->papar->myTable);
