@@ -172,9 +172,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
+		$this->panggilDB('website'); # panggil fungsi panggilDB
 		//$this->tambahMedanDB('product'); # panggil medan dalam jadual
-		//$this->panggilDB('product'); # panggil fungsi panggilDB
-
 		# untuk add form
 		$this->papar->myTable = 'test_website';
 		$this->papar->medan = array('website_name','website_link','note');
