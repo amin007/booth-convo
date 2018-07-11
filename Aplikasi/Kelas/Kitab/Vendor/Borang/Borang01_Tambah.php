@@ -117,6 +117,9 @@ class Borang01_Tambah
 		elseif(in_array($type,array('int','double')))
 			$input = $this->inputNumber($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
+		elseif ( in_array($type,array('date')) )
+			$input = $this->inputTarikh($tab2, $tab2, $name, $data,
+			$classInput, $komenInput, $jadual, $key);
 		else
 		{#kod untuk lain2
 			$input = $tab2 . '<p class="form-control-static text-info">'
