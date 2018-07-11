@@ -103,6 +103,8 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			$this->papar->senarai = null;
 		endif;//*/
 		# Set pembolehubah untuk Papar
+		$this->papar->_jadual = 'test_website';
+		$this->papar->medan = array('website_name','website_link','note');
 		$this->kandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
@@ -172,10 +174,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
 		$this->panggilDB('website'); # panggil fungsi panggilDB
-		//$this->tambahMedanDB('product'); # panggil medan dalam jadual
-		# untuk add form
-		$this->papar->_jadual = 'test_website';
-		$this->papar->medan = array('website_name','website_link','note');
+		$this->tambahMedanDB('product'); # panggil medan dalam jadual
 
 		# Pergi papar kandungan
 		$this->kandunganPaparan('website',$this->papar->_jadual);
