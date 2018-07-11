@@ -112,7 +112,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		list($myTable) = $this->tanya->tambahPembolehubah($pilih);
 		$this->papar->medan = $this->tanya->//paparMedan
-			//paparMedan02 //pilihMedan
+			//paparMedan02 //pilihMedan //pilihMedan02
 			pilihMedan02($myTable);//*/
 
 		# Set pembolehubah untuk Papar
