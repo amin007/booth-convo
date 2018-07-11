@@ -29,7 +29,8 @@ echo "\n\n";
 <div class="col-md-12">
 <div class="card"><?php
 //include 'jadual/template_' . $this->template . '.php';
-echo $this->_jadual;
+echo '<br>$this->_jadual:' . $this->_jadual;
+echo '<br>$this->myTable:' . $this->myTable;
 ?></div><!-- / class="card" -->
 </div><!-- / class="col-md-12" -->
 </div><!-- / class="row" -->
