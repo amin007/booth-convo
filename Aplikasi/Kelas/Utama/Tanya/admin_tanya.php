@@ -122,6 +122,8 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 			$myTable = 'test_product';
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'test_report';
+		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_website';
 		else: //echo "\$pilih = $pilih <br>";
 			$myTable = null;
 		endif;
