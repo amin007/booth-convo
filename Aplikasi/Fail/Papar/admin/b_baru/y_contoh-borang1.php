@@ -12,17 +12,17 @@ $b = $this->_pilih;
 $kira = 0;
 //*/?>
 <div class="container">
-<?php echo $aksi ?>
+<h5><?php echo $aksi ?></h5>
 <form method="POST" action="<?php echo $aksi ?>"><?php echo "\n";
 //for ($kira=0; $kira < count($this->medan); $kira++)
 //{
 	foreach ( $this->medan as $key=>$data )
 	{## papar data $row ----------------------------------------------------------
 		?><div class="form-group row"><?php echo "\n\t";
-		?><label for="inputTajuk" class="col-sm-4 control-label"><?php echo $data
+		?><label for="inputTajuk" class="col-sm-4 control-label"><?php echo $key
 		?></label><?php echo "\n\t";
-		?><div class="<?php echo $class2 ?>"><?php
-		$paparData = $html->ubahInput($a,$this->_jadual,$kira,$data,$data);
+		?><div class="<?php echo $class2 ?>"><?php  echo "\n\t\t";
+		$paparData = $html->baruInput($a,$this->_jadual,$kira,$key,$data);
 		echo $paparData . "\n\t";
 		?></div><!-- / class="<?php echo $class2 ?>" --><?php echo "\n";
 		?></div><!-- / class="form-group row" --><?php echo "\n";
