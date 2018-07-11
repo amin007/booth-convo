@@ -70,7 +70,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			($myTable, $medan, $carian, $susun);
 		if( count($this->papar->senarai[$myTable]) == 0 ):
 			//echo 'jumlah $senarai kosong';
-			$this->papar->senarai = null;
+			$this->papar->senarai[$myTable] = null;
 		endif;//*/
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
@@ -78,7 +78,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih, $myTable)
 	{
-		$this->papar->senarai = null;
+		$this->papar->senarai[$myTable] = null;
 		$this->papar->myTable = $myTable;
 		$this->papar->carian[] = 'semua';
 		$this->papar->c1 = $this->papar->c2 = null;
