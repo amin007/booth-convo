@@ -125,12 +125,14 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
+		$this->panggilDB('login'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('login'); # panggil medan dalam jadual
+		$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function staffView()
@@ -149,12 +151,14 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
+		$this->panggilDB('product'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('product'); # panggil medan dalam jadual
+		$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); $this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function productView()
