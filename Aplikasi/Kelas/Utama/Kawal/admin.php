@@ -61,6 +61,20 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	}
 #==========================================================================================
 #-------------------------------------------------------------------------------------------
+	function kandunganPaparan($pilih, $myTable)
+	{
+		//$this->papar->senarai[$myTable] = null;
+		$this->papar->myTable = $myTable;
+		$this->papar->carian[] = 'semua';
+		$this->papar->c1 = $this->papar->c2 = null;
+		$this->papar->_pilih = $pilih;
+		//$this->papar->template = 'biasa';
+		$this->papar->template = 'bootstrap_table';
+		//$this->papar->template = 'bootstrap';
+		//$this->papar->template = 'khas01';
+		//*/
+	}
+#-------------------------------------------------------------------------------------------
 	function panggilDB($pilih)
 	{
 		# Set pembolehubah utama
@@ -74,20 +88,6 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		endif;//*/
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
-	}
-#-------------------------------------------------------------------------------------------
-	function kandunganPaparan($pilih, $myTable)
-	{
-		//$this->papar->senarai[$myTable] = null;
-		$this->papar->myTable = $myTable;
-		$this->papar->carian[] = 'semua';
-		$this->papar->c1 = $this->papar->c2 = null;
-		$this->papar->_pilih = $pilih;
-		//$this->papar->template = 'biasa';
-		$this->papar->template = 'bootstrap_table';
-		//$this->papar->template = 'bootstrap';
-		//$this->papar->template = 'khas01';
-		//*/
 	}
 #-------------------------------------------------------------------------------------------
 	function tambahMedanDB($pilih)
