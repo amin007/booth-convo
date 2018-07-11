@@ -364,6 +364,37 @@ class Borang01_Tambah
 		return '';
 	}
 #------------------------------------------------------------------------------------------
+	function inputDropmenuNg($tab2, $tab3, $name, $data, $classInput, $komenInput,
+		$key)
+	{
+		return $tab2
+		. '<div class="'.$classInput.'">' . $tab3
+		. $this->selectNg($name,$data) . $tab3
+		//. $this->labelBawah3($data)
+		. '</div>' . $komenInput
+		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function selectNg($name,$data)
+	{
+		$negeri = array('Johor','Melaka','Negeri Sembilan',
+			'Selangor','Putrajaya','Kuala Lumpur','Labuan',
+			'Perak','Pulau Pinang','Kedah','Perlis',
+			'Kelantan','Terengganu','Pahang',
+			'Sabah','Sarawak','Lain-lain');
+		//$select .= '<option value="" selected="selected">-- Choose State --</option>';
+		$option = '';
+		foreach($negeri as $ng):
+			$terpilih = ($ng == $data) ? ' selected="selected">*' : '>';
+			$option .= '<option value="' . $ng .'"' . $terpilih
+			. $ng . '</option>';
+		endforeach;
+		$select = '<select  ' . $name . ' class="form-control">'
+		. $option . '</select>';
+
+		return $select;
+	}
+#------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------
 #==========================================================================================
