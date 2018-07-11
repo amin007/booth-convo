@@ -29,6 +29,8 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 			list($myTable, $medan, $carian, $susun) = $this->jadualProduct();
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualReport();
+		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
+			list($myTable, $medan, $carian, $susun) = $this->jadualWebsite();
 		else: //echo "\$pilih = $pilih <br>";
 			$myTable = $medan = $carian= $susun = null;
 		endif;
