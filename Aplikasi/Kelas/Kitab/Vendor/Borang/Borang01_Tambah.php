@@ -262,13 +262,17 @@ class Borang01_Tambah
 	function inputSesi($tab2, $tab3, $name, $data, $classInput, $komenInput,
 		$jadual, $key)
 	{
-		$name2 = 'name="' . $jadual . '[' . $key . 'X]"';
-
+		list($idUser,$namaPendek) = $this->dataSesi();
+		$data = $idUser . '-' . $namaPendek;
 		return ''
 		. '<div class="input-group mb-3">'
-		. $tab3 . '<div class="input-group-prepend"><span class="input-group-text">$</span></div>'
-		. $tab3 . '<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">'
-		. $tab2 . '</div>'
+		. $tab3 . '<div class="input-group-prepend"><span class="input-group-text">'
+		. $tab3 . 'idUser = ' . $idUser . '-' . $namaPendek
+		. $tab3 . '</span></div>' . $tab3
+		. '<input type="text" ' . $name
+		. ' value="' . $data . '"'
+		. ' class="form-control" readonly>' . $tab2
+		. '</div>'
 		/*. '<div class="input-group input-group-sm">' . $tab3
 		. '<span class="input-group-addon"></span>' . $tab3
 		. '<input type="password" ' . $name	. $tab3
@@ -283,12 +287,16 @@ class Borang01_Tambah
 	{
 		$Sesi = new \Aplikasi\Kitab\Sesi();
 		$Sesi->init();
+		$idUser = $Sesi->get('idUser');
+		$namaPendek = $Sesi->get('namaPendek');
 		//echo '<pre>'; print_r($_SESSION) . '</pre>';
 		/*echo 'namaPendek=' . $Sesi->get('namaPendek') . '<br>';
 		echo 'namaPenuh=' . $Sesi->get('namaPenuh') . '<br>';
 		echo 'idUser=' . $Sesi->get('idUser') . '<br>';
 		echo 'email=' . $Sesi->get('email') . '<br>';
 		echo 'levelPengguna=' . $Sesi->get('levelPengguna') . '';//*/
+
+		return array($idUser,$namaPendek);
 	}
 #------------------------------------------------------------------------------------------
 	function inputNumber($tab2, $tab3, $name, $data = 'Number Only',
