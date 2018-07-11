@@ -50,7 +50,7 @@ class Tanya
 	public function pilihMedan02($myTable)
 	{
 		//echo '<br>return $this->db->getColumnNames('.$myTable.');';
-		return $this->db->getColumnNames($myTable);
+		return $this->db->getColumnNames($myTable, DB_NAME);
 	}
 #-------------------------------------------------------------------------------------------------
 	public function ubahMedan($myTable, $medan)
