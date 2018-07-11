@@ -302,7 +302,9 @@ class DB_Pdo extends \PDO
 			$output = array();
 			while($row = $sth->fetch(\PDO::FETCH_ASSOC))
 			{
-				$output[] = $row['COLUMN_NAME'] . '|' . $row['DATA_TYPE'];
+				//$output[] = $row['COLUMN_NAME'] . '|' . $row['DATA_TYPE'];
+				$num = ($row['max'] == null) ? '20' : $row['max'];
+				$output[$row['COLUMN_NAME']] =  $row['DATA_TYPE'] . '|' . $num;
 			}
 			return $output;
 		}
