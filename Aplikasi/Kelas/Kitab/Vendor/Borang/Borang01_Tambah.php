@@ -109,6 +109,9 @@ class Borang01_Tambah
 		elseif(in_array($type,array('varchar')))
 			$input = $this->inputTeksBesar($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
+		elseif(in_array($type,array('int','double')))
+			$input = $this->inputNumber($tab2, $tab3, $name, $data,
+				$classInput, $komenInput);
 		else
 		{#kod untuk lain2
 			$input = $tab2 . '<p class="form-control-static text-info">'
@@ -228,14 +231,15 @@ class Borang01_Tambah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
-	function inputNumber($tab2, $tab3, $name, $data, $classInput, $komenInput)
+	function inputNumber($tab2, $tab3, $name, $data = 'Number Only',
+		$classInput, $komenInput)
 	{
 		return '<div class="input-group input-group-sm">' . $tab2
-		. '<span class="input-group-addon">Nilai</span>'
+		//. '<span class="input-group-addon">Nilai</span>'
 		. '<input type="text" ' . $name
 		. ' placeholder="' . $data . '"'
 		. ' class="form-control">' . $tab2
-		. $tab2 . '</div>' . $komenInput
+		. '</div>' . $komenInput
 		. '';
 	}
 #------------------------------------------------------------------------------------------
