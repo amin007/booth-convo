@@ -271,15 +271,8 @@ class Borang01_Tambah
 		. $tab3 . '</span></div>' . $tab3
 		. '<input type="text" ' . $name
 		. ' value="' . $data . '"'
-		. ' class="form-control" readonly>' . $tab2
-		. '</div>'
-		/*. '<div class="input-group input-group-sm">' . $tab3
-		. '<span class="input-group-addon"></span>' . $tab3
-		. '<input type="password" ' . $name	. $tab3
-		. ' placeholder="Taip kata laluan" class="form-control">'
-		. '<input type="password" ' . $name2 . $tab3
-		. ' placeholder="Taip lagi sekali" class="form-control">'
-		//. $tab2 . '</div>'//*/
+		. ' class="form-control" readonly>'
+		. $tab2 . '</div>'
 		. '';
 	}
 #------------------------------------------------------------------------------------------
