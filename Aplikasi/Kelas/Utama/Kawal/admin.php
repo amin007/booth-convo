@@ -103,7 +103,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 			$this->papar->senarai = null;
 		endif;//*/
 		# Set pembolehubah untuk Papar
-		$this->papar->_jadual = 'test_website';
+		$this->papar->_jadual = $myTable;
 		$this->papar->medan = array('website_name','website_link','note');
 		$this->kandunganPaparan($pilih, $myTable);
 	}
