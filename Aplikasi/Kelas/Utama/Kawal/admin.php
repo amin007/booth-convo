@@ -67,9 +67,11 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		echo '<pre>';
 		echo '<br>$this->papar->senarai : '; print_r($this->papar->senarai);
 		echo '<br>$this->papar->myTable : '; print_r($this->papar->myTable);
+		echo '<br>$this->papar->_jadual : '; print_r($this->papar->_jadual);
 		echo '<br>$this->papar->carian : '; print_r($this->papar->carian);
 		echo '<br>$this->papar->c1 : '; print_r($this->papar->c1);
 		echo '<br>$this->papar->c2 : '; print_r($this->papar->c2);
+		echo '<br>$this->papar->medan : '; print_r($this->papar->medan);
 		echo '<br>$this->papar->_pilih : '; print_r($this->papar->_pilih);
 		echo '<br>$this->papar->template : '; print_r($this->papar->template);
 		echo '</pre>';
@@ -109,19 +111,13 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		list($myTable) = $this->tanya->tambahPembolehubah($pilih);
-		//echo '<br>$pilih:' . $pilih . '<br>';
-		echo '<br>$myTable:' . $myTable . '<br>';
-		/*$this->papar->senarai[$myTable] = $this->tanya->//paparMedan
+		$this->papar->medan = $this->tanya->//paparMedan
 			//paparMedan02 //pilihMedan
-			pilihMedan02
-			($myTable);
-		/*if( count($this->papar->senarai[$myTable]) == 0 ):
-			//echo 'jumlah $senarai kosong';
-			$this->papar->senarai = null;
-		endif;//*/
+			pilihMedan02($myTable);//*/
+
 		# Set pembolehubah untuk Papar
 		$this->papar->_jadual = $myTable;
-		$this->papar->medan = array('website_name','website_link','note');
+		//$this->papar->medan = array('website_name','website_link','note');
 	}
 #-------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------
