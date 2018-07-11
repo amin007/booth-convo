@@ -78,7 +78,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih, $myTable)
 	{
-		$this->papar->senarai[$myTable] = null;
+		//$this->papar->senarai[$myTable] = null;
 		$this->papar->myTable = $myTable;
 		$this->papar->carian[] = 'semua';
 		$this->papar->c1 = $this->papar->c2 = null;
@@ -180,7 +180,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Pergi papar kandungan
 		$this->kandunganPaparan('website',$this->papar->myTable);
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('z_form-list-website'); //$this->_folder = 'cari';
+		$fail = array('z_form-list-website1'); //$this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
