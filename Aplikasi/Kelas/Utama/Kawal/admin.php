@@ -174,11 +174,11 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->panggilDB('website'); # panggil fungsi panggilDB
 		//$this->tambahMedanDB('product'); # panggil medan dalam jadual
 		# untuk add form
-		$this->papar->myTable = 'test_website';
+		$this->papar->_jadual = 'test_website';
 		$this->papar->medan = array('website_name','website_link','note');
 
 		# Pergi papar kandungan
-		$this->kandunganPaparan('website',$this->papar->myTable);
+		$this->kandunganPaparan('website',$this->papar->_jadual);
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('z_form-list-website1'); //$this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
