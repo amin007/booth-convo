@@ -255,8 +255,9 @@ class Borang01_Tambah
 	function inputNumber($tab2, $tab3, $name, $data = 'Number Only',
 		$classInput, $komenInput)
 	{
-		return '<div class="input-group input-group-sm">' . $tab2
-		//. '<span class="input-group-addon">Nilai</span>'
+		return ''//'<div class="input-group input-group-sm">' . $tab2
+		. '<div class="' . $classInput . '">' . $tab2
+		. '<span class="input-group-text" id="basic-addon2">Number Only</span>'
 		. '<input type="text" ' . $name
 		. ' placeholder="' . $data . '"'
 		. ' class="form-control">' . $tab2
