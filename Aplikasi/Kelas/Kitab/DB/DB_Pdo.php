@@ -289,7 +289,7 @@ class DB_Pdo extends \PDO
 	public function getColumnNames($table, $db)
 	{
 		# https://stackoverflow.com/questions/1526688/get-table-column-names-in-mysql
-		$col = 'COLUMN_NAME,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH as max,COLUMN_TYPE';
+		$col = 'COLUMN_NAME,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH as max,COLUMN_TYPE,COLUMN_KEY,extra';
 		//$sql = 'SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table';
 		$sql = 'SELECT '.$col.' FROM INFORMATION_SCHEMA.COLUMNS '
 			. 'WHERE table_schema  = :database '
@@ -302,8 +302,7 @@ class DB_Pdo extends \PDO
 			$output = array();
 			while($row = $sth->fetch(\PDO::FETCH_ASSOC))
 			{
-				//$output[] = $row['COLUMN_NAME'] . '|' . $row['DATA_TYPE'];
-				$num = ($row['max'] == null) ? '20' : $row['max'];
+				$num = $this->semakPencam($row);
 				$output[$row['COLUMN_NAME']] =  $row['DATA_TYPE'] . '|' . $num;
 			}
 			return $output;
@@ -314,6 +313,14 @@ class DB_Pdo extends \PDO
 		}
 	}
 #------------------------------------------------------------------------------------------------------------------
+	function semakPencam($row)
+	{
+		//$output[] = $row['COLUMN_NAME'] . '|' . $row['DATA_TYPE'];
+		$num = ($row['max'] == null) ? '20' : $row['max'];
+		$num = ($row['COLUMN_KEY'] == 'PRI') ? 'PRI' : $num; # PRI-auto_increment
+
+		return $num;
+	}
 #------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------
 #==================================================================================================================
