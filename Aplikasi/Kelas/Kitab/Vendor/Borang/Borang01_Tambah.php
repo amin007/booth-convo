@@ -94,6 +94,31 @@ class Borang01_Tambah
 	}
 ###########################################################################################
 #------------------------------------------------------------------------------------------
+	public function baruInput($tata,$jadual,$kira,$key,$data)
+	{
+		# istihar pembolehubah
+		$name = 'name="' . $jadual . '[' . $key . ']"';
+		list($type,$pri) = explode('|', $data);
+		# css
+		list($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
+			$classInput,$komenInput) = $this->ccs();
+
+		if(in_array($key,array('entahlah')))
+			$input = $tab2 . 'Entahlah';
+		elseif(in_array($pri,array('PRI')))
+			$input = 'primary-key';
+		elseif(in_array($type,array('varchar')))
+			$input = $this->inputTeksBesar($tab2, $tab3, $name, null,
+				$classInput, $komenInput);
+		else
+		{#kod untuk lain2
+			$input = $tab2 . '<p class="form-control-static text-info">'
+				   . $data . '</p>';
+		}
+
+		return $input; # pulangkan nilai
+	}
+#------------------------------------------------------------------------------------------
 	public function ubahInput($paparSahaja,$jadual,$kira,$key,$data)
 	{	# istihar pembolehubah
 		$name = 'name="' . $jadual . '[' . $key . ']"';
