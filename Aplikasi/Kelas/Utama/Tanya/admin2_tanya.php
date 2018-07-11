@@ -29,6 +29,8 @@ class Admin2_Tanya extends \Aplikasi\Kitab\Tanya
 			list($myTable, $medan, $carian, $susun) = $this->jadualProduct();
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualReport();
+		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
+			list($myTable, $medan, $carian, $susun) = $this->jadualWebsite();
 		else: //echo "\$pilih = $pilih <br>";
 			$myTable = $medan = $carian= $susun = null;
 		endif;
@@ -38,7 +40,8 @@ class Admin2_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	function jadualLogin()
 	{
-		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		$myTable = 'login';
 		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`, id as Action';
@@ -90,6 +93,43 @@ class Admin2_Tanya extends \Aplikasi\Kitab\Tanya
 				'apa' => 'admin2'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
+	function jadualWebsite()
+	{
+		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_report');
+		$myTable = 'test_website';
+		$medan = '`website_id`,`website_name`,`website_link`,`note`,`website_id` as Action';
+		$carian = $susun = null;
+		/*# semak database
+			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => 'username', # cari dalam medan apa
+				'apa' => 'admin'); # benda yang dicari
+			$carian[] = array('fix'=>'like', # cari x= atau %like%
+				'atau'=>'AND', # WHERE / OR / AND
+				'medan' => 'level', # cari dalam medan apa
+				'apa' => 'admin2'); # benda yang dicari//*/
+
+		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
+	public function tambahPembolehubah($pilih)
+	{
+		//$pilih = null;
+		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'login';
+		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_product';
+		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_report';
+		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_website';
+		else: //echo "\$pilih = $pilih <br>";
+			$myTable = null;
+		endif;
+
+		return array($myTable); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------------------------#
