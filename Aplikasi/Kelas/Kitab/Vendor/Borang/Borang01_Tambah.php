@@ -94,11 +94,10 @@ class Borang01_Tambah
 	}
 ###########################################################################################
 #------------------------------------------------------------------------------------------
-	public function baruInput($tata,$jadual,$kira,$key,$data)
+	public function baruInput($jadual,$key,$data,$type,$pri)
 	{
 		# istihar pembolehubah
 		$name = 'name="' . $jadual . '[' . $key . ']"';
-		list($type,$pri) = explode('|', $data);
 		# css
 		list($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
 			$classInput,$komenInput) = $this->ccs();
