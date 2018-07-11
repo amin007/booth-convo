@@ -104,21 +104,21 @@ class Borang01_Tambah
 
 		if(in_array($key,array('entahlah')))
 			$input = $tab2 . 'Entahlah';
-		elseif(in_array($key,array('state','negeri')))
+		elseif(in_array($key,array('state','negeri'))) # untuk dropmene negeri
 			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
 		elseif ( in_array($key,array('password','kataLaluan')) )
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
 				$classInput, $komenInput, $jadual, $key);
-		elseif ( in_array($key,array('name')) )
+		elseif ( in_array($key,array('name')) ) # untuk data session
 			$input = $this->inputSesi($tab2, $tab3, $name);
 		elseif(in_array($pri,array('PRI')))
 			$input = 'primary-key';
 		elseif(in_array($type,array('varchar')))
 			$input = $this->inputTeksBesar($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
-		elseif(in_array($type,array('text')))
-			$input = $this->inputTextarea($tab2, $name, null); #kod utk textarea
+		elseif(in_array($type,array('text'))) #kod utk textarea
+			$input = $this->inputTextarea($tab2, $name, null);
 		elseif(in_array($type,array('int','double')))
 			$input = $this->inputNumber($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
