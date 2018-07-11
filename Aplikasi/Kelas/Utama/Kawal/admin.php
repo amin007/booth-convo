@@ -108,8 +108,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	{
 		list($myTable) = $this->tanya->tambahPembolehubah($pilih);
 		$this->papar->senarai[$myTable] = $this->tanya->//paparMedan
-			//paparMedan02
-			//pilihMedan
+			//paparMedan02 //pilihMedan
 			pilihMedan02
 			($myTable);
 		/*if( count($this->papar->senarai[$myTable]) == 0 ):
@@ -194,7 +193,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->kandunganPaparan('website',$this->papar->_jadual);
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('z_form-list-website1'); //$this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
