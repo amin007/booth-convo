@@ -327,6 +327,13 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		return $posmen; # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
+	public function insertID($myTable)
+	{
+		# ubahsuai $posmen
+		//list($posmen,$senaraiJadual,$myTable,$medanID) = $this->ubahsuaiPost($dataID);
+		echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
