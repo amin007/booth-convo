@@ -286,19 +286,23 @@ class DB_Pdo extends \PDO
 		return $this->exec("DELETE FROM $table WHERE $where LIMIT $limit");
 	}
 #------------------------------------------------------------------------------------------------------------------
-	public function getColumnNames($table)
+	public function getColumnNames($table, $db)
 	{
 		# https://stackoverflow.com/questions/1526688/get-table-column-names-in-mysql
 		$col = 'COLUMN_NAME,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH as max,COLUMN_TYPE';
-		$sql = 'SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table';
+		//$sql = 'SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = :table';
+		$sql = 'SELECT '.$col.' FROM INFORMATION_SCHEMA.COLUMNS '
+			. 'WHERE table_schema  = :database '
+			. 'AND table_name = :table';
 		try {
 			$sth = $this->prepare($sql);
 			$sth->bindValue(':table', $table, \PDO::PARAM_STR);
+			$sth->bindValue(':database', $db, \PDO::PARAM_STR);
 			$sth->execute();
 			$output = array();
 			while($row = $sth->fetch(\PDO::FETCH_ASSOC))
 			{
-				$output[] = $row['COLUMN_NAME'];
+				$output[] = $row['COLUMN_NAME'] . '|' . $row['DATA_TYPE'];
 			}
 			return $output;
 		}
