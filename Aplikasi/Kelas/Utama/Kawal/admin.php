@@ -63,6 +63,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	function debugKandunganPaparan()
 	{
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		echo '<pre>';
 		echo '<br>$this->papar->senarai : '; print_r($this->papar->senarai);
 		echo '<br>$this->papar->myTable : '; print_r($this->papar->myTable);
@@ -101,13 +102,16 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		endif;//*/
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
-		$this->debugKandunganPaparan($pilih, $myTable);
+		//$this->debugKandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
 	function tambahMedanDB($pilih)
 	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		list($myTable) = $this->tanya->tambahPembolehubah($pilih);
-		$this->papar->senarai[$myTable] = $this->tanya->//paparMedan
+		//echo '<br>$pilih:' . $pilih . '<br>';
+		echo '<br>$myTable:' . $myTable . '<br>';
+		/*$this->papar->senarai[$myTable] = $this->tanya->//paparMedan
 			//paparMedan02 //pilihMedan
 			pilihMedan02
 			($myTable);
@@ -118,8 +122,6 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah untuk Papar
 		$this->papar->_jadual = $myTable;
 		$this->papar->medan = array('website_name','website_link','note');
-		$this->kandunganPaparan($pilih, $myTable);
-		$this->debugKandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------
@@ -189,9 +191,9 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->panggilDB('website'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('website'); # panggil medan dalam jadual
+		$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
-		$this->kandunganPaparan('website',$this->papar->_jadual);
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('z_form-list-website1'); //$this->_folder = 'cari';
 		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
