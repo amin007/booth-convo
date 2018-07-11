@@ -78,8 +78,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih, $myTable)
 	{
-		/*list($myTable, $medan, $carian, $susun) =
-			$this->tanya->susunPembolehubah($pilih);*/
+		$this->papar->senarai = null;
 		$this->papar->myTable = $myTable;
 		$this->papar->carian[] = 'semua';
 		$this->papar->c1 = $this->papar->c2 = null;
