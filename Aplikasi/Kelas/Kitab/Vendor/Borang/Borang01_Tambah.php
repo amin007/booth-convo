@@ -197,8 +197,7 @@ class Borang01_Tambah
 	{
 		return ''
 		. '<textarea ' . $name . ' rows="1" cols="20"' . $tab2
-		. ' class="form-control">' . $data . '</textarea>'
-		. $tab2 . '<pre>' . $data . '</pre>'
+		. ' class="form-control"></textarea>' . $tab2
 		. '';
 	}
 #------------------------------------------------------------------------------------------
@@ -223,9 +222,9 @@ class Borang01_Tambah
 		return $tab2
 		. '<div class="'.$classInput.'">' . $tab3
 		//. '<span class="input-group-addon"></span>' . $tab3
-		. '<input type="text" ' . $name  . ' value="' . $data . '"'
-		. ' class="form-control">'
-		. $tab2 . $this->labelBawah($data)
+		. '<input type="text" ' . $name
+		. ' placeholder="' . $data . '"'
+		. ' class="form-control">' . $tab2
 		. '</div>' . $komenInput
 		. '';
 	}
@@ -235,9 +234,8 @@ class Borang01_Tambah
 		return '<div class="input-group input-group-sm">' . $tab2
 		. '<span class="input-group-addon">Nilai</span>'
 		. '<input type="text" ' . $name
-		. ' value="' . $data . '"'
+		. ' placeholder="' . $data . '"'
 		. ' class="form-control">' . $tab2
-		. '<span class="input-group-addon">' . kira($data) . '</span>'
 		. $tab2 . '</div>' . $komenInput
 		. '';
 	}
@@ -254,7 +252,6 @@ class Borang01_Tambah
 		return '<div class="input-group input-group-sm">' . $tab3
 		. '<span class="input-group-addon">' . $dataX . '</span>' . $tab3
 		. '<input type="date" ' . $name //. 'class="input-date tarikh" readonly>'
-		. ' value="' . $data . '"'
 		. $tab3 . ' class="form-control date-picker"'
 		. $tab3 . ' placeholder="Cth: 2014-05-01"'
 		. $tab3 . ' id="date' . $key . '" data-date-format="yyyy/mm/dd"/>'
@@ -265,9 +262,9 @@ class Borang01_Tambah
 	function inputAlamatBaru($tab2, $tab3, $name, $data, $classInput, $komenInput)
 	{
 		return '<div class="input-group input-group">' . $tab3
-		. '<span class="input-group-addon">' . $data . '</span>' . $tab3
+		//. '<span class="input-group-addon">' . $data . '</span>' . $tab3
 		. '<input type="text" ' . $name
-		. ' value="' . $data . '"'
+		. ' placeholder="' . $data . '"'
 		. ' class="form-control">'
 		. $tab2 . '</div>' . $komenInput
 		. '';
@@ -277,9 +274,9 @@ class Borang01_Tambah
 	{
 		#kod utk input text saiz besar
 		return '<div class="input-group input-group-lg">' . $tab3
-		. '<span class="input-group-addon">' . $data . '</span>' . $tab3
+		//. '<span class="input-group-addon">' . $data . '</span>' . $tab3
 		. '<input type="text" ' . $name
-		. ' value="' . $data . '"'
+		. ' placeholder="' . $data . '"'
 		. ' class="form-control">'
 		. $tab2 . '</div>' . $komenInput
 		. '';
@@ -289,9 +286,9 @@ class Borang01_Tambah
 	{
 		#kod utk input text saiz besar
 		return '<div class="input-group input-group-sm">' . $tab3
-		. '<span class="input-group-addon">' . $data . '</span>' . $tab3
+		//. '<span class="input-group-addon">' . $data . '</span>' . $tab3
 		. '<input type="text" ' . $name
-		. ' value="' . $data . '"'
+		. ' placeholder="' . $data . '"'
 		. ' class="form-control">'
 		. $tab2 . '</div>' . $komenInput
 		. '';
