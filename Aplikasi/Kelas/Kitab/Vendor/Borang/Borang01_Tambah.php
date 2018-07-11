@@ -259,6 +259,38 @@ class Borang01_Tambah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
+	function inputSesi($tab2, $tab3, $name, $data, $classInput, $komenInput,
+		$jadual, $key)
+	{
+		$name2 = 'name="' . $jadual . '[' . $key . 'X]"';
+
+		return ''
+		. '<div class="input-group mb-3">'
+		. $tab3 . '<div class="input-group-prepend"><span class="input-group-text">$</span></div>'
+		. $tab3 . '<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">'
+		. $tab2 . '</div>'
+		/*. '<div class="input-group input-group-sm">' . $tab3
+		. '<span class="input-group-addon"></span>' . $tab3
+		. '<input type="password" ' . $name	. $tab3
+		. ' placeholder="Taip kata laluan" class="form-control">'
+		. '<input type="password" ' . $name2 . $tab3
+		. ' placeholder="Taip lagi sekali" class="form-control">'
+		//. $tab2 . '</div>'//*/
+		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function dataSesi()
+	{
+		$Sesi = new \Aplikasi\Kitab\Sesi();
+		$Sesi->init();
+		//echo '<pre>'; print_r($_SESSION) . '</pre>';
+		/*echo 'namaPendek=' . $Sesi->get('namaPendek') . '<br>';
+		echo 'namaPenuh=' . $Sesi->get('namaPenuh') . '<br>';
+		echo 'idUser=' . $Sesi->get('idUser') . '<br>';
+		echo 'email=' . $Sesi->get('email') . '<br>';
+		echo 'levelPengguna=' . $Sesi->get('levelPengguna') . '';//*/
+	}
+#------------------------------------------------------------------------------------------
 	function inputNumber($tab2, $tab3, $name, $data = 'Number Only',
 		$classInput, $komenInput)
 	{
