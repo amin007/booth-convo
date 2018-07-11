@@ -104,6 +104,9 @@ class Borang01_Tambah
 
 		if(in_array($key,array('entahlah')))
 			$input = $tab2 . 'Entahlah';
+		elseif(in_array($key,array('state','negeri')))
+			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
+			$classInput, $komenInput, $key);
 		elseif(in_array($pri,array('PRI')))
 			$input = 'primary-key';
 		elseif(in_array($type,array('varchar')))
