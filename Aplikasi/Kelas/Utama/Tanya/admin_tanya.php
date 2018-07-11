@@ -40,7 +40,8 @@ class Admin_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	function jadualLogin()
 	{
-		list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		$myTable = 'login';
 		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`, id as Action';
