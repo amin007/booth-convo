@@ -327,12 +327,42 @@ class Borang extends \Aplikasi\Kitab\Kawal
 		return $posmen; # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
-	public function insertID($myTable)
+	function ubahsuaiPost2($jadual)
+	{
+		$senaraiJadual = array($jadual);
+		$posmen = array();
+		foreach ($_POST as $myTable => $v1):
+			if ( in_array($myTable,$senaraiJadual) ):
+			foreach ($v1 as $kekunci => $papar)
+			{//echo '<br>$myTable = ' . $myTable;
+				$posmen[$kekunci] = bersih($papar);
+			}//*/
+		endif; endforeach;
+
+		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		return array($posmen,$senaraiJadual,$senaraiJadual[0]); # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
+	public function insertID($jadual)
 	{
 		# ubahsuai $posmen
-		//list($posmen,$senaraiJadual,$myTable,$medanID) = $this->ubahsuaiPost($dataID);
-		echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+		list($posmen,$senaraiJadual,$myTable) = $this->ubahsuaiPost2($jadual);
+		//echo '<hr><pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		# mula ulang $senaraiJadual
+		foreach ($senaraiJadual as $kunci => $jadual)
+		{# mula ulang table
+			//$this->tanya->tambahSql($jadual, $posmen);
+			$this->tanya->tambahData($jadual, $posmen);
+		}# tamat ulang table
+
+		# pergi papar kandungan
+		$lokasi = 'admin/?jadual=' . $myTable;;
+		//echo '<br>location: ' . URL . $lokasi;
+		header('location: ' . URL . $lokasi); //*/
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
