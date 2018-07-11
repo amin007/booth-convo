@@ -14,8 +14,7 @@ include 'z_template-3ruang.php';
 echo "\n\n";
 ?>
 <div class="row">
-
-<div class="col-md-6">
+<div class="col-md-12">
 <div class="card"><?php
 //include 'y_website-form.php';
 $tajukjadual = 'Daftar Baru';
@@ -24,11 +23,13 @@ include 'y_contoh-borang1.php';
 echo "\n\n";
 ?></div><!-- / class="card" -->
 </div><!-- / class="col-md-3" -->
+</div><!-- / class="row" -->
 
-<div class="col-md-6">
+<div class="row">
+<div class="col-md-12">
 <div class="card"><?php
 //include 'jadual/template_' . $this->template . '.php';
-echo "\n\n";
+echo $this->_jadual;
 ?></div><!-- / class="card" -->
 </div><!-- / class="col-md-12" -->
 </div><!-- / class="row" -->
