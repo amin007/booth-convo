@@ -253,18 +253,6 @@ class Borang01_Tambah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
-	function inputBiodata($tab2, $tab3, $name, $data, $classInput, $komenInput)
-	{
-		return $tab2
-		. '<div class="'.$classInput.'">' . $tab3
-		//. '<span class="input-group-addon"></span>' . $tab3
-		. '<input type="text" ' . $name
-		. ' placeholder="' . $data . '"'
-		. ' class="form-control">' . $tab2
-		. '</div>' . $komenInput
-		. '';
-	}
-#------------------------------------------------------------------------------------------
 	function inputNumber($tab2, $tab3, $name, $data = 'Number Only',
 		$classInput, $komenInput)
 	{
@@ -286,17 +274,6 @@ class Borang01_Tambah
 		. $tab3 . ' class="form-control date-picker"'
 		. $tab3 . ' placeholder="Cth: 2014-05-01"'
 		. $tab3 . ' id="date' . $key . '" data-date-format="yyyy/mm/dd"/>'
-		. $tab2 . '</div>' . $komenInput
-		. '';
-	}
-#------------------------------------------------------------------------------------------
-	function inputAlamatBaru($tab2, $tab3, $name, $data, $classInput, $komenInput)
-	{
-		return '<div class="input-group input-group">' . $tab3
-		//. '<span class="input-group-addon">' . $data . '</span>' . $tab3
-		. '<input type="text" ' . $name
-		. ' placeholder="' . $data . '"'
-		. ' class="form-control">'
 		. $tab2 . '</div>' . $komenInput
 		. '';
 	}
