@@ -110,6 +110,9 @@ class Borang01_Tambah
 		elseif ( in_array($key,array('password','kataLaluan')) )
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
 				$classInput, $komenInput, $jadual, $key);
+		elseif ( in_array($key,array('name')) )
+			$input = $this->inputSesi($tab2, $tab3, $name, $data,
+				$classInput, $komenInput, $jadual, $key);
 		elseif(in_array($pri,array('PRI')))
 			$input = 'primary-key';
 		elseif(in_array($type,array('varchar')))
