@@ -10,7 +10,7 @@ include 'atasbawah1/menu_atas.php';
 <div class="container-fluid">
 
 <?php
-include 'z_template-3ruang.php';
+include 'b_baru/z_template-3ruang.php';
 echo "\n\n";
 ?>
 <div class="row">
@@ -19,7 +19,7 @@ echo "\n\n";
 //include 'y_website-form.php';
 $tajukjadual = 'Daftar Baru';
 include 'jadual/pilih_a_tajuk.php';
-include 'y_contoh-borang1.php';
+include 'b_baru/y_contoh-borang1.php';
 echo "\n\n";
 ?></div><!-- / class="card" -->
 </div><!-- / class="col-md-3" -->
