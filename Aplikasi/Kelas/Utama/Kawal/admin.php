@@ -119,6 +119,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		$this->papar->_jadual = $myTable;
 		$this->papar->medan = array('website_name','website_link','note');
 		$this->kandunganPaparan($pilih, $myTable);
+		$this->debugKandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------
