@@ -110,7 +110,7 @@ class Borang01_Tambah
 			$input = $this->inputTeksBesar($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
 		elseif(in_array($type,array('int','double')))
-			$input = $this->inputNumber($tab2, $tab3, $name, $data,
+			$input = $this->inputNumber($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
 		else
 		{#kod untuk lain2
