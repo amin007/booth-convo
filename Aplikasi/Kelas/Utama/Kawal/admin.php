@@ -61,6 +61,19 @@ class Admin extends \Aplikasi\Kitab\Kawal
 	}
 #==========================================================================================
 #-------------------------------------------------------------------------------------------
+	function debugKandunganPaparan()
+	{
+		echo '<pre>';
+		echo '<br>$this->papar->senarai : '; print_r($this->papar->senarai);
+		echo '<br>$this->papar->myTable : '; print_r($this->papar->myTable);
+		echo '<br>$this->papar->carian : '; print_r($this->papar->carian);
+		echo '<br>$this->papar->c1 : '; print_r($this->papar->c1);
+		echo '<br>$this->papar->c2 : '; print_r($this->papar->c2);
+		echo '<br>$this->papar->_pilih : '; print_r($this->papar->_pilih);
+		echo '<br>$this->papar->template : '; print_r($this->papar->template);
+		echo '</pre>';
+	}
+#-------------------------------------------------------------------------------------------
 	function kandunganPaparan($pilih, $myTable)
 	{
 		//$this->papar->senarai[$myTable] = null;
@@ -88,6 +101,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		endif;//*/
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($pilih, $myTable);
+		$this->debugKandunganPaparan($pilih, $myTable);
 	}
 #-------------------------------------------------------------------------------------------
 	function tambahMedanDB($pilih)
