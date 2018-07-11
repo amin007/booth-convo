@@ -131,7 +131,7 @@ class Admin extends \Aplikasi\Kitab\Kawal
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('b_baru'); $this->_folder = 'cari';
+		$fail = array('b_baru'); //$this->_folder = 'cari';
 		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
