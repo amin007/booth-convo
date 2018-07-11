@@ -127,12 +127,12 @@ class Admin extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->panggilDB('login'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('login'); # panggil medan dalam jadual
-		$this->debugKandunganPaparan();
+		//$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('b_baru'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function staffView()
