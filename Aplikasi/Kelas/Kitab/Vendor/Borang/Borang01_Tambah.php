@@ -281,14 +281,7 @@ class Borang01_Tambah
 	function inputTarikh($tab2, $tab3, $name, $data, $classInput, $komenInput,
 		$jadual, $key)
 	{
-		#terima - style="font-family:sans-serif;font-size:10px;"
-		$X = 'name="' . $jadual . '[' . $key . 'X]"';
-		$dataX = ($key=='hantar_prosesan') ?
-			'<input type="checkbox" ' . $X . ' value="x"> Utk Prosesan : ' . $data
-			: '<input type="checkbox" ' . $X . ' value="x"> ' . $data;
-
 		return '<div class="input-group input-group-sm">' . $tab3
-		. '<span class="input-group-addon">' . $dataX . '</span>' . $tab3
 		. '<input type="date" ' . $name //. 'class="input-date tarikh" readonly>'
 		. $tab3 . ' class="form-control date-picker"'
 		. $tab3 . ' placeholder="Cth: 2014-05-01"'
