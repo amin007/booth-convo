@@ -175,10 +175,16 @@ class Borang01_Tambah
 		$birutua = 'btn btn-primary btn-mini';
 		$birumuda = 'btn btn-info btn-mini';
 		$merah = 'btn btn-danger btn-mini';
-		$classInput = 'input-group input-group';
-		$komenInput = '<!-- / "input-group input-group" -->';
+		//$classInput = 'input-group input-group'; # 3.3.7
+		//$komenInput = '<!-- / "input-group input-group" -->';
+		$classInput = 'input-group mb-3'; # 4.1.1
+		$komenInput = '<!-- / "input-group mb-3" -->';
+		# tatasusunan
+		$medanLogin = array('username','fullusername','level',
+		'phoneno','address1','address2','city','postcode');
 
-		return array($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,$classInput,$komenInput);
+		return array($tab2,$tab3,$tab4,$birutua,$birumuda,$merah,
+		$classInput,$komenInput,$medanLogin);
 	}
 #------------------------------------------------------------------------------------------
 	function labelBawah($data)
@@ -186,9 +192,24 @@ class Borang01_Tambah
 		$input2 = null;
 		$tab2 = "\n\t\t";
 		$input2 = ($data==null) ? '' :
-				'<span class="input-group-addon">'
-				. $data . '</span>'
-				. $tab2;
+			'<span class="input-group-text" id="basic-addon2">'
+			. $data . '</span>'
+			. $tab2;
+
+		return $input2;
+	}
+#------------------------------------------------------------------------------------------
+	function labelBawah3($data)
+	{
+		$input2 = null;
+		$tab2 = "\n\t\t";
+		$tab3 = "\n\t\t\t";
+		$input2 = ($data==null) ? '' :
+			'<div class="input-group-append">'
+			. '<span class="input-group-text" id="basic-addon2">'
+			. $tab3 . $data . $tab3 . '</span>'
+			. '</div><!-- / class="input-group-append" -->'
+			. $tab2;
 
 		return $input2;
 	}
