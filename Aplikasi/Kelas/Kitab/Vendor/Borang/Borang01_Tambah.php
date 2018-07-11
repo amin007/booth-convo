@@ -111,8 +111,7 @@ class Borang01_Tambah
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
 				$classInput, $komenInput, $jadual, $key);
 		elseif ( in_array($key,array('name')) )
-			$input = $this->inputSesi($tab2, $tab3, $name, $data,
-				$classInput, $komenInput, $jadual, $key);
+			$input = $this->inputSesi($tab2, $tab3, $name);
 		elseif(in_array($pri,array('PRI')))
 			$input = 'primary-key';
 		elseif(in_array($type,array('varchar')))
@@ -259,8 +258,7 @@ class Borang01_Tambah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
-	function inputSesi($tab2, $tab3, $name, $data, $classInput, $komenInput,
-		$jadual, $key)
+	function inputSesi($tab2, $tab3, $name)
 	{
 		list($idUser,$namaPendek) = $this->dataSesi();
 		$data = $idUser . '-' . $namaPendek;
