@@ -109,6 +109,8 @@ class Borang01_Tambah
 		elseif(in_array($type,array('varchar')))
 			$input = $this->inputTeksBesar($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
+		elseif(in_array($type,array('text')))
+			$input = $this->inputTextarea($tab2, $name, null); #kod utk textarea
 		elseif(in_array($type,array('int','double')))
 			$input = $this->inputNumber($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
@@ -219,8 +221,13 @@ class Borang01_Tambah
 	function inputTextarea($tab2, $name, $data)
 	{
 		return ''
-		. '<textarea ' . $name . ' rows="1" cols="20"' . $tab2
+		. '<div class="input-group">' . $tab2
+		//. '<div class="input-group-prepend">'
+		//. $tab2 . '<span class="input-group-text">With textarea</span>'
+		//. $tab2 . '</div>' . $tab2
+		. '<textarea ' . $name . ' rows="3" cols="20"' . $tab2
 		. ' class="form-control"></textarea>' . $tab2
+		. '</div><!-- class="input-group" -->'
 		. '';
 	}
 #------------------------------------------------------------------------------------------
