@@ -337,14 +337,16 @@ class Borang01_Tambah
 	{
 		return $tab2
 		. '<div class="'.$classInput.'">' . $tab3
-		. $this->pilihDropmenu($name,$data) . $tab3
+		. $this->pilihDropmenu($key,$name,$data) . $tab3
 		//. $this->labelBawah3($data)
 		. '</div>' . $komenInput
 		. '';
 	}
 #------------------------------------------------------------------------------------------
-	function pilihDropmenu($key,$name,$data)
+	function pilihDropmenu($key,$name,$data = null)
 	{
+		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		echo '<hr>$key = ' . $key . '<hr>';
 		if($key=='state' Or $key=='negeri')
 			$inputDrop = $this->selectNg($name,$data);
 		elseif($key=='categoryProduct')
@@ -377,7 +379,7 @@ class Borang01_Tambah
 #------------------------------------------------------------------------------------------
 	function selectCategory($name,$data)
 	{
-		$negeri = array(
+		$pilih = array(
 			'food' => 'Food & Drink',
 			'flower' => 'Flower',
 			'clothes' => 'Clothes',
@@ -385,10 +387,10 @@ class Borang01_Tambah
 			);
 		//$select .= '<option value="" selected="selected">-- Choose State --</option>';
 		$option = '';
-		foreach($negeri as $ng):
-			$terpilih = ($ng == $data) ? ' selected="selected">*' : '>';
-			$option .= '<option value="' . $ng .'"' . $terpilih
-			. $ng . '</option>';
+		foreach($pilih as $kunci => $mangga):
+			$terpilih = ($mangga == $data) ? ' selected="selected">*' : '>';
+			$option .= '<option value="' . $kunci .'"' . $terpilih
+			. $mangga . '</option>';
 		endforeach;
 		$select = '<select  ' . $name . ' class="form-control">'
 		. $option . '</select>';
@@ -396,9 +398,6 @@ class Borang01_Tambah
 		return $select;
 	}
 #------------------------------------------------------------------------------------------
-/*
-
-*/
 #------------------------------------------------------------------------------------------
 #==========================================================================================
 }
