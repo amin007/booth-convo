@@ -337,7 +337,7 @@ class Borang01_Tambah
 	{
 		return $tab2
 		. '<div class="'.$classInput.'">' . $tab3
-		. $this->selectNg($name,$data) . $tab3
+		. $this->pilihDropmenu($name,$data) . $tab3
 		//. $this->labelBawah3($data)
 		. '</div>' . $komenInput
 		. '';
