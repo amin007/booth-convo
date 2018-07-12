@@ -222,9 +222,9 @@ class Borang01_Tambah
 
 		return ''
 		. '<div class="input-group mb-3">'
-		. $tab3 . '<div class="input-group-prepend"><span class="input-group-text">'
-		. $tab3 . 'idUser = ' . $idUser . '-' . $namaPendek
-		. $tab3 . '</span></div>' . $tab3
+		//. $tab3 . '<div class="input-group-prepend"><span class="input-group-text">'
+		//. $tab3 . 'idUser = ' . $idUser . '-' . $namaPendek
+		//. $tab3 . '</span></div>' . $tab3
 		. '<input type="text" ' . $name . ' value="' . $data . '"'
 		. ' class="form-control" readonly>'
 		//. '<input type="hidden" ' . $name . ' value="' . $data . '">'
