@@ -104,13 +104,13 @@ class Borang01_Tambah
 
 		if(in_array($key,array('entahlah')))
 			$input = $tab2 . 'Entahlah';
-		elseif(in_array($key,array('state','negeri'))) # untuk dropmene negeri
+		elseif(in_array($key,array('state','negeri','categoryProduct'))) # untuk dropmene negeri
 			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
 		elseif ( in_array($key,array('password','kataLaluan')) )
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
 				$classInput, $komenInput, $jadual, $key);
-		elseif ( in_array($key,array('name')) ) # untuk data session
+		elseif ( in_array($key,array('name','idLogin')) ) # untuk data session
 			$input = $this->inputSesi($tab2, $tab3, $name);
 		elseif(in_array($pri,array('PRI')))
 			$input = 'primary-key';
@@ -363,7 +363,30 @@ class Borang01_Tambah
 		return $select;
 	}
 #------------------------------------------------------------------------------------------
+	function selectCategory($name,$data)
+	{
+		$negeri = array(
+			'food' => 'Food & Drink',
+			'flower' => 'Flower',
+			'clothes' => 'Clothes',
+			'cosmetic' => 'Cosmetic'
+			);
+		//$select .= '<option value="" selected="selected">-- Choose State --</option>';
+		$option = '';
+		foreach($negeri as $ng):
+			$terpilih = ($ng == $data) ? ' selected="selected">*' : '>';
+			$option .= '<option value="' . $ng .'"' . $terpilih
+			. $ng . '</option>';
+		endforeach;
+		$select = '<select  ' . $name . ' class="form-control">'
+		. $option . '</select>';
+
+		return $select;
+	}
 #------------------------------------------------------------------------------------------
+/*
+
+*/
 #------------------------------------------------------------------------------------------
 #==========================================================================================
 }
