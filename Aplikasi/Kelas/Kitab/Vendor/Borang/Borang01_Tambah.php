@@ -343,6 +343,17 @@ class Borang01_Tambah
 		. '';
 	}
 #------------------------------------------------------------------------------------------
+	function pilihDropmenu($key,$name,$data)
+	{
+		if($key=='state' Or $key=='negeri')
+			$inputDrop = $this->selectNg($name,$data);
+		elseif($key=='categoryProduct')
+			$inputDrop = $this->selectCategory($name,$data);
+		else
+			$inputDrop = $key . '|' . $name;
+		return $inputDrop;
+	}
+#------------------------------------------------------------------------------------------
 	function selectNg($name,$data)
 	{
 		$negeri = array('Johor','Melaka','Negeri Sembilan',
