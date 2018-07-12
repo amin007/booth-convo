@@ -335,18 +335,16 @@ class Borang01_Tambah
 	function inputDropmenu($tab2, $tab3, $name, $data, $classInput, $komenInput,
 		$key)
 	{
-		return $tab2
-		. '<div class="'.$classInput.'">' . $tab3
+		return $tab2 . '<div class="'.$classInput.'">' . $tab3
 		. $this->pilihDropmenu($key,$name,$data) . $tab3
-		//. $this->labelBawah3($data)
 		. '</div>' . $komenInput
 		. '';
 	}
 #------------------------------------------------------------------------------------------
 	function pilihDropmenu($key,$name,$data = null)
 	{
-		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
-		echo '<hr>$key = ' . $key . '<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+
 		if($key=='state' Or $key=='negeri')
 			$inputDrop = $this->selectNg($name,$data);
 		elseif($key=='categoryProduct')
