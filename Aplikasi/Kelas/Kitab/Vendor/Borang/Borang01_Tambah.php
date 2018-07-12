@@ -105,7 +105,7 @@ class Borang01_Tambah
 		if(in_array($key,array('entahlah')))
 			$input = $tab2 . 'Entahlah';
 		elseif(in_array($key,array('state','negeri','categoryProduct'))) # untuk dropmene negeri
-			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
+			$input = $this->inputDropmenu($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
 		elseif ( in_array($key,array('password','kataLaluan')) )
 			$input = $this->inputPassword($tab2, $tab3, $name, $data,
@@ -332,7 +332,7 @@ class Borang01_Tambah
 		return '';
 	}
 #------------------------------------------------------------------------------------------
-	function inputDropmenuNg($tab2, $tab3, $name, $data, $classInput, $komenInput,
+	function inputDropmenu($tab2, $tab3, $name, $data, $classInput, $komenInput,
 		$key)
 	{
 		return $tab2
