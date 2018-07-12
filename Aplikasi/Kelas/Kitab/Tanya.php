@@ -130,14 +130,13 @@ class Tanya
 	{
 		$sql = $this->insertSql->arahanSet($myTable, $data);
 		echo '<pre>Tambah $sql->'; print_r($sql); echo '</pre>';
-		//$this->db->insert($sql);
 	}
 	#---------------------------------------------------------------------------------------------
 	public function tambahData($myTable, $data)
 	{
 		$sql = $this->insertSql->arahanSet($myTable, $data);
 		//echo '<pre>Tambah $sql->'; print_r($sql); echo '</pre>';
-		$this->db->insert($myTable, $data);
+		$this->db->insertAll($sql);
 	}
 	#--- tamat - contoh tambah sql guna set ---#
 	#---------------------------------------------------------------------------------------------
