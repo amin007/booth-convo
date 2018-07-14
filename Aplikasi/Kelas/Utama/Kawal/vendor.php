@@ -211,8 +211,8 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
-		$this->panggilDB('login'); # panggil fungsi panggilDB
-		//$this->tambahMedanDB('login'); # panggil medan dalam jadual
+		$this->panggilDB('profile'); # panggil fungsi panggilDB
+		//$this->tambahMedanDB('profile'); # panggil medan dalam jadual
 		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
