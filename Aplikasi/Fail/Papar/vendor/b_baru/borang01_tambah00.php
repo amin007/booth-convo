@@ -15,8 +15,8 @@
 </div><!-- / class="row" -->
 
 <?php
-input_asal();
-//input_baru();
+//input_asal();
+input_baru();
 ?>
 
 </center>
@@ -94,7 +94,8 @@ function input_baru()
 		<label for="inputTajuk" style="text-align:left"
 		class="col-sm-3 control-label"><?php
 		echo $input ?></label>
-		<div class="<?php echo $class2 ?>" >
+		<div class="<?php echo $class2 ?>" id="<?php
+		echo $label ?>" style="display:none;">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"
