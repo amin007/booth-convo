@@ -56,33 +56,32 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		//exit;
 	}
 #==========================================================================================
-	public function pelawat()
+/*	public function staffAdd()
 	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pemboleubah utama
-		$this->papar->tajuk = 'Ruangtamu';
-		$this->papar->senarai['modul'] = $this->tanya->jadualModul();
+		$this->panggilDB('login'); # panggil fungsi panggilDB
+		$this->tambahMedanDB('login'); # panggil medan dalam jadual
+		//$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'pelawat', $noInclude=0);
+		$fail = array('b_baru'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
-	function keluar()
+	public function staffView()
 	{
-		//echo '<pre>sebelum:'; print_r($_SESSION); echo '</pre>';
-		\Aplikasi\Kitab\Sesi::init();
-		\Aplikasi\Kitab\Sesi::destroy();
-		header('location: ' . URL);
-		//exit;
-	}
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		$this->panggilDB('login'); # panggil fungsi panggilDB
+
+		# Pergi papar kandungan
+		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
+		$fail = array('jadual'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+	}//*/
 #-------------------------------------------------------------------------------------------
-	function semaknama($nama)
-	{
-		# Semak data $_POST
-		echo '<pre>$_POST->'; print_r($_POST) . '</pre>| ';
-		echo '<pre>$nama->'; print_r($nama) . '</pre>| ';
-		echo 'Kod:' . \Aplikasi\Kitab\RahsiaHash::rahsia('md5', $nama) . ': ';
-		//echo 'Kod:' . RahsiaHash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY) . ': ';
-	}
+#-------------------------------------------------------------------------------------------
 #==========================================================================================
 }
