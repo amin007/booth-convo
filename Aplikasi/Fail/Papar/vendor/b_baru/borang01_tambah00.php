@@ -16,7 +16,8 @@
 <br><br>
 <?php
 //input_asal();
-input_asal01();
+//input_asal01();
+input_asal02();
 //input_baru();
 ?>
 
@@ -94,6 +95,37 @@ function input_asal01()
 				<input type="text" class="form-control">
 			</span>
 		</div><!-- / class="col" id="<?php echo $label ?>" style="display:none;" -->
+	</div><!-- / class="row" -->
+	<?php
+	endforeach;
+}
+#---------------------------------------------------------------------------------------------
+function input_asal02()
+{
+	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
+	'yuran'=>'Yuran Proses',
+	'sijil'=>'Sijil Pengendalian Makanan',
+	'suntikan'=>'Suntikan Thypoid');
+
+	foreach($ulangan as $label => $input):?>
+	<div class="row" align="center">
+	<div class="col" id="<?php echo $label ?>" style="display:none;">
+	<div class="form-group row">
+		<label for="inputTajuk" style="text-align:left"
+		class="col-sm-2 control-label"><?php
+		echo $input ?></label>
+		<div class="col-sm-7">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"
+					id="sprytextfield2"><?php
+					echo $input ?></span>
+				</div>
+				<input type="text" class="form-control">
+			</div><!-- /  class="input-group" -->
+		</div><!-- / class="col-sm-7" -->
+	</div><!-- / class="form-group row" -->
+	</div><!-- / class="col" id="<?php echo $label ?>" style="display:none;" -->
 	</div><!-- / class="row" -->
 	<?php
 	endforeach;
