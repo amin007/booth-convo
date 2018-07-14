@@ -67,17 +67,24 @@
 <br><br><hr>
 <form>
 <?php
+$class2 = 'col-sm-7'; # untuk $data
 $ulangan = array('SSM','Lesen Berniaga','Yuran Proses',
 'Sijil Pengendalian Makanan','Suntikan Thypoid');
 foreach($ulangan as $label):
 ?>
-<div class="input-group">
-	<div class="input-group-prepend">
-		<span class="input-group-text"><?php
-		echo $label ?></span>
-	</div>
-	<input type="text" class="form-control">
-</div>
+<div class="form-group row">
+	<label for="inputTajuk" class="col-sm-2 control-label"><?php
+	echo $label ?></label>
+	<div class="<?php echo $class2 ?>">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"><?php
+				echo $label ?></span>
+			</div>
+			<input type="text" class="form-control">
+		</div><!-- /  class="input-group" -->
+	</div><!-- / class="<?php echo $class2 ?>" -->
+</div><!-- / class="form-group row" -->
 <?php
 endforeach;
 ?>
