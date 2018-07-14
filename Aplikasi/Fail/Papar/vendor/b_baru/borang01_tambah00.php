@@ -16,7 +16,8 @@
 <br><br>
 <?php
 //input_asal();
-input_baru();
+input_asal01();
+//input_baru();
 ?>
 
 </center>
@@ -76,6 +77,26 @@ function input_asal()
 		</span>
 	</div><!-- / class="col"id="suntikan" style="display:none;" -->
 </div><!-- / class="row" --><?php
+}
+#---------------------------------------------------------------------------------------------
+function input_asal01()
+{
+	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
+	'yuran'=>'Yuran Proses',
+	'sijil'=>'Sijil Pengendalian Makanan',
+	'suntikan'=>'Suntikan Thypoid');
+
+	foreach($ulangan as $label => $input):?>
+	<div class="row">
+		<div class="col" id="<?php echo $label ?>" style="display:none;">
+			<?php echo $input ?>
+			<span id="sprytextfield2">
+				<input type="text" class="form-control">
+			</span>
+		</div><!-- / class="col" id="<?php echo $label ?>" style="display:none;" -->
+	</div><!-- / class="row" -->
+	<?php
+	endforeach;
 }
 #---------------------------------------------------------------------------------------------
 function input_baru()
