@@ -43,7 +43,7 @@ input_asal02($c01,$c02,$ulangan);
 <br><br><hr>
 <?php
 #---------------------------------------------------------------------------------------------
-function input_asal()
+function input_asal($c01,$c02,$ulangan)
 {
 ?><div class="row">
 	<div class="col" id="ic" style="display:none;">
@@ -87,7 +87,7 @@ function input_asal()
 </div><!-- / class="row" --><?php
 }
 #---------------------------------------------------------------------------------------------
-function input_asal01()
+function input_asal01($c01,$c02,$ulangan)
 {
 	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 	'yuran'=>'Yuran Proses',
@@ -107,7 +107,7 @@ function input_asal01()
 	endforeach;
 }
 #---------------------------------------------------------------------------------------------
-function input_asal02()
+function input_asal02($c01,$c02,$ulangan)
 {
 	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 	'yuran'=>'Yuran Proses',
@@ -138,7 +138,7 @@ function input_asal02()
 	endforeach;
 }
 #---------------------------------------------------------------------------------------------
-function input_baru()
+function input_baru($c01,$c02,$ulangan)
 {?>
 	<form align="center">
 	<?php
