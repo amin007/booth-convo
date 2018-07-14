@@ -18,6 +18,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		//$this->panggilDB('login'); # panggil fungsi panggilDB
+		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
 		$fail = array('index0'); //$this->_folder = 'cari';
@@ -212,10 +213,9 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah utama
 		$this->panggilDB('login'); # panggil fungsi panggilDB
 		//$this->tambahMedanDB('login'); # panggil medan dalam jadual
-		//$this->debugKandunganPaparan();
+		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('jadual','b_baru'); //$this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[1], $noInclude=1);
 	}
@@ -226,10 +226,9 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah utama
 		$this->panggilDB('booking'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('booking'); # panggil medan dalam jadual
-		//$this->debugKandunganPaparan();
+		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('jadual','b_baru'); //$this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[1], $noInclude=1);
 	}
@@ -239,9 +238,9 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		$this->panggilDB('status'); # panggil fungsi panggilDB
+		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		$fail = array('jadual'); //$this->_folder = 'cari';
 		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
@@ -251,9 +250,9 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		//$this->panggilDB('login'); # panggil fungsi panggilDB
+		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
 		//$fail = array('jadual'); //$this->_folder = 'cari';
 		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
