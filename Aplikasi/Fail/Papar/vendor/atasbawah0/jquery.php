@@ -2,6 +2,8 @@
 ================================================== -->
 <script type="text/javascript" src="<?=JQUERY?>"></script>
 <script type="text/javascript" src="<?=BOOTSTRAPJS?>"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 <?php
 if (isset($this->js))
 {
@@ -100,6 +102,29 @@ $(document).ready(function(){
 }
 .suggestionList li:hover {background-color: #659CD8;}
 </style>
+<?php
+elseif ($this->_pilih == 'booking') : echo "\n\n"; ?>
+<script type="text/javascript">
+$('#test').on('change', function() {
+// alert( this.value ); // or $(this).val()
+	if(this.value == "MY")
+	{
+		$('#ic').show();
+		$('#passport').show();
+		$('#yuran').show();
+		$('#sijil').show();
+		$('#suntikan').show();
+	}
+	else
+	{
+		$('#ic').show();
+		$('#passport').show();
+		$('#yuran').show();
+		$('#sijil').hide();
+		$('#suntikan').hide();
+	}
+});
+</script>
 <?php
 else :
 endif;
