@@ -182,6 +182,46 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		return $posmen; # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
+	function ubahsuaiPost2($pilih)
+	{
+		list($senaraiJadual,$medanID) = $this->tanya->pilihJadual($pilih);
+
+		$posmen = array();
+		foreach ($_POST as $myTable => $v1):
+			if ( in_array($myTable,$senaraiJadual) ):
+			foreach ($v1 as $kekunci => $papar)
+			{//echo '<br>$myTable = ' . $myTable;
+				$posmen[$kekunci] = bersih($papar);
+			}//*/
+		endif; endforeach;
+
+		echo '<pre>$pilih='; print_r($pilih); echo '</pre>';
+		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		return array($posmen,$senaraiJadual,$senaraiJadual[0]); # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
+	public function insertID($pilih)
+	{
+		# ubahsuai $posmen
+		list($posmen,$senaraiJadual,$myTable) = $this->ubahsuaiPost2($pilih);
+		//echo '<hr><pre>$_POST='; print_r($_POST); echo '</pre>';
+		echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		# mula ulang $senaraiJadual
+		foreach ($senaraiJadual as $kunci => $jadual)
+		{# mula ulang table
+			$this->tanya->tambahSql($jadual, $posmen);
+			//$this->tanya->tambahData($jadual, $posmen);
+		}# tamat ulang table
+
+		# pergi papar kandungan
+		$lokasi = 'vendor/profile/?jadual=' . $myTable;;
+		//echo '<br>location: ' . URL . $lokasi;
+		//header('location: ' . URL . $lokasi); //*/
+	}
+#-------------------------------------------------------------------------------------------
 /*	public function staffAdd()
 	{
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
