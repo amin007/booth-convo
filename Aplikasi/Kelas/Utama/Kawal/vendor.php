@@ -15,13 +15,13 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 ##-----------------------------------------------------------------------------------------
 	public function index()
 	{
-		# Set pemboleubah utama
-		$this->papar->tajuk = namaClass($this);
-		//echo '<hr> Nama class : ' . namaClass($this) . '<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		//$this->panggilDB('login'); # panggil fungsi panggilDB
 
 		# Pergi papar kandungan
-		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$this->paparKandungan($this->_folder, 'index', $noInclude=0);
+		$fail = array('index0'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
 	}
 ##-----------------------------------------------------------------------------------------
 	public function paparKandungan($folder, $fail, $noInclude)
