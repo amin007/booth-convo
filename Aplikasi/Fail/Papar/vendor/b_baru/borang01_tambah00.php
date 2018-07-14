@@ -109,9 +109,9 @@ function input_asal02($c01,$c02,$ulangan)
 	<div class="col" id="<?php echo $label ?>" style="display:none;">
 	<div class="form-group row">
 		<label for="inputTajuk" style="text-align:left"
-		class="col-sm-2 control-label"><?php
+		class="<?php echo $c01 ?> control-label"><?php
 		echo $input ?></label>
-		<div class="col-sm-7">
+		<div class="<?php echo $c02 ?>">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"
@@ -120,7 +120,7 @@ function input_asal02($c01,$c02,$ulangan)
 				</div>
 				<input type="text" class="form-control">
 			</div><!-- /  class="input-group" -->
-		</div><!-- / class="col-sm-7" -->
+		</div><!-- / class="<?php echo $c02 ?>" -->
 	</div><!-- / class="form-group row" -->
 	</div><!-- / class="col" id="<?php echo $label ?>" style="display:none;" -->
 	</div><!-- / class="row" -->
@@ -136,9 +136,9 @@ function input_baru($c01,$c02,$ulangan)
 	?>
 	<div class="form-group row">
 		<label for="inputTajuk" style="text-align:left"
-		class="col-sm-3 control-label"><?php
+		class="<?php echo $c01 ?> control-label"><?php
 		echo $input ?></label>
-		<div class="<?php echo $class2 ?>" id="<?php
+		<div class="<?php echo $c02 ?>" id="<?php
 		echo $label ?>" style="display:none;">
 			<div class="input-group">
 				<div class="input-group-prepend">
@@ -148,7 +148,7 @@ function input_baru($c01,$c02,$ulangan)
 				</div>
 				<input type="text" class="form-control">
 			</div><!-- /  class="input-group" -->
-		</div><!-- / class="<?php echo $class2 ?>" -->
+		</div><!-- / class="<?php echo $c02 ?>" -->
 	</div><!-- / class="form-group row" -->
 	<?php
 	endforeach;
