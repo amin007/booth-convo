@@ -23,7 +23,7 @@ if ($paras == null): else: ?>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 	<a class="navbar-brand" href="<?php echo URL ?>">
 		<?php echo $iconFA['video'] . Tajuk_Muka_Surat . ':' . $paras ?></a>
-	<a class="navbar-brand" href="<?php echo URL ?>ruangtamu/logout">
+	<a class="navbar-brand" href="<?php echo URL ?>vendor/logout">
 		<i class="fa fa-times fa-2x" aria-hidden="true"></i>Keluar</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
