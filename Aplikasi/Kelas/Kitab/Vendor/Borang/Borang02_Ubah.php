@@ -50,28 +50,13 @@ class Borang02_Ubah
 #------------------------------------------------------------------------------------------
 	public function atasLabelSyarikat()
 	{
-		echo "\n"; ?><style>
-.floating-menu {
-	padding: 5px;; width: 300px; z-index: 100;
-	position: fixed; bottom: 0px; right: 0px;
-}
-</style><?php echo "\n";
+		echo "\n"; echo "\n";
 	}
 #------------------------------------------------------------------------------------------
 	public function atasSemakData($senarai, $cariID, $_jadual)
 	{
 		if(isset($senarai['kes'][0]['newss'])):
-			# set pembolehubah
-			$mencari = URL . 'kawalan/ubahCari/';
-			$carian = $cariID;
-			$mesej = ''; //$carian .' ada dalam ' . $this->_jadual;
-			@list($namaSyarikat, $semak1, $semak3) = explode("|", $senarai['kes'][0]['nama']);
-			?><nav class="floating-menu">
-			<p class="bg-primary"><?php
-			echo "\n&nbsp;" . $namaSyarikat
-			?></p></nav><?php
-
-			else: # set pembolehubah
+		else: # set pembolehubah
 			$mencari = URL . 'kawalan/ubahCari/';
 			$carian = null;
 			$mesej = '::' . $cariID . ' tiada dalam ' . $_jadual;
@@ -82,21 +67,7 @@ class Borang02_Ubah
 #------------------------------------------------------------------------------------------
 	public function atasInputCarian($mencari, $carian, $mesej, $class)
 	{
-		echo "\n";?><div class="container">
-<form method="GET" action="<?=$mencari;?>" class="form-inline" autocomplete="off">
-<div class="form-group">
-	<label for="carian"><h1>Ubah Kawalan<?=$mesej?></h1></label>
-	<div class="input-group">
-		<input type="text" name="cari" value="<?=$carian;?>"
-		class="form-control" id="inputString"
-		onkeyup="lookup(this.value);" onblur="fill();">
-		<span class="input-group-addon"><input type="submit" value="mencari"></span>
-	</div>
-</div>
-<div class="suggestionsBox" id="suggestions" style="display: none;">
-	<div class="suggestionList" id="autoSuggestionsList">&nbsp;</div>
-</div>
-</form></div><br><?php echo "\n";
+		echo "\n"; echo "\n";
 	}
 ###########################################################################################
 #------------------------------------------------------------------------------------------
