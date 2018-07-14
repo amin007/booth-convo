@@ -195,7 +195,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 			}//*/
 		endif; endforeach;
 
-		echo '<pre>$pilih='; print_r($pilih); echo '</pre>';
+		//echo '<pre>$pilih='; print_r($pilih); echo '</pre>';
 		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
@@ -207,7 +207,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# ubahsuai $posmen
 		list($posmen,$senaraiJadual,$myTable) = $this->ubahsuaiPost2($pilih);
 		//echo '<hr><pre>$_POST='; print_r($_POST); echo '</pre>';
-		echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
 		# mula ulang $senaraiJadual
 		foreach ($senaraiJadual as $kunci => $jadual)
