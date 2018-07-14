@@ -75,8 +75,7 @@ $ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 'suntikan'=>'Suntikan Thypoid');
 foreach($ulangan as $label => $input):
 ?>
-<div class="form-group row" id="<?php
-echo $label ?>" style="display:none;">
+<div class="form-group row">
 	<label for="inputTajuk" style="text-align:left"
 	class="col-sm-3 control-label"><?php
 	echo $input ?></label>
