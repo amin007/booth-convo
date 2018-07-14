@@ -1,4 +1,8 @@
-<center>
+<?php
+$url = URL . 'vendor/insertID/' . $this->_pilih;
+echo '<h2>' . $url . '</h2>';
+?>
+<form method="POST" action="<?php echo $url ?>">
 <div class="row">
 	<div class="col">
 		Product :
@@ -27,20 +31,15 @@ $ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 input_asal02($c01,$c02,$ulangan);
 //input_baru($c01,$c02,$ulangan);
 ?>
-
-</center>
-
 <table>
-<tr>
-<td align="right">&nbsp;</td>
-<td align="left"><br><br>
-	<button type="submit" name="login" class="butangadmin"><span>SUBMIT</span></button>
-	<button type="reset" class="butangadmin"><span>CLEAR</span></button>
-</td>
-</tr>
+<tr><td align="left">
+	<input type="hidden" name="jadual" value="<?php echo $this->myTable ?>">
+	<input type="submit" name="Simpan" value="Submit" class="btn btn-primary btn-large">
+	<input type="reset" value="Reset" class="btn btn-danger btn-large">
+</td></tr>
 </table>
 
-<br><br><hr>
+</form>
 <?php
 #---------------------------------------------------------------------------------------------
 function input_asal($c01,$c02,$ulangan)
@@ -129,11 +128,8 @@ function input_asal02($c01,$c02,$ulangan)
 }
 #---------------------------------------------------------------------------------------------
 function input_baru($c01,$c02,$ulangan)
-{?>
-	<form align="center">
-	<?php
-	foreach($ulangan as $label => $input):
-	?>
+{
+	foreach($ulangan as $label => $input):?>
 	<div class="form-group row">
 		<label for="inputTajuk" style="text-align:left"
 		class="<?php echo $c01 ?> control-label"><?php
@@ -152,8 +148,5 @@ function input_baru($c01,$c02,$ulangan)
 	</div><!-- / class="form-group row" -->
 	<?php
 	endforeach;
-	?>
-	</form>
-<?php
 }
 #---------------------------------------------------------------------------------------------
