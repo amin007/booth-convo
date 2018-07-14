@@ -47,6 +47,8 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 			list($myTable, $medan, $carian, $susun) = $this->jadualReport();
 		elseif($pilih == 'status'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualStatus();
+		elseif($pilih == 'booking'): //echo "\$pilih = $pilih <br>";
+			list($myTable, $medan, $carian, $susun) = $this->jadualBooking();
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualWebsite();
 		else: //echo "\$pilih = $pilih <br>";
@@ -113,6 +115,20 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
+	function jadualBooking()
+	{
+		list($idUser,$namaPendek) = $this->tanyaDataSesi();
+		$myTable = 'test_booking_criteria'; $medan = '*';
+		$carian = $susun = null;
+		# semak database
+			$carian[] = array('fix'=>'x=', # cari x= atau %like%
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => 'idUser', # cari dalam medan apa
+				'apa' => $idUser); # benda yang dicari//*/
+
+		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
 	function jadualWebsite()
 	{
 		$myTable = 'test_website';
@@ -136,6 +152,8 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 			$myTable = 'test_product';
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'test_report';
+		elseif($pilih == 'booking'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_booking_criteria';
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'test_website';
 		else: //echo "\$pilih = $pilih <br>";
