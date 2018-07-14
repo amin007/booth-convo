@@ -12,30 +12,40 @@
 			</select>
 		</span>
 	</div><!-- / class="col" -->
+</div><!-- / class="row" -->
+<div class="row">
 	<div class="col" id="ic" style="display:none;">
 		SSM:
 		<span id="sprytextfield2">
 			<input name="ssm" type="text" class="input" id="ssm" value="" size="20"/>
 		</span>
 	</div><!-- / class="col" -->
+</div><!-- / class="row" -->
+<div class="row">
 	<div class="col" id="passport" style="display:none;">
 		Lesen Berniaga:
 		<span id="sprytextfield2">
 			<input name="ssm" type="text" class="input" id="ssm" value="" size="15"/>
 		</span>
 	</div><!-- / class="col" id="passport" style="display:none;" -->
+</div><!-- / class="row" -->
+<div class="row">
 	<div class="col" id="yuran" style="display:none;">
 		Yuran Proses:
 		<span id="sprytextfield2">
 			<input name="ssm" type="text" class="input" id="ssm" value="" size="15"/>
 		</span>
 	</div><!-- / class="col" id="yuran" style="display:none;" -->
+</div><!-- / class="row" -->
+<div class="row">
 	<div class="col" id="sijil" style="display:none;">
 		Sijil Pengendalian Makanan:
 		<span id="sprytextfield2">
 			<input name="ssm" type="text" class="input" id="ssm" value="" size="5"/>
 		</span>
 	</div><!-- / class="col" id="sijil" style="display:none;" -->
+</div><!-- / class="row" -->
+<div class="row">
 	<div class="col" id="suntikan" style="display:none;">
 		Suntikan Thypoid:
 		<span id="sprytextfield2">
