@@ -45,6 +45,8 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 			list($myTable, $medan, $carian, $susun) = $this->jadualProduct();
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualReport();
+		elseif($pilih == 'status'): //echo "\$pilih = $pilih <br>";
+			list($myTable, $medan, $carian, $susun) = $this->jadualStatus();
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualWebsite();
 		else: //echo "\$pilih = $pilih <br>";
@@ -93,6 +95,20 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
 				'apa' => 'admin'); # benda yang dicari//*/
+
+		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
+	}
+#---------------------------------------------------------------------------------------------------#
+	function jadualStatus()
+	{
+		list($idUser,$namaPendek) = $this->tanyaDataSesi();
+		$myTable = 'test_status_result'; $medan = '*';
+		$carian = $susun = null;
+		# semak database
+			$carian[] = array('fix'=>'x=', # cari x= atau %like%
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => 'idUser', # cari dalam medan apa
+				'apa' => $idUser); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
