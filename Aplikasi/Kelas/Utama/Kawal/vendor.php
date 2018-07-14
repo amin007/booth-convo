@@ -77,6 +77,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 	{
 		//$this->papar->senarai[$myTable] = null;
 		$this->papar->myTable = $myTable;
+		$this->papar->_jadual = $myTable;
 		$this->papar->carian[] = 'semua';
 		$this->papar->c1 = $this->papar->c2 = null;
 		$this->papar->_pilih = $pilih;
@@ -147,11 +148,13 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		$this->panggilDB('login'); # panggil fungsi panggilDB
+		//$this->tambahMedanDB('login'); # panggil medan dalam jadual
+		//$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		$fail = array('jadual'); //$this->_folder = 'cari';
-		$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$fail = array('jadual','b_baru'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[1], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function booking()
