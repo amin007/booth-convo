@@ -12,7 +12,16 @@ $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
 		<li class="nav-item">
-			<a class="nav-link" href="#">Link</a>
+			<a class="nav-link" href="#">profile</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">booking</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">status</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">payment</a>
 		</li>
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
