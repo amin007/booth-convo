@@ -19,7 +19,9 @@ include 'atasbawah0/menu_atas.php';
 <?php
 $tajukjadual = 'Ubah Data';
 include 'jadual/pilih_a_tajuk.php';
-if( in_array($this->_pilih,array('booking','payment')) ):
+if( in_array($this->_pilih,array('booking')) ):
+	include 'b_baru/borang01_tambah00.php';
+elseif( in_array($this->_pilih,array('payment')) ):
 	include 'b_baru/borang01_tambah.php';
 elseif( in_array($this->_pilih,array('profile')) ):
 	include 'b_baru/b02_ulangjadual.php';
