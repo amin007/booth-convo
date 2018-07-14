@@ -10,6 +10,7 @@ include 'atasbawah0/menu_atas.php';
 $Sesi = new \Aplikasi\Kitab\Sesi();
 $Sesi->init();
 //echo '<pre>'; print_r($_SESSION) . '</pre>';
+echo 'idUser=' . $Sesi->get('idUser') . '<br>';
 echo 'namaPendek=' . $Sesi->get('namaPendek') . '<br>';
 echo 'namaPenuh=' . $Sesi->get('namaPenuh') . '<br>';
 echo 'email=' . $Sesi->get('email') . '<br>';
