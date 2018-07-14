@@ -155,6 +155,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 				}
 		endif; endforeach;//*/
 
+		//echo '<pre>$pilih='; print_r($pilih); echo '</pre>';
 		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
 		//echo '<pre>$medanID='; print_r($medanID); echo '</pre>';
 		//echo '<pre>$dataID='; print_r($dataID); echo '</pre>';
