@@ -58,7 +58,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	{
 		list($idUser,$namaPendek) = $this->tanyaDataSesi();
 		$myTable = 'login';
-		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
+		$medan = '`id`,`username`,`fullusername`,`password`,`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`';
 		$carian = $susun = null;
