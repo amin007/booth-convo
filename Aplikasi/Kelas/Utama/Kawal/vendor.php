@@ -222,14 +222,16 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function booking()
 	{
-		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
-		//$this->panggilDB('login'); # panggil fungsi panggilDB
+		$this->panggilDB('booking'); # panggil fungsi panggilDB
+		$this->tambahMedanDB('booking'); # panggil medan dalam jadual
+		//$this->debugKandunganPaparan();
 
 		# Pergi papar kandungan
 		//$this->semakPembolehubah($this->papar->senarai); # Semak data dulu
-		//$fail = array('jadual'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$fail = array('jadual','b_baru'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[1], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 	public function status()
