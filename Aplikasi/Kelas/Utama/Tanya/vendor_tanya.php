@@ -67,53 +67,38 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
 				'apa' => $namaPendek); # benda yang dicari
-			/*$carian[] = array('fix'=>'like', # cari x= atau %like%
-				'atau'=>'AND', # WHERE / OR / AND
-				'medan' => 'level', # cari dalam medan apa
-				'apa' => 'admin2'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 	function jadualProduct()
 	{
-		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_product');
 		$myTable = 'test_product'; $medan = '*, id as Action';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
-				'apa' => 'admin'); # benda yang dicari
-			$carian[] = array('fix'=>'like', # cari x= atau %like%
-				'atau'=>'AND', # WHERE / OR / AND
-				'medan' => 'level', # cari dalam medan apa
-				'apa' => 'admin2'); # benda yang dicari//*/
+				'apa' => 'admin'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 	function jadualReport()
 	{
-		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_report');
 		$myTable = 'test_report'; $medan = '*, id as Action';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
-				'apa' => 'admin'); # benda yang dicari
-			$carian[] = array('fix'=>'like', # cari x= atau %like%
-				'atau'=>'AND', # WHERE / OR / AND
-				'medan' => 'level', # cari dalam medan apa
-				'apa' => 'admin2'); # benda yang dicari//*/
+				'apa' => 'admin'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 	function jadualWebsite()
 	{
-		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_report');
 		$myTable = 'test_website';
 		$medan = '`website_id`,`website_name`,`website_link`,`note`,`website_id` as Action';
 		$carian = $susun = null;
@@ -121,11 +106,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
-				'apa' => 'admin'); # benda yang dicari
-			$carian[] = array('fix'=>'like', # cari x= atau %like%
-				'atau'=>'AND', # WHERE / OR / AND
-				'medan' => 'level', # cari dalam medan apa
-				'apa' => 'admin2'); # benda yang dicari//*/
+				'apa' => 'admin'); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
