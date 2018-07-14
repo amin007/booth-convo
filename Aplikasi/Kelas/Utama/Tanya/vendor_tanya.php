@@ -26,11 +26,12 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		//echo '<pre>'; print_r($_SESSION) . '</pre>';
 		$idUser = $dataSulit->get('idUser');
 		$namaPendek = $dataSulit->get('namaPendek');
-		echo 'idUser=' . $dataSulit->get('idUser') . '<br>';
+		/*echo 'idUser=' . $dataSulit->get('idUser') . '<br>';
 		echo 'namaPendek=' . $dataSulit->get('namaPendek') . '<br>';
 		echo 'namaPenuh=' . $dataSulit->get('namaPenuh') . '<br>';
 		echo 'email=' . $dataSulit->get('email') . '<br>';
-		echo 'levelPengguna=' . $dataSulit->get('levelPengguna') . '';//*/
+		echo 'levelPengguna=' . $dataSulit->get('levelPengguna') . '';
+		echo '<hr>';//*/
 
 		return array($idUser,$namaPendek);
 	}
@@ -55,17 +56,17 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	function jadualLogin()
 	{
-		//list($myTable, $medan01, $medan02, $medan) = dpt_senarai('jadual_login');
+		list($idUser,$namaPendek) = $this->tanyaDataSesi();
 		$myTable = 'login';
 		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
 		. '`city`,`postcode`,`state`,`gambar`, id as Action';
 		$carian = $susun = null;
 		# semak database
-			$carian[] = array('fix'=>'xlike', # cari x= / %like% / xlike
+			$carian[] = array('fix'=>'x=', # cari x= / %like% / xlike
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'username', # cari dalam medan apa
-				'apa' => 'admin'); # benda yang dicari
+				'apa' => $namaPendek); # benda yang dicari
 			/*$carian[] = array('fix'=>'like', # cari x= atau %like%
 				'atau'=>'AND', # WHERE / OR / AND
 				'medan' => 'level', # cari dalam medan apa
