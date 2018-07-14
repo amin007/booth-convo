@@ -129,6 +129,23 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		return array($myTable); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
+	public function pilihJadual($pilih)
+	{
+		//$pilih = null;
+		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
+			$myTable = array('login'); $medanID = 'username';
+		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_product';
+		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_report';
+		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
+			$myTable = 'test_website';
+		else: //echo "\$pilih = $pilih <br>";
+			$myTable = null;
+		endif;
+
+		return array($myTable,$medanID); # pulangkan nilai
+	}
 #---------------------------------------------------------------------------------------------------#
 #=====================================================================================================
 }
