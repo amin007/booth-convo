@@ -140,8 +140,8 @@ class Borang02_Ubah
 		$tab = array($tab2,$tab3,$tab4);
 
 		//if ( in_array($key,array(...)) )
-		if(in_array($key,array('nota','nota_prosesan','catatan','CatatNota')))
-			$input = $this->inputTextarea($tab2, $name, $data); #kod utk textarea
+		if(in_array($key,array('level')))
+			$input = $this->inputPaparSahaja($tab2, $data); # kod untuk paparkan sahaja
 		elseif(in_array($key,array('nota','nota_prosesan','catatan','CatatNota')))
 			$input = $this->inputTextarea($tab2, $name, $data); #kod utk textarea
 		elseif ( in_array($key,array('password','kataLaluan')) )
