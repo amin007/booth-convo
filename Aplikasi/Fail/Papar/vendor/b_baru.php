@@ -4,7 +4,7 @@ $pilihJadual = 'jadual_bootstrap';
 
 # untuk debug kod
 //echo '<pre>$carian='; print_r($this->carian); echo '</pre>';
-echo '<pre>$senarai='; print_r($this->senarai); echo '</pre>';
+//echo '<pre>$senarai='; print_r($this->senarai); echo '</pre>';
 
 # include fail berkaitan
 include 'atasbawah0/diatas.php';
