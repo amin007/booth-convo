@@ -89,11 +89,6 @@ function input_asal($c01,$c02,$ulangan)
 #---------------------------------------------------------------------------------------------
 function input_asal01($c01,$c02,$ulangan)
 {
-	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
-	'yuran'=>'Yuran Proses',
-	'sijil'=>'Sijil Pengendalian Makanan',
-	'suntikan'=>'Suntikan Thypoid');
-
 	foreach($ulangan as $label => $input):?>
 	<div class="row">
 		<div class="col" id="<?php echo $label ?>" style="display:none;">
@@ -109,11 +104,6 @@ function input_asal01($c01,$c02,$ulangan)
 #---------------------------------------------------------------------------------------------
 function input_asal02($c01,$c02,$ulangan)
 {
-	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
-	'yuran'=>'Yuran Proses',
-	'sijil'=>'Sijil Pengendalian Makanan',
-	'suntikan'=>'Suntikan Thypoid');
-
 	foreach($ulangan as $label => $input):?>
 	<div class="row" align="center">
 	<div class="col" id="<?php echo $label ?>" style="display:none;">
