@@ -167,20 +167,20 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	{
 		//$pilih = null;
 		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
-			$myTable = array('login'); $medanID = 'username';
+			$t = 'login'; $m = 'username';
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_product'; $medanID = 'id';
+			$t = 'test_product'; $m = 'id';
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_report'; $medanID = 'id';
+			$t = 'test_report'; $m = 'id';
 		elseif($pilih == 'booking'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_booking_criteria'; $medanID = 'id';
+			$t = 'test_booking_criteria'; $m = 'id';
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_website'; $medanID = 'id';
+			$t = 'test_website'; $m = 'id';
 		else: //echo "\$pilih = $pilih <br>";
-			$myTable = null; $medanID = null;
+			$t = null; $m = null;
 		endif;
 
-		return array($myTable,$medanID); # pulangkan nilai
+		return array(array($t),$m); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 #=====================================================================================================
