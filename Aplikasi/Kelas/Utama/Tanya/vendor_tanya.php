@@ -39,8 +39,8 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	public function susunPembolehubah($pilih)
 	{
 		//$pilih = null;
-		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
-			list($myTable, $medan, $carian, $susun) = $this->jadualLogin();
+		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
+			list($myTable, $medan, $carian, $susun) = $this->jadualProfile();
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
 			list($myTable, $medan, $carian, $susun) = $this->jadualProduct();
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
@@ -58,7 +58,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
-	function jadualLogin()
+	function jadualProfile()
 	{
 		list($idUser,$namaPendek) = $this->tanyaDataSesi();
 		$myTable = 'login';
@@ -146,7 +146,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	public function tambahPembolehubah($pilih)
 	{
 		//$pilih = null;
-		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
+		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'login';
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'test_product';
@@ -166,7 +166,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	public function pilihJadual($pilih)
 	{
 		//$pilih = null;
-		if($pilih == 'login'): //echo "\$pilih = $pilih <br>";
+		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
 			$myTable = array('login'); $medanID = 'username';
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
 			$myTable = 'test_product';
