@@ -15,6 +15,8 @@
 </div><!-- / class="row" -->
 
 <?php
+input_asal();
+//input_baru();
 ?>
 
 </center>
