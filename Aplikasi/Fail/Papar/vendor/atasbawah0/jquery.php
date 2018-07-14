@@ -103,7 +103,7 @@ $(document).ready(function(){
 .suggestionList li:hover {background-color: #659CD8;}
 </style>
 <?php
-elseif ($this->_pilih == 'booking') : echo "\n\n"; ?>
+elseif( isset($this->_pilih) && ($this->_pilih == 'booking') ): echo "\n\n"; ?>
 <script type="text/javascript">
 $('#test').on('change', function() {
 // alert( this.value ); // or $(this).val()
