@@ -1,13 +1,14 @@
 <?php
 $url = URL . 'vendor/insertID/' . $this->_pilih;
 echo '<h2>' . $url . '</h2>';
+$inputName = $this->myTable . '[product]';
 ?>
 <form method="POST" action="<?php echo $url ?>">
 <div class="row">
 	<div class="col">
 		Product :
 		<span id="spryselect1">
-			<select id="test" name="product" class="form-control">
+			<select id="test" name="<?php echo $inputName ?>" class="form-control">
 			<option value="" selected="selected">--- select product ---</option>
 			<option value="MY">Food & Drink</option>
 			<option value="JP">Flower</option>
@@ -26,10 +27,10 @@ $ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 'sijil'=>'Sijil Pengendalian Makanan',
 'suntikan'=>'Suntikan Thypoid');
 
-//input_asal($c01,$c02,$ulangan);
-//input_asal01($c01,$c02,$ulangan);
-input_asal02($c01,$c02,$ulangan);
-//input_baru($c01,$c02,$ulangan);
+//input_asal($c01,$c02,$ulangan,$this->myTable);
+//input_asal01($c01,$c02,$ulangan,$this->myTable);
+input_asal02($c01,$c02,$ulangan,$this->myTable);
+//input_baru($c01,$c02,$ulangan,$this->myTable);
 ?>
 <table>
 <tr><td align="left">
@@ -101,9 +102,10 @@ function input_asal01($c01,$c02,$ulangan)
 	endforeach;
 }
 #---------------------------------------------------------------------------------------------
-function input_asal02($c01,$c02,$ulangan)
+function input_asal02($c01,$c02,$ulangan,$myTable)
 {
-	foreach($ulangan as $label => $input):?>
+	foreach($ulangan as $label => $input):
+	$name = $myTable . '[' . $label . ']'; ?>
 	<div class="row" align="center">
 	<div class="col" id="<?php echo $label ?>" style="display:none;">
 	<div class="form-group row">
@@ -115,9 +117,10 @@ function input_asal02($c01,$c02,$ulangan)
 				<div class="input-group-prepend">
 					<span class="input-group-text"
 					id="sprytextfield2"><?php
-					echo $input ?></span>
+					echo $label ?></span>
 				</div>
-				<input type="text" class="form-control">
+				<input type="text" name="<?php
+				echo $name ?>" class="form-control">
 			</div><!-- /  class="input-group" -->
 		</div><!-- / class="<?php echo $c02 ?>" -->
 	</div><!-- / class="form-group row" -->
