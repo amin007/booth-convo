@@ -169,13 +169,13 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
 			$myTable = array('login'); $medanID = 'username';
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_product';
+			$myTable = 'test_product'; $medanID = 'id';
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_report';
+			$myTable = 'test_report'; $medanID = 'id';
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
-			$myTable = 'test_website';
+			$myTable = 'test_website'; $medanID = 'id';
 		else: //echo "\$pilih = $pilih <br>";
-			$myTable = null;
+			$myTable = null; $medanID = null;
 		endif;
 
 		return array($myTable,$medanID); # pulangkan nilai
