@@ -65,20 +65,26 @@
 </table> 
 
 <br><br><hr>
-<form>
+<form align="center">
 <?php
 $class2 = 'col-sm-7'; # untuk $data
-$ulangan = array('SSM','Lesen Berniaga','Yuran Proses',
-'Sijil Pengendalian Makanan','Suntikan Thypoid');
-foreach($ulangan as $label):
+// ic,passport,yuran,sijil,suntikan
+$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
+'yuran'=>'Yuran Proses',
+'sijil'=>'Sijil Pengendalian Makanan',
+'suntikan'=>'Suntikan Thypoid');
+foreach($ulangan as $label => $input):
 ?>
-<div class="form-group row">
-	<label for="inputTajuk" class="col-sm-2 control-label"><?php
-	echo $label ?></label>
-	<div class="<?php echo $class2 ?>">
+<div class="form-group row" id="<?php
+echo $label ?>" style="display:none;">
+	<label for="inputTajuk" style="text-align:left"
+	class="col-sm-3 control-label"><?php
+	echo $input ?></label>
+	<div class="<?php echo $class2 ?>" >
 		<div class="input-group">
 			<div class="input-group-prepend">
-				<span class="input-group-text"><?php
+				<span class="input-group-text"
+				id="sprytextfield2"><?php
 				echo $label ?></span>
 			</div>
 			<input type="text" class="form-control">
