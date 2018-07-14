@@ -1,7 +1,7 @@
 <?php
 //https://getbootstrap.com/docs/4.1/components/input-group/
 $html = new Aplikasi\Kitab\Borang02_Ubah;
-$aksi =  URL . 'vendor/updateID/' . $this->_jadual;
+$aksi =  URL . 'vendor/updateID/' . $this->_pilih;
 $class1 = 'col-sm-7'; # untuk tajuk dan hantar
 $class2 = 'col-sm-7'; # untuk $data
 //*/?>
