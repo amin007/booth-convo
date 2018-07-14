@@ -60,7 +60,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		$myTable = 'login';
 		$medan = '`id`,`username`,`fullusername`,/*`password`,*/`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
-		. '`city`,`postcode`,`state`,`gambar`, id as Action';
+		. '`city`,`postcode`,`state`,`gambar`';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'x=', # cari x= / %like% / xlike
@@ -73,7 +73,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	function jadualProduct()
 	{
-		$myTable = 'test_product'; $medan = '*, id as Action';
+		$myTable = 'test_product'; $medan = 'id as Action,*';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
@@ -86,7 +86,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 #---------------------------------------------------------------------------------------------------#
 	function jadualReport()
 	{
-		$myTable = 'test_report'; $medan = '*, id as Action';
+		$myTable = 'test_report'; $medan = 'id as Action,*';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
@@ -100,7 +100,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualWebsite()
 	{
 		$myTable = 'test_website';
-		$medan = '`website_id`,`website_name`,`website_link`,`note`,`website_id` as Action';
+		$medan = '`website_id` as Action,`website_id`,`website_name`,`website_link`,`note`';
 		$carian = $susun = null;
 		/*# semak database
 			$carian[] = array('fix'=>'xlike', # cari x= atau %like%
