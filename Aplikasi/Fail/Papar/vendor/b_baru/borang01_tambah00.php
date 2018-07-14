@@ -15,10 +15,17 @@
 </div><!-- / class="row" -->
 <br><br>
 <?php
-//input_asal();
-//input_asal01();
-input_asal02();
-//input_baru();
+$c01 = 'col-sm-2';
+$c02 = 'col-sm-7';
+$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
+'yuran'=>'Yuran Proses',
+'sijil'=>'Sijil Pengendalian Makanan',
+'suntikan'=>'Suntikan Thypoid');
+
+//input_asal($c01,$c02,$ulangan);
+//input_asal01($c01,$c02,$ulangan);
+input_asal02($c01,$c02,$ulangan);
+//input_baru($c01,$c02,$ulangan);
 ?>
 
 </center>
@@ -135,12 +142,6 @@ function input_baru()
 {?>
 	<form align="center">
 	<?php
-	$class2 = 'col-sm-7'; # untuk $data
-	// ic,passport,yuran,sijil,suntikan
-	$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
-	'yuran'=>'Yuran Proses',
-	'sijil'=>'Sijil Pengendalian Makanan',
-	'suntikan'=>'Suntikan Thypoid');
 	foreach($ulangan as $label => $input):
 	?>
 	<div class="form-group row">
