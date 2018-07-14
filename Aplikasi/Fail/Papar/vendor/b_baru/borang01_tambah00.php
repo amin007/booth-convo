@@ -63,3 +63,22 @@
 </td>
 </tr>
 </table> 
+
+<br><br><hr>
+<form>
+<?php
+$ulangan = array('SSM','Lesen Berniaga','Yuran Proses',
+'Sijil Pengendalian Makanan','Suntikan Thypoid');
+foreach($ulangan as $label):
+?>
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text"><?php
+		echo $label ?></span>
+	</div>
+	<input type="text" class="form-control">
+</div>
+<?php
+endforeach;
+?>
+</form>
