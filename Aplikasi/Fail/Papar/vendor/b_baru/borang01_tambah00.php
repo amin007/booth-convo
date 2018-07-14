@@ -3,7 +3,7 @@
 	<div class="col">
 		Product :
 		<span id="spryselect1">
-			<select id="test" name="product" class="input">
+			<select id="test" name="product" class="form-control">
 			<option value="" selected="selected">--- select product ---</option>
 			<option value="MY">Food & Drink</option>
 			<option value="JP">Flower</option>
@@ -13,7 +13,7 @@
 		</span>
 	</div><!-- / class="col" -->
 </div><!-- / class="row" -->
-
+<br><br>
 <?php
 //input_asal();
 input_baru();
