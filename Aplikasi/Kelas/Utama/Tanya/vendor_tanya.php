@@ -139,7 +139,7 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		$userID = $idUser . '-' . $namaPendek;
 		$myTable = 'test_payment'; $medan = '*';
 		$carian = $susun = null;
-		/*# semak database
+		# semak database
 			$carian[] = array('fix'=>'x=', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'idUser', # cari dalam medan apa
