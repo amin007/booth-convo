@@ -10,6 +10,7 @@ $iconFA['Ask'] = '<i class="fas fa-question-circle"></i>';
 $iconFA['Power'] = '<i class="fas fa-power-off"></i>';
 $iconFA['PayUsd'] = '<i class="fas fa-dollar-sign"></i>';
 $iconFA['PaymentHand'] = '<i class="fas fa-hand-holding-usd"></i>';
+$iconFA['BookOpen'] = '<i class="fas fa-book-open"></i>';
 ?>
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
@@ -19,7 +20,7 @@ $iconFA['PaymentHand'] = '<i class="fas fa-hand-holding-usd"></i>';
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="<?php echo URL ?>vendor/booking">
-			<?php echo $iconFA['Ask'] ?>booking</a>
+			<?php echo $iconFA['BookOpen'] ?>booking</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="<?php echo URL ?>vendor/status">
