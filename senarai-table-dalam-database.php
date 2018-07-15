@@ -87,16 +87,17 @@ INSERT INTO `test_booking_result` (`id`, `categoryproduct`, `result`, `idUser`, 
 DROP TABLE IF EXISTS `test_payment`;
 CREATE TABLE `test_payment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idpayment` varchar(20) DEFAULT NULL,
+  `idUser` varchar(20) DEFAULT NULL,
   `datepayment` date DEFAULT NULL,
   `dateresult` date DEFAULT NULL,
   `receipt` blob,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `test_payment` (`id`, `idpayment`, `datepayment`, `dateresult`, `receipt`) VALUES
+INSERT INTO `test_payment` (`id`, `idUser`, `datepayment`, `dateresult`, `receipt`) VALUES
 (1,	'FD001',	'2017-02-07',	'2018-09-09',	''),
-(2,	'FD002',	'2017-03-09',	'2018-07-07',	'');
+(2,	'FD002',	'2017-03-09',	'2018-07-07',	''),
+(3,	'4-liyana',	'2018-07-12',	'2018-07-25',	NULL);
 
 DROP TABLE IF EXISTS `test_product`;
 CREATE TABLE `test_product` (
@@ -189,4 +190,4 @@ INSERT INTO `z_vacancybooth` (`idvacancybooth`, `categoryproduct`, `capacity`, `
 ('DE001',	'food',	'100',	'BE001'),
 ('DE002',	'flower',	'50',	'BE002');
 
--- 2018-07-15 04:24:33
+-- 2018-07-15 06:59:18
