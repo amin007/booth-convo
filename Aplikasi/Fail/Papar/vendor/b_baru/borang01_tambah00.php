@@ -32,9 +32,9 @@ $c03 = 'col-sm-9';
 </div><!-- / class="col" --></div><!-- / class="row" -->
 <br><br>
 <?php
-$ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
+$ulangan = array('nossm'=>'SSM','lesenberniaga'=>'Lesen Berniaga',
 'yuran'=>'Yuran Proses',
-'sijil'=>'Sijil Pengendalian Makanan',
+'sijilpemakanan'=>'Sijil Pengendalian Makanan',
 'suntikan'=>'Suntikan Thypoid');
 
 //input_asal($c01,$c02,$ulangan,$this->myTable);
