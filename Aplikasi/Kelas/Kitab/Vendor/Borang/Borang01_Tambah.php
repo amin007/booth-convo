@@ -78,7 +78,7 @@ class Borang01_Tambah
 	{
 		echo "\n";?><div class="container">
 <form method="GET" action="<?=$mencari;?>" class="form-inline" autocomplete="off">
-<div class="form-group">
+<div class="form-group row">
 	<label for="carian"><h1>Ubah Kawalan<?=$mesej?></h1></label>
 	<div class="input-group">
 		<input type="text" name="cari" value="<?=$carian;?>"
@@ -280,11 +280,11 @@ class Borang01_Tambah
 		$jadual, $key)
 	{
 		$komenInput2 = '<!-- / class="input-group-prepend" -->';
-		return $tab2//'<div class="' . $classInput . '">' . $tab2
+		return ''//'<div class="' . $classInput . '">' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
-		. $tab2 . '<div class="input-group-prepend">'
-		. $tab3 . '<span class="input-group-text">Picture:</span>'
-		. $tab2 . '</div>' . $komenInput2
+		//. $tab2 . '<div class="input-group-prepend">'
+		//. $tab3 . '<span class="input-group-text">Picture:</span>'
+		//. $tab2 . '</div>' . $komenInput2
 		. $tab2 . '<div class="custom-file">'
 		. $tab3 . '<input type="file" class="custom-file-input">'
 		. $tab3 . '<label class="custom-file-label">Choose file</label>'
