@@ -182,9 +182,22 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		return $posmen; # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
+	function tambahNilaiSesi($senaraiJadual,$m,$posmen)
+	{
+		foreach ($senaraiJadual as $kunci => $jadual):
+			if($jadual == 'test_booking_result'):
+				$posmen[$jadual]['idUser']= $m[0] . '-' . $m[1];
+			else:
+				$posmen[$jadual]['dateCriteria']= date("Y-m-d");
+			endif;
+		endforeach;
+
+		return array($posmen); # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
 	function ubahsuaiPost2($pilih)
 	{
-		list($senaraiJadual,$medanID) = $this->tanya->pilihJadual($pilih);
+		list($senaraiJadual,$m) = $this->tanya->pilihJadual($pilih);
 
 		$posmen = array();
 		foreach ($_POST as $myTable => $v1):
@@ -194,6 +207,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 				$posmen[$myTable][$kekunci] = bersih($papar);
 			}//*/
 		endif; endforeach;
+		list($posmen) = $this->tambahNilaiSesi($senaraiJadual,$m,$posmen);
 
 		//echo '<pre>$pilih='; print_r($pilih); echo '</pre>';
 		//echo '<pre>$senaraiJadual='; print_r($senaraiJadual); echo '</pre>';
@@ -207,7 +221,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# ubahsuai $posmen
 		list($posmen,$senaraiJadual,$myTable) = $this->ubahsuaiPost2($pilih);
 		//echo '<hr><pre>$_POST='; print_r($_POST); echo '</pre>';
-		echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
 		# mula ulang $senaraiJadual
 		foreach ($senaraiJadual as $kunci => $jadual)
