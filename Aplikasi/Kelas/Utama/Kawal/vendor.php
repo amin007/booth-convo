@@ -191,7 +191,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 			if ( in_array($myTable,$senaraiJadual) ):
 			foreach ($v1 as $kekunci => $papar)
 			{//echo '<br>$myTable = ' . $myTable;
-				$posmen[$kekunci] = bersih($papar);
+				$posmen[$myTable][$kekunci] = bersih($papar);
 			}//*/
 		endif; endforeach;
 
@@ -207,13 +207,13 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# ubahsuai $posmen
 		list($posmen,$senaraiJadual,$myTable) = $this->ubahsuaiPost2($pilih);
 		//echo '<hr><pre>$_POST='; print_r($_POST); echo '</pre>';
-		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+		echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
 		# mula ulang $senaraiJadual
 		foreach ($senaraiJadual as $kunci => $jadual)
 		{# mula ulang table
-			$this->tanya->tambahSql($jadual, $posmen);
-			//$this->tanya->tambahData($jadual, $posmen);
+			$this->tanya->tambahSql($jadual, $posmen[$jadual]);
+			//$this->tanya->tambahData($jadual, $posmen[$jadual]);
 		}# tamat ulang table
 
 		# pergi papar kandungan
