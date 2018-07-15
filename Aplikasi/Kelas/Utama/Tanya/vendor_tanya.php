@@ -104,13 +104,14 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualStatus()
 	{
 		list($idUser,$namaPendek) = $this->tanyaDataSesi();
-		$myTable = 'test_status_result'; $medan = '*';
+		$userID = $idUser . '-' . $namaPendek;
+		$myTable = 'test_booking_result'; $medan = '*';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'x=', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'idUser', # cari dalam medan apa
-				'apa' => $idUser); # benda yang dicari//*/
+				'apa' => $userID); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
@@ -118,13 +119,14 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	function jadualBooking()
 	{
 		list($idUser,$namaPendek) = $this->tanyaDataSesi();
+		$userID = $idUser . '-' . $namaPendek;
 		$myTable = 'test_booking_criteria'; $medan = '*';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'x=', # cari x= atau %like%
 				'atau'=>'WHERE', # WHERE / OR / AND
 				'medan' => 'idUser', # cari dalam medan apa
-				'apa' => $idUser); # benda yang dicari//*/
+				'apa' => $userID); # benda yang dicari//*/
 
 		return array($myTable, $medan, $carian, $susun); # pulangkan nilai
 	}
