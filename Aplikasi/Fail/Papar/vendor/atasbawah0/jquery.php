@@ -110,18 +110,18 @@ $('#test').on('change', function() {
 	/*if(this.value == "MY")*/
 	if(this.value == "Food & Drink")
 	{
-		$('#ic').show();
-		$('#passport').show();
+		$('#nossm').show();
+		$('#lesenberniaga').show();
 		$('#yuran').show();
-		$('#sijil').show();
+		$('#sijilpemakanan').show();
 		$('#suntikan').show();
 	}
 	else
 	{
-		$('#ic').show();
-		$('#passport').show();
+		$('#nossm').show();
+		$('#lesenberniaga').show();
 		$('#yuran').show();
-		$('#sijil').hide();
+		$('#sijilpemakanan').hide();
 		$('#suntikan').hide();
 	}
 });
