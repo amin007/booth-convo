@@ -159,6 +159,9 @@ class Borang02_Ubah
 		elseif(in_array($key,array('state','negeri')))
 			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
+		elseif ( in_array($key,array('gambar')) )
+			$input = $this->inputMuatnaik($tab2, $tab3, $name, $data,
+			$classInput, $komenInput, $jadual, $key);
 		else
 		{#kod untuk lain2
 			$input = $tab2 . '<p class="form-control-static text-info">'
@@ -294,6 +297,25 @@ class Borang02_Ubah
 		. $tab3 . ' placeholder="Cth: 2014-05-01"'
 		. $tab3 . ' id="date' . $key . '" data-date-format="yyyy/mm/dd"/>'
 		. $tab2 . '</div>' . $komenInput
+		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function inputMuatnaik($tab2, $tab3, $name, $data, $classInput, $komenInput,
+		$jadual, $key)
+	{
+		$komenInput2 = '<!-- / class="input-group-prepend" -->';
+		return $tab2//'<div class="' . $classInput . '">' . $tab2
+		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
+		. $tab2 . '<div class="input-group-prepend">'
+		. $tab3 . '<span class="input-group-text" id="a">Picture:</span>'
+		. $tab2 . '</div>' . $komenInput2
+		. $tab2 . '<div class="custom-file">'
+		. $tab3 . '<input type="file" class="custom-file-input" id="b" '
+		. 'aria-describedby="a">'
+		. $tab3 . '<label class="custom-file-label" '
+		. 'for="b">Choose file</label>'
+		. $tab2 . '</div>' . $tab2
+		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. '';
 	}
 #------------------------------------------------------------------------------------------
