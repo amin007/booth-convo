@@ -13,15 +13,17 @@ $class2 = 'col-sm-8'; # untuk $data
 foreach ( $this->medan as $key=>$data )
 {## papar data $row ----------------------------------------------------------
 	list($type,$pri) = explode('|', $data);
-	if($pri == 'PRI'): echo '';
-	else:
+	if($pri == 'PRI'): echo ''; else:
 	?><div class="form-group row"><?php echo "\n\t";
-	?><label for="inputTajuk" class="col-sm-2 control-label"><?php echo $key
-	?></label><?php echo "\n\t";
-	?><div class="<?php echo $class2 ?>"><?php  echo "\n\t\t";
+	?><label for="inputTajuk" class="col-sm-2 control-label"><?php
+	echo $key ?></label><?php echo "\n\t";
+	?><!-- ================================================================ -->
+	<div class="<?php echo $class2 ?>"><?php  echo "\n\t\t";
 	$paparData = $html->baruInput($this->_jadual,$key,$data,$type,$pri);
 	echo $paparData . "\n\t";
 	?></div><!-- / class="<?php echo $class2 ?>" --><?php echo "\n";
+	?><!-- ================================================================ --><?php
+	echo "\n";
 	?></div><!-- / class="form-group row" --><?php echo "\n";
 	endif;
 }## --------------------------------------------------------------------------
