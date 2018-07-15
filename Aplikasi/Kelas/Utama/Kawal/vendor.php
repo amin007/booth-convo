@@ -68,7 +68,9 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		echo '<br>$this->papar->carian : '; print_r($this->papar->carian);
 		echo '<br>$this->papar->c1 : '; print_r($this->papar->c1);
 		echo '<br>$this->papar->c2 : '; print_r($this->papar->c2);
-		echo '<br>$this->papar->medan : '; print_r($this->papar->medan);
+		if(isset($this->papar->medan)):
+			echo '<br>$this->papar->medan : '; print_r($this->papar->medan);
+		endif;
 		echo '<br>$this->papar->_pilih : '; print_r($this->papar->_pilih);
 		echo '<br>$this->papar->template : '; print_r($this->papar->template);
 		echo '</pre>';
@@ -306,12 +308,13 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 	{
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
-		//$this->panggilDB('login'); # panggil fungsi panggilDB
+		$this->panggilDB('payment'); # panggil fungsi panggilDB
+		$this->tambahMedanDB('payment'); # panggil medan dalam jadual
 		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
-		//$fail = array('jadual'); //$this->_folder = 'cari';
-		//$this->paparKandungan($this->_folder, $fail[0], $noInclude=1);
+		$fail = array('jadual','b_baru'); //$this->_folder = 'cari';
+		$this->paparKandungan($this->_folder, $fail[1], $noInclude=1);
 	}
 #-------------------------------------------------------------------------------------------
 #==========================================================================================
