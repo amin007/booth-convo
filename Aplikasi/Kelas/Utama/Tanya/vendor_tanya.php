@@ -64,9 +64,9 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	{
 		list($idUser,$namaPendek) = $this->tanyaDataSesi();
 		$myTable = 'login';
-		$medan = '`id`,`username`,`fullusername`,`password`,`level`,'
+		$medan = '`gambar`,`id`,`username`,`fullusername`,`password`,`level`,'
 		. '`email`,`phoneno`,`address1`,`address2`,'
-		. '`city`,`postcode`,`state`,`gambar`';
+		. '`city`,`postcode`,`state`';
 		$carian = $susun = null;
 		# semak database
 			$carian[] = array('fix'=>'x=', # cari x= / %like% / xlike
