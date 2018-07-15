@@ -5,7 +5,7 @@ $html = new Aplikasi\Kitab\Borang01_Tambah;
 //$aksi = URL . $this->_method . '/ubahSimpan/' . $this->carian[0];
 $aksi =  URL . '/borang/insertID/' . $this->_jadual;
 $class1 = 'col-sm-7'; # untuk tajuk dan hantar
-$class2 = 'col-sm-7'; # untuk $data
+$class2 = 'col-sm-8'; # untuk $data
 //*/?>
 <div class="container">
 <h5><?php echo $aksi ?></h5>

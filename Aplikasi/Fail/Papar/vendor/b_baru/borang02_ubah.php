@@ -3,7 +3,7 @@
 $html = new Aplikasi\Kitab\Borang02_Ubah;
 $aksi =  URL . 'vendor/updateID/' . $this->_pilih;
 $class1 = 'col-sm-7'; # untuk tajuk dan hantar
-$class2 = 'col-sm-7'; # untuk $data
+$class2 = 'col-sm-8'; # untuk $data
 //*/?>
 <div class="container">
 <h5><?php echo $aksi ?></h5>
