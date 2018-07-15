@@ -123,7 +123,7 @@ class Borang01_Tambah
 			$input = $this->inputNumber($tab2, $tab3, $name, null,
 				$classInput, $komenInput);
 		elseif ( in_array($type,array('date')) )
-			$input = $this->inputTarikh($tab2, $tab2, $name, $data,
+			$input = $this->inputTarikh($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $jadual, $key);
 		elseif ( in_array($type,array('blob')) )
 			$input = $this->inputMuatnaik($tab2, $tab3, $name, $data,
@@ -284,14 +284,13 @@ class Borang01_Tambah
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. $tab2 . '<div class="input-group-prepend">'
 		. $tab3 . '<span class="input-group-text" id="inputGroupFileAddon01">Picture:</span>'
-		. $tab2 . '</div>'
+		. $tab2 . '</div>' . $komenInput2
 		. $tab2 . '<div class="custom-file">'
 		. $tab3 . '<input type="file" class="custom-file-input" id="inputGroupFile01" '
 		. 'aria-describedby="inputGroupFileAddon01">'
 		. $tab3 . '<label class="custom-file-label" '
 		. 'for="inputGroupFile01">Choose file</label>'
-		. $tab2 . '</div>'
-		. $tab2 . '</div>' . $komenInput2 . $tab2
+		. $tab2 . '</div>' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. '';
 	}
