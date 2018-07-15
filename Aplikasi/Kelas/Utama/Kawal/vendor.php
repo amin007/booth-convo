@@ -189,6 +189,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 				$posmen[$jadual]['idUser']= $m[0] . '-' . $m[1];
 			else:
 				$posmen[$jadual]['dateCriteria']= date("Y-m-d");
+				$posmen[$jadual]['idUser']= $m[0] . '-' . $m[1];
 			endif;
 		endforeach;
 
@@ -226,14 +227,14 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# mula ulang $senaraiJadual
 		foreach ($senaraiJadual as $kunci => $jadual)
 		{# mula ulang table
-			$this->tanya->tambahSql($jadual, $posmen[$jadual]);
-			//$this->tanya->tambahData($jadual, $posmen[$jadual]);
+			//$this->tanya->tambahSql($jadual, $posmen[$jadual]);
+			$this->tanya->tambahData($jadual, $posmen[$jadual]);
 		}# tamat ulang table
 
 		# pergi papar kandungan
 		$lokasi = 'vendor/profile/?jadual=' . $myTable;;
 		//echo '<br>location: ' . URL . $lokasi;
-		//header('location: ' . URL . $lokasi); //*/
+		header('location: ' . URL . $lokasi); //*/
 	}
 #-------------------------------------------------------------------------------------------
 /*	public function staffAdd()
