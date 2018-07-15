@@ -1,7 +1,9 @@
 <?php
 $url = URL . 'vendor/insertID/' . $this->_pilih;
 echo '<h2>' . $url . '</h2>';
-$inputName = $this->myTable . '[product]';
+$inputName01 = 'test_booking_result[product]';
+$inputName02 = 'test_booking_result[idUser]';
+$inputName03 = 'test_booking_result[result]';
 $c01 = 'col-sm-2';
 $c02 = 'col-sm-7';
 $c03 = 'col-sm-9';
@@ -16,13 +18,15 @@ $c03 = 'col-sm-9';
 				<div class="input-group-prepend">
 					<span class="input-group-text">Product :</span>
 				</div>
-					<select id="test" name="<?php echo $inputName ?>" class="form-control">
-					<option value="" selected="selected">--- select product ---</option>
-					<option value="MY">Food & Drink</option>
-					<option value="JP">Flower</option>
-					<option value="JP">Clothes</option>
-					<option value="JP">Cosmetic</option>
-					</select>
+				<select id="test" name="<?php echo $inputName01 ?>" class="form-control">
+				<option value="" selected="selected">--- select product ---</option>
+				<option value="Food & Drink">Food & Drink</option>
+				<option value="Flower">Flower</option>
+				<option value="Clothes">Clothes</option>
+				<option value="Clothes">Cosmetic</option>
+				</select>
+				<input type="hidden" name="<?php echo $inputName02 ?>">
+				<input type="hidden" name="<?php echo $inputName03 ?>" value="new">
 			</div><!-- /  class="input-group" -->
 		</div><!-- / class="<?php echo $c03 ?>" -->
 	</div><!-- / class="form-group row" -->
