@@ -160,7 +160,7 @@ class Borang02_Ubah
 			$input = $this->inputDropmenuNg($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $key);
 		elseif ( in_array($key,array('gambar')) )
-			$input = $this->inputMuatnaik($tab2, $tab3, $name, $data,
+			$input = $this->inputMuatnaik2($tab2, $tab3, $name, $data,
 			$classInput, $komenInput, $jadual, $key);
 		else
 		{#kod untuk lain2
@@ -309,6 +309,36 @@ class Borang02_Ubah
 		. $tab2 . '<div class="input-group-prepend">' . $tab3
 			. '<span class="input-group-text" id="a">Picture:</span>' . $tab2
 		. '</div>' . $komenInput2 . $tab2
+		. '<div class="custom-file">' . $tab3
+			. '<input type="file" class="custom-file-input" id="b" '
+			. 'aria-describedby="a">' . $tab3
+			. '<label class="custom-file-label" '
+			. 'for="b">Choose file</label>' . $tab2
+		. '</div>' . $tab2
+		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
+		. '';
+	}
+#------------------------------------------------------------------------------------------
+	function pilihGambar($jadual, $name, $key, $data)
+	{
+		$g[0] = URL . 'sumber/rangka-dawai/w3-event-venue/images/no-image.gif';
+		$g[1] = URL . 'sumber/rangka-dawai/w3-event-venue/images/t1.jpg';
+		$g[2] = URL . 'sumber/rangka-dawai/w3-event-venue/images/t2.jpg';
+		$g[3] = URL . 'sumber/rangka-dawai/w3-event-venue/images/t3.jpg';
+		$g[4] = URL . 'sumber/rangka-dawai/w3-event-venue/images/t4.jpg';
+		$r = rand(0,4);
+
+		return $g[$r];
+	}
+#------------------------------------------------------------------------------------------
+	function inputMuatnaik2($tab2, $tab3, $name, $data, $classInput, $komenInput,
+		$jadual, $key)
+	{
+		$g = $this->pilihGambar($jadual, $name, $key, $data);
+
+		return ''
+		. '<div><img src="' . $g . '" width="150" height="150" /></div>'
+		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. '<div class="custom-file">' . $tab3
 			. '<input type="file" class="custom-file-input" id="b" '
 			. 'aria-describedby="a">' . $tab3
