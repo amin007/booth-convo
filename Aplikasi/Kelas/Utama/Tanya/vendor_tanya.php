@@ -167,20 +167,21 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 	{
 		//$pilih = null;
 		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
-			$t = 'login'; $m = 'username';
+			$t = array('login');
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
-			$t = 'test_product'; $m = 'id';
+			$t = array('test_product');
 		elseif($pilih == 'report'): //echo "\$pilih = $pilih <br>";
-			$t = 'test_report'; $m = 'id';
+			$t = array('test_report');
 		elseif($pilih == 'booking'): //echo "\$pilih = $pilih <br>";
-			$t = 'test_booking_criteria'; $m = 'id';
+			$t = array('test_booking_criteria','test_booking_result');
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
-			$t = 'test_website'; $m = 'id';
+			$t = array('test_website');
 		else: //echo "\$pilih = $pilih <br>";
 			$t = null; $m = null;
 		endif;
+		$m = null;
 
-		return array(array($t),$m); # pulangkan nilai
+		return array($t,$m); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
 #=====================================================================================================
