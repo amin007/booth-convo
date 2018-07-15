@@ -163,9 +163,10 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 		return array($myTable); # pulangkan nilai
 	}
 #---------------------------------------------------------------------------------------------------#
-	public function pilihJadual($pilih)
+	public function pilihJadual($pilih, $m = null)
 	{
 		//$pilih = null;
+		list($idUser,$namaPendek) = $this->tanyaDataSesi();
 		if($pilih == 'profile'): //echo "\$pilih = $pilih <br>";
 			$t = array('login');
 		elseif($pilih == 'product'): //echo "\$pilih = $pilih <br>";
@@ -174,12 +175,12 @@ class Vendor_Tanya extends \Aplikasi\Kitab\Tanya
 			$t = array('test_report');
 		elseif($pilih == 'booking'): //echo "\$pilih = $pilih <br>";
 			$t = array('test_booking_criteria','test_booking_result');
+			$m = array($idUser,$namaPendek);
 		elseif($pilih == 'website'): //echo "\$pilih = $pilih <br>";
 			$t = array('test_website');
 		else: //echo "\$pilih = $pilih <br>";
-			$t = null; $m = null;
+			$t = $m = null;
 		endif;
-		$m = null;
 
 		return array($t,$m); # pulangkan nilai
 	}
