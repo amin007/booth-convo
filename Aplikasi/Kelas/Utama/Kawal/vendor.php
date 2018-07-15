@@ -294,6 +294,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		$this->panggilDB('status'); # panggil fungsi panggilDB
+		$this->panggilDB('booking'); # panggil fungsi panggilDB
 		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
