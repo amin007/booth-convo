@@ -297,6 +297,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah utama
 		$this->panggilDB('status'); # panggil fungsi panggilDB
 		$this->panggilDB('booking'); # panggil fungsi panggilDB
+		$this->panggilDB('payment'); # panggil fungsi panggilDB
 		//$this->debugKandunganPaparan();# Semak data dulu
 
 		# Pergi papar kandungan
