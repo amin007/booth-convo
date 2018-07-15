@@ -306,7 +306,7 @@ class Vendor extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function payment()
 	{
-		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		# Set pembolehubah utama
 		$this->panggilDB('payment'); # panggil fungsi panggilDB
 		$this->tambahMedanDB('payment'); # panggil medan dalam jadual
