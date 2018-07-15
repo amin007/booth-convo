@@ -283,13 +283,11 @@ class Borang01_Tambah
 		return $tab2//'<div class="' . $classInput . '">' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. $tab2 . '<div class="input-group-prepend">'
-		. $tab3 . '<span class="input-group-text" id="inputGroupFileAddon01">Picture:</span>'
+		. $tab3 . '<span class="input-group-text">Picture:</span>'
 		. $tab2 . '</div>' . $komenInput2
 		. $tab2 . '<div class="custom-file">'
-		. $tab3 . '<input type="file" class="custom-file-input" id="inputGroupFile01" '
-		. 'aria-describedby="inputGroupFileAddon01">'
-		. $tab3 . '<label class="custom-file-label" '
-		. 'for="inputGroupFile01">Choose file</label>'
+		. $tab3 . '<input type="file" class="custom-file-input">'
+		. $tab3 . '<label class="custom-file-label">Choose file</label>'
 		. $tab2 . '</div>' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. '';
