@@ -1,9 +1,8 @@
 <?php
 $url = URL . 'vendor/insertID/' . $this->_pilih;
 echo '<h2>' . $url . '</h2>';
-$inputName01 = 'test_booking_result[product]';
-$inputName02 = 'test_booking_result[idUser]';
-$inputName03 = 'test_booking_result[result]';
+$inputName01 = 'test_booking_result[categoryproduct]';
+$inputName02 = 'test_booking_result[result]';
 $c01 = 'col-sm-2';
 $c02 = 'col-sm-7';
 $c03 = 'col-sm-9';
@@ -25,8 +24,7 @@ $c03 = 'col-sm-9';
 				<option value="Clothes">Clothes</option>
 				<option value="Clothes">Cosmetic</option>
 				</select>
-				<input type="hidden" name="<?php echo $inputName02 ?>">
-				<input type="hidden" name="<?php echo $inputName03 ?>" value="new">
+				<input type="hidden" name="<?php echo $inputName02 ?>" value="new">
 			</div><!-- /  class="input-group" -->
 		</div><!-- / class="<?php echo $c03 ?>" -->
 	</div><!-- / class="form-group row" -->
