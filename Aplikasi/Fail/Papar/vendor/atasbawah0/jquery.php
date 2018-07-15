@@ -107,7 +107,8 @@ elseif( isset($this->_pilih) && ($this->_pilih == 'booking') ): echo "\n\n"; ?>
 <script type="text/javascript">
 $('#test').on('change', function() {
 // alert( this.value ); // or $(this).val()
-	if(this.value == "MY")
+	/*if(this.value == "MY")*/
+	if(this.value == "Food & Drink")
 	{
 		$('#ic').show();
 		$('#passport').show();
