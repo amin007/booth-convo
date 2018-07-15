@@ -15,7 +15,7 @@ class Sql_Insert
 		}
 
 		# set sql
-		$sql  = "INSERT INTO $myTable SET \r";
+		$sql  = "INSERT INTO `$myTable` SET \r";
 		$sql .= implode(",\r", $senarai);
 
 		return $sql;
@@ -26,7 +26,7 @@ class Sql_Insert
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 
 		# set sql
-		$sql  = "INSERT INTO $myTable\r($medan) VALUES \r";
+		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
 		$sql .= implode(",\r", $data) . ";";
 
 		return $sql;
