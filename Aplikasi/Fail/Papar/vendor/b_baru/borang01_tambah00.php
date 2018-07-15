@@ -2,26 +2,34 @@
 $url = URL . 'vendor/insertID/' . $this->_pilih;
 echo '<h2>' . $url . '</h2>';
 $inputName = $this->myTable . '[product]';
-?>
-<form method="POST" action="<?php echo $url ?>">
-<div class="row">
-	<div class="col">
-		Product :
-		<span id="spryselect1">
-			<select id="test" name="<?php echo $inputName ?>" class="form-control">
-			<option value="" selected="selected">--- select product ---</option>
-			<option value="MY">Food & Drink</option>
-			<option value="JP">Flower</option>
-			<option value="JP">Clothes</option>
-			<option value="JP">Cosmetic</option>
-			</select>
-		</span>
-	</div><!-- / class="col" -->
-</div><!-- / class="row" -->
-<br><br>
-<?php
 $c01 = 'col-sm-2';
 $c02 = 'col-sm-7';
+$c03 = 'col-sm-9';
+?>
+<form method="POST" action="<?php echo $url ?>">
+
+<div class="row"><div class="col">
+
+	<div class="form-group row">
+		<div class="<?php echo $c03 ?>">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Product :</span>
+				</div>
+					<select id="test" name="<?php echo $inputName ?>" class="form-control">
+					<option value="" selected="selected">--- select product ---</option>
+					<option value="MY">Food & Drink</option>
+					<option value="JP">Flower</option>
+					<option value="JP">Clothes</option>
+					<option value="JP">Cosmetic</option>
+					</select>
+			</div><!-- /  class="input-group" -->
+		</div><!-- / class="<?php echo $c03 ?>" -->
+	</div><!-- / class="form-group row" -->
+
+</div><!-- / class="col" --></div><!-- / class="row" -->
+<br><br>
+<?php
 $ulangan = array('ic'=>'SSM','passport'=>'Lesen Berniaga',
 'yuran'=>'Yuran Proses',
 'sijil'=>'Sijil Pengendalian Makanan',
@@ -42,6 +50,21 @@ input_asal02($c01,$c02,$ulangan,$this->myTable);
 
 </form>
 <?php
+#---------------------------------------------------------------------------------------------
+function pilihInput()
+{
+?>		Product :
+		<span id="spryselect1">
+			<select id="test" name="<?php echo $inputName ?>" class="form-control">
+			<option value="" selected="selected">--- select product ---</option>
+			<option value="MY">Food & Drink</option>
+			<option value="JP">Flower</option>
+			<option value="JP">Clothes</option>
+			<option value="JP">Cosmetic</option>
+			</select>
+		</span>
+<?php
+}
 #---------------------------------------------------------------------------------------------
 function input_asal($c01,$c02,$ulangan)
 {
