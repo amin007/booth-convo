@@ -307,13 +307,13 @@ class Borang02_Ubah
 		return $tab2//'<div class="' . $classInput . '">' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. $tab2 . '<div class="input-group-prepend">'
-		. $tab3 . '<span class="input-group-text" id="a">Picture:</span>'
+			. $tab3 . '<span class="input-group-text" id="a">Picture:</span>'
 		. $tab2 . '</div>' . $komenInput2
 		. $tab2 . '<div class="custom-file">'
-		. $tab3 . '<input type="file" class="custom-file-input" id="b" '
-		. 'aria-describedby="a">'
-		. $tab3 . '<label class="custom-file-label" '
-		. 'for="b">Choose file</label>'
+			. $tab3 . '<input type="file" class="custom-file-input" id="b" '
+			. 'aria-describedby="a">'
+			. $tab3 . '<label class="custom-file-label" '
+			. 'for="b">Choose file</label>'
 		. $tab2 . '</div>' . $tab2
 		. '<!-- //////////////////////////////////////////////////////////////////////// -->'
 		. '';
