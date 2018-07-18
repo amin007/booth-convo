@@ -24,12 +24,6 @@ if(isset($_POST['submit']))
 {
 	# buat data $posmen
 	unset($_POST['submit']);
-	//$image = $imagename = null;
-	$image=addslashes($_FILES['image']['tmp_name']);
-	$imagename=addslashes($_FILES['image']['name']);
-	$image=file_get_contents($image);
-	$image=base64_encode($image);//*/
-
 	# mula ulang $jadual
 	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
@@ -63,6 +57,14 @@ function setDating($posmen,$myTable,$medan)
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 	return array($posmen);
 }
+#------------------------------------------------------------------------------------------
+/*
+	//$image = $imagename = null;
+	$image=addslashes($_FILES['image']['tmp_name']);
+	$imagename=addslashes($_FILES['image']['name']);
+	$image=file_get_contents($image);
+	$image=base64_encode($image);//*/
+*/
 #------------------------------------------------------------------------------------------
 /*
 	$datecriteria=$_POST['datecriteria'];
