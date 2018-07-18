@@ -24,8 +24,8 @@ if(isset($_POST['submit']))
 {
 	# buat data $posmen
 	unset($_POST['submit']);
-	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
-	//list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
+	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
+	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	//$image = $imagename = null;
 	$image=addslashes($_FILES['image']['tmp_name']);
 	$imagename=addslashes($_FILES['image']['name']);
@@ -34,8 +34,8 @@ if(isset($_POST['submit']))
 
 	# mula ulang $jadual
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
-	$sql = sql_insert_values($myTable, $posmen[$myTable]);
-	//$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
+	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
 	echo '<pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 
 	/*if ($connect->query($sql) === TRUE) 
@@ -142,13 +142,13 @@ function bersih($papar)
 		return $sql;
 	}
 #-------------------------------------------------------------------------------------------------
-	function sql_insert_manyValues($myTable, $senarai)
+	function sql_insert_manyValues($myTable, $data)
 	{
-		list($medan,$data) = setBanyakValues($senarai);
+		//list($medan,$data) = setBanyakValues($senarai);
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
-		$sql .= implode(",\r", $data) . ";";
+		$sql .= implode(",\r", $senarai) . ";";
 
 		return $sql;//*/
 	}
