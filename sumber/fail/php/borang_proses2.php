@@ -126,12 +126,11 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_values($myTable, $senarai)
 	{
-		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		list($medan,$data) = setNilai1Values($senarai);
+
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
-		$sql .= "($data);";
-		//$sql .= implode(",\r", $data) . ";";
+		$sql .= implode(",\r", $data) . ";";
 
 		return $sql;
 	}
@@ -147,7 +146,7 @@ function bersih($papar)
 		}
 
 		$medan = implode(",", $jalur) . "";
-		$senarai = "" . implode(",", $baris) . "";
+		$senarai[] = "(" . implode(",", $baris) . ")";
 
 		return array($medan,$senarai);
 	}
