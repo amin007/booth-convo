@@ -58,6 +58,7 @@ function setDating($posmen)
 	$date['now'] = time();//mktime();
 	$date['diffDate'] = ($date['endDate']-$date['now']) / 86400;
 	# semak output
+	echo '<pre>$date='; print_r($date); echo '</pre>';
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 	//return array($startDate,$endDate,$date_diff);
 }
