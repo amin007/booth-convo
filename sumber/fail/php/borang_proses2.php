@@ -148,8 +148,8 @@ function bersih($papar)
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $k => $v): foreach ($v as $kunci => $nilai):
 			if($k==0) $medan[] = $kunci;
-			$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
-		endforeach; $senarai[] = "(" . implode(",", $baris[$k1]) . ")";
+			$baris[$k][] = ($nilai==null) ? "null" : "'$nilai'";
+		endforeach; $senarai[] = "(" . implode(",", $baris[$k]) . ")";
 		endforeach;
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
