@@ -51,13 +51,13 @@ if(isset($_POST['submit']))
 #------------------------------------------------------------------------------------------
 function setDating($datessm)
 {
-	$datessm = date('Y-m-d');
-	$start_date = date($datessm);
-	$enddate = strtotime('+400 days', strtotime($datessm));
+	$startDate = date('Y-m-d');
+	//$start_date = date($datessm);
+	$endDate = strtotime('+400 days', strtotime($start_date));
 	$now = time();//mktime();
 	$date_diff=($enddate-$now) / 86400;
 
-	return array($enddate,$date_diff)
+	return array($startDate,$endDate,$date_diff)
 }
 #------------------------------------------------------------------------------------------
 /*
