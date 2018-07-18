@@ -126,7 +126,7 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_values($myTable, $senarai)
 	{
-		list($medan,$data) = setNilai1Values($senarai);
+		list($medan,$data) = setOneValues($senarai);
 
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
@@ -135,7 +135,7 @@ function bersih($papar)
 		return $sql;
 	}
 #-------------------------------------------------------------------------------------------------
-	function setNilai1Values($data)
+	function setOneValues($data)
 	{
 		$jalur = $baris = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $kunci => $nilai)
