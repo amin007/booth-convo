@@ -55,6 +55,7 @@ function setDating($posmen,$myTable,$medan)
 	# semak output
 	//echo '<pre>$date='; print_r($date); echo '</pre>';
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
 	return array($posmen);
 }
 #------------------------------------------------------------------------------------------
@@ -69,8 +70,9 @@ function setFiles($posmen,$myTable)
 	$posmen[$myTable]['image'] = $image;
 	$posmen[$myTable]['imagename'] = $imagename;
 	# semak output
-	echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
-	//return array($posmen);
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+	return array($posmen);
 }
 #------------------------------------------------------------------------------------------
 /*
@@ -118,7 +120,7 @@ function nombor($papar, $pilih = 'floor')
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
 		list($posmen) = setDating($posmen,$myTable,'datessm');
-		setFiles($posmen,$myTable);
+		list($posmen) = setFiles($posmen,$myTable);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
