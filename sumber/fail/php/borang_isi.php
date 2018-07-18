@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div align="center">
 <table><tr><td valign="top">
 <table><tr><td valign="top">
-	<form action="borang_proses.php" method="post" enctype="multipart/form-data">
+	<form action="borang_proses2.php" method="post" enctype="multipart/form-data">
 	<table border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
 	<tr>
 		<td width="23"><img src="<?=$url?>images/kotak_01_01.png" width="23" height="21" alt="" /></td>
