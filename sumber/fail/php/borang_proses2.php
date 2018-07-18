@@ -172,7 +172,8 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function setBanyakValues1($data)
 	{
-		$jalur = $baris = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
+		$medan = $baris = null;
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $k1 => $v1):
 			foreach ($v1 as $kunci => $nilai):
 				//echo $kunci . '<br>'; //
@@ -181,6 +182,7 @@ function bersih($papar)
 			endforeach;
 			$senarai[] = "(" . implode(",", $baris[$k1]) . ")";
 		endforeach;
+		echo '<pre>$medan->'; print_r($medan); echo '</pre>';
 		echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 
 		return array($medan,$senarai);
