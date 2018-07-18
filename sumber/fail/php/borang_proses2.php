@@ -97,7 +97,7 @@ function bersih($papar)
 	function ubahsuaiPost2($myTable)
 	{
 		$posmen = array();
-		for($kira = 0; $kira < 10; $kira++):
+		for($kira = 0; $kira < 1; $kira++):
 			foreach ($_POST as $kekunci => $papar):
 				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
 			endforeach;
