@@ -36,7 +36,7 @@ if(isset($_POST['submit']))
 	$sql = sql_insert_values($myTable, $posmen[$myTable]);
 	/*list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);//*/
-	echo '<pre>$sql->:'; print_r($sql); echo '</pre><hr>';
+	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 
 	/*if ($connect->query($sql) === TRUE) 
 	{
@@ -92,7 +92,7 @@ function bersih($papar)
 		foreach ($_POST as $kekunci => $papar):
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
-		$posmen = setDating($posmen);
+		setDating($posmen);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
