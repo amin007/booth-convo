@@ -55,8 +55,8 @@ function setDating($posmen)
 	$date['startDate'] = date('Y-m-d');
 	//$start_date = date($datessm);
 	$date['endDate'] = strtotime('+400 days', strtotime($date['startDate']));
-	$now = time();//mktime();
-	$date_diff = ($date['endDate']-$now) / 86400;
+	$date['now'] = time();//mktime();
+	$date_diff = ($date['endDate']-$date['now']) / 86400;
 	# semak output
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 	//return array($startDate,$endDate,$date_diff);
