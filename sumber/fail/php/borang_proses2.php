@@ -24,8 +24,6 @@ if(isset($_POST['submit']))
 {
 	# buat data $posmen
 	unset($_POST['submit']);
-	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
-	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	//$image = $imagename = null;
 	$image=addslashes($_FILES['image']['tmp_name']);
 	$imagename=addslashes($_FILES['image']['name']);
@@ -33,8 +31,10 @@ if(isset($_POST['submit']))
 	$image=base64_encode($image);//*/
 
 	# mula ulang $jadual
+	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
 	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
 	echo '<pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 
