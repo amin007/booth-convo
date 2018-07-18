@@ -49,7 +49,7 @@ if(isset($_POST['submit']))
 }
 //*/
 #------------------------------------------------------------------------------------------
-function setDating($posmen)
+function setDating($posmen,$myTable,$medan)
 {
 	# kira tarikh
 	$date['startDate'] = date('Y-m-d');
@@ -92,7 +92,7 @@ function bersih($papar)
 		foreach ($_POST as $kekunci => $papar):
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
-		setDating($posmen);
+		setDating($posmen,$myTable,'datessm');
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
