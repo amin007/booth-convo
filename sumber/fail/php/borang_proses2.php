@@ -49,7 +49,7 @@ if(isset($_POST['submit']))
 }
 //*/
 #------------------------------------------------------------------------------------------
-function setDating($datessm)
+function setDating($posmen)
 {
 	$startDate = date('Y-m-d');
 	//$start_date = date($datessm);
@@ -57,7 +57,7 @@ function setDating($datessm)
 	$now = time();//mktime();
 	$date_diff = ($enddate-$now) / 86400;
 
-	return array($startDate,$endDate,$date_diff)
+	//return array($startDate,$endDate,$date_diff);
 }
 #------------------------------------------------------------------------------------------
 /*
