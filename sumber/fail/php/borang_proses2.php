@@ -61,10 +61,17 @@ function setDating($posmen,$myTable,$medan)
 function setFiles(($posmen,$myTable)
 {
 	//$image = $imagename = null;
-	$image=addslashes($_FILES['image']['tmp_name']);
-	$imagename=addslashes($_FILES['image']['name']);
-	$image=file_get_contents($image);
-	$image=base64_encode($image);//*/
+	# proses $_FILES
+	$imagename = addslashes($_FILES['image']['name']);
+	$image = addslashes($_FILES['image']['tmp_name']);
+	$image = file_get_contents($image);
+	$image = base64_encode($image);//*/
+	$posmen[$myTable]['image'] = $imagename;
+	$posmen[$myTable]['imagename'] = $imagename;
+	# semak output
+	//echo '<pre>$date='; print_r($date); echo '</pre>';
+	echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+	//return array($posmen);
 }
 #------------------------------------------------------------------------------------------
 /*
