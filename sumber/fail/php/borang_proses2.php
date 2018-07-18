@@ -145,7 +145,8 @@ function bersih($papar)
 	function sql_insert_manyValues($myTable, $data)
 	{
 		list($medan,$senarai) = setBanyakValues1($data);
-		//echo '<pre>$data->'; print_r($data); echo '</pre>';
+		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
 		$sql .= implode(",", $medan) . ") VALUES \r";
