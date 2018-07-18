@@ -87,6 +87,21 @@ function bersih($papar)
 	return $papar;
 }
 #------------------------------------------------------------------------------------------
+function nombor($papar, $pilih = 'floor')
+{
+	if($pilih == 'round')# http://php.net/manual/en/function.round.php
+		$papar = round($papar, 0); # echo round(3.6, 0); // 4
+	if($pilih == 'ceil')# http://php.net/manual/en/function.ceil.php
+		$papar = ceil($papar); # echo ceil(4.3); // 5
+	if($pilih == 'floor'):# http://php.net/manual/en/function.floor.php
+		$papar = floor($papar); # echo floor(9.999); // 9
+	if($pilih == 'number_format'): #http://php.net/manual/en/function.number-format.php
+		$papar = number_format($papar, 0, '.', ','); // 1234.56->1234.57
+		# http://php.net/manual/en/function.money-format.php
+
+	return $papar;
+}
+#------------------------------------------------------------------------------------------
 	function ubahsuaiPost($myTable)
 	{
 		$posmen = array();
