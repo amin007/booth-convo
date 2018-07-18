@@ -55,7 +55,7 @@ function setDating($datessm)
 	//$start_date = date($datessm);
 	$endDate = strtotime('+400 days', strtotime($start_date));
 	$now = time();//mktime();
-	$date_diff=($enddate-$now) / 86400;
+	$date_diff = ($enddate-$now) / 86400;
 
 	return array($startDate,$endDate,$date_diff)
 }
