@@ -56,7 +56,7 @@ function setDating($posmen,$myTable,$medan)
 	//echo '<pre>$date='; print_r($date); echo '</pre>';
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
-	return array($posmen);
+	return array($posmen);//*/
 }
 #------------------------------------------------------------------------------------------
 function setFiles($posmen,$myTable)
@@ -72,7 +72,7 @@ function setFiles($posmen,$myTable)
 	# semak output
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
-	return array($posmen);
+	return array($posmen);//*/
 }
 #------------------------------------------------------------------------------------------
 /*
@@ -85,7 +85,6 @@ function setFiles($posmen,$myTable)
 	$datelesenberniaga=$_POST['datelesenberniaga'];
 	$suntikan=$_POST['suntikan'];
 	$sijilpmakanan=$_POST['sijilpmakanan'];
-
 */
 #------------------------------------------------------------------------------------------
 function bersih($papar)
@@ -95,7 +94,7 @@ function bersih($papar)
 	# buang ruang kosong (atau aksara lain) dari mula & akhir 
 	$papar = trim($papar);
 
-	return $papar;
+	return $papar;//*/
 }
 #------------------------------------------------------------------------------------------
 function nombor($papar, $pilih = 'floor')
@@ -110,7 +109,7 @@ function nombor($papar, $pilih = 'floor')
 		$papar = number_format($papar, 0, '.', ','); // 1234.56->1234.57
 		# http://php.net/manual/en/function.money-format.php
 
-	return $papar;
+	return $papar;//*/
 }
 #------------------------------------------------------------------------------------------
 	function ubahsuaiPost($myTable)
@@ -154,7 +153,7 @@ function nombor($papar, $pilih = 'floor')
 		$sql  = "INSERT INTO `$myTable` SET \r";
 		$sql .= implode(",\r", $senarai);
 
-		return $sql;
+		return $sql;//*/
 	}
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_values($myTable, $data)
@@ -175,7 +174,7 @@ function nombor($papar, $pilih = 'floor')
 		$sql .= implode(",", $medan) . ") VALUES \r";
 		$sql .= implode(",", $senarai) . ";";
 
-		return $sql;
+		return $sql;//*/
 	}
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_manyValues($myTable, $data)
