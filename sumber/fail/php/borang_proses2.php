@@ -126,7 +126,8 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_values($myTable, $data)
 	{
-		$medan = $senarai = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
+		$medan = $baris = $senarai = null;
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $kunci => $nilai)
 		{
 			$medan[] = $kunci;
@@ -154,6 +155,7 @@ function bersih($papar)
 		endforeach; $senarai[] = '(' . implode(',', $baris[$k]) . ')';
 		endforeach;
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		//echo '<pre>$baris->'; print_r($baris); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
