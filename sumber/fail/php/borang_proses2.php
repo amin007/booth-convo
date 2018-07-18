@@ -60,8 +60,8 @@ function setDating($posmen,$myTable,$medan)
 	$posmen[$myTable]['tamatLesen'] = nombor($date['diffDate']);
 	# semak output
 	//echo '<pre>$date='; print_r($date); echo '</pre>';
-	echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
-	//return array($startDate,$endDate,$date_diff);
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+	return array($posmen);
 }
 #------------------------------------------------------------------------------------------
 /*
@@ -108,7 +108,7 @@ function nombor($papar, $pilih = 'floor')
 		foreach ($_POST as $kekunci => $papar):
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
-		setDating($posmen,$myTable,'datessm');
+		list($posmen) = setDating($posmen,$myTable,'datessm');
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
