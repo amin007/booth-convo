@@ -144,12 +144,19 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_manyValues($myTable, $data)
 	{
-		list($medan,$senarai) = setBanyakValues1($data);
+		//list($medan,$senarai) = setBanyakValues1($data);
+		$medan = $baris = $senarai = null;
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
+		foreach ($data as $k1 => $v1): foreach ($v1 as $kunci => $nilai):
+			if($k1 ==0) $medan[] = $kunci;
+			$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
+		endforeach; $senarai[] = "(" . implode(",", $baris[$k1]) . ")";
+		endforeach;
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
-		$sql .= implode(",", $medan) . ") VALUES \r";
+		$sql .= implode(",", $medan) . ")\rVALUES \r";
 		$sql .= implode(",", $senarai) . ";";
 
 		return $sql;//*/
@@ -183,8 +190,8 @@ function bersih($papar)
 			endforeach;
 			$senarai[] = "(" . implode(",", $baris[$k1]) . ")";
 		endforeach;
-		echo '<pre>$medan->'; print_r($medan); echo '</pre>';
-		echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
+		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 
 		return array($medan,$senarai);
 	}
