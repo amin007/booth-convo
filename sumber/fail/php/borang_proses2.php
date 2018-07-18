@@ -52,8 +52,8 @@ if(isset($_POST['submit']))
 function setDating($posmen,$myTable,$medan)
 {
 	# kira tarikh
-	$date['startDate'] = date('Y-m-d');
-	//$start_date = date($datessm);
+	//$date['startDate'] = date('Y-m-d');
+	$date['startDate'] = date($posmen[$myTable][$medan]);
 	$date['endDate'] = strtotime('+400 days', strtotime($date['startDate']));
 	$date['now'] = time();//mktime();
 	$date['diffDate'] = ($date['endDate']-$date['now']) / 86400;
