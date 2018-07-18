@@ -58,13 +58,14 @@ function setDating($posmen,$myTable,$medan)
 	return array($posmen);
 }
 #------------------------------------------------------------------------------------------
-/*
+function setFiles(($posmen,$myTable)
+{
 	//$image = $imagename = null;
 	$image=addslashes($_FILES['image']['tmp_name']);
 	$imagename=addslashes($_FILES['image']['name']);
 	$image=file_get_contents($image);
 	$image=base64_encode($image);//*/
-*/
+}
 #------------------------------------------------------------------------------------------
 /*
 	$datecriteria=$_POST['datecriteria'];
