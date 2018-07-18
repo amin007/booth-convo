@@ -89,7 +89,7 @@ function bersih($papar)
 		foreach ($_POST as $kekunci => $papar):
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
-
+		$posmen = setDating($posmen);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
