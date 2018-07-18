@@ -57,7 +57,7 @@ function setDating($posmen,$myTable,$medan)
 	$date['endDate'] = strtotime('+400 days', strtotime($date['startDate']));
 	$date['now'] = time();//mktime();
 	$date['diffDate'] = ($date['endDate']-$date['now']) / 86400;
-	$posmen[$myTable]['tamatLesen'] = $date['diffDate'];
+	$posmen[$myTable]['tamatLesen'] = nombor($date['diffDate']);
 	# semak output
 	//echo '<pre>$date='; print_r($date); echo '</pre>';
 	echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
