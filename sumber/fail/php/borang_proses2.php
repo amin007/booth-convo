@@ -148,15 +148,15 @@ function bersih($papar)
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $k => $v): foreach ($v as $kunci => $nilai):
 			if($k==0) $medan[] = $kunci;
-			$baris[$k][] = ($nilai==null) ? "null" : "'$nilai'";
-		endforeach; $senarai[] = "(" . implode(",", $baris[$k]) . ")";
+			$baris[$k][] = ($nilai==null) ? 'null' : "'$nilai'";
+		endforeach; $senarai[] = '(' . implode(',', $baris[$k]) . ')';
 		endforeach;
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
-		$sql .= implode(",", $medan) . ")\rVALUES \r";
-		$sql .= implode(",", $senarai) . ";";
+		$sql .= implode(',', $medan) . ")\rVALUES \r";
+		$sql .= implode(',', $senarai) . ";";
 
 		return $sql;//*/
 	}
