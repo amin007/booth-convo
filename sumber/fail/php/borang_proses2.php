@@ -31,11 +31,11 @@ if(isset($_POST['submit']))
 	$image=base64_encode($image);//*/
 
 	# mula ulang $jadual
-	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
+	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
-	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
-	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
-	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
+	$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	/*list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
+	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);//*/
 	echo '<pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 
 	/*if ($connect->query($sql) === TRUE) 
@@ -131,9 +131,10 @@ function bersih($papar)
 		{
 			$medan[] = $kunci;
 			//$baris[] = ($nilai==null) ? "/*$kunci*/null" : "/*$kunci*/'$nilai'";
-			$senarai[] = ($nilai==null) ? "null" : "'$nilai'";
-		}
+			$baris[] = ($nilai==null) ? "null" : "'$nilai'";
+		}	$senarai[] = '(' . implode(',', $baris) . ')';
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		//echo '<pre>$baris->'; print_r($baris); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
