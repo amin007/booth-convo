@@ -133,7 +133,8 @@ function bersih($papar)
 			//$baris[] = ($nilai==null) ? "/*$kunci*/null" : "/*$kunci*/'$nilai'";
 			$senarai[] = ($nilai==null) ? "null" : "'$nilai'";
 		}
-
+		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
 		$sql .= implode(",", $medan) . ") VALUES \r";
