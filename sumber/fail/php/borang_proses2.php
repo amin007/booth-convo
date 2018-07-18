@@ -144,11 +144,12 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_manyValues($myTable, $data)
 	{
-		//list($medan,$data) = setBanyakValues($senarai);
+		list($medan,$data) = setBanyakValues($senarai);
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		# set sql
-		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
-		$sql .= implode(",\r", $senarai) . ";";
+		$sql  = "INSERT INTO `$myTable`\r(";
+		$sql .= implode(",", $medan) . ") VALUES \r";
+		$sql .= implode(",", $senarai) . ";";
 
 		return $sql;//*/
 	}
