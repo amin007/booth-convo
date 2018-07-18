@@ -166,7 +166,7 @@ function nombor($papar, $pilih = 'floor')
 			$medan[] = $kunci;
 			//$baris[] = ($nilai==null) ? "/*$kunci*/null" : "/*$kunci*/'$nilai'";
 			$baris[] = ($nilai==null) ? "null" : "'$nilai'";
-		}	$senarai[] = '(' . implode(',', $baris) . ')';
+		}	$senarai[] = '(' . implode(",\r", $baris) . ')';
 		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
 		//echo '<pre>$baris->'; print_r($baris); echo '</pre>';
 		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
