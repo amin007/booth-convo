@@ -51,12 +51,14 @@ if(isset($_POST['submit']))
 #------------------------------------------------------------------------------------------
 function setDating($posmen)
 {
+	# kira tarikh
 	$startDate = date('Y-m-d');
 	//$start_date = date($datessm);
 	$endDate = strtotime('+400 days', strtotime($start_date));
 	$now = time();//mktime();
 	$date_diff = ($enddate-$now) / 86400;
-
+	# semak output
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 	//return array($startDate,$endDate,$date_diff);
 }
 #------------------------------------------------------------------------------------------
