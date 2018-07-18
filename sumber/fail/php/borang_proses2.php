@@ -144,11 +144,10 @@ function bersih($papar)
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_manyValues($myTable, $data)
 	{
-		//list($medan,$senarai) = setBanyakValues1($data);
 		$medan = $baris = $senarai = null;
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
-		foreach ($data as $k1 => $v1): foreach ($v1 as $kunci => $nilai):
-			if($k1 ==0) $medan[] = $kunci;
+		foreach ($data as $k => $v): foreach ($v as $kunci => $nilai):
+			if($k==0) $medan[] = $kunci;
 			$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
 		endforeach; $senarai[] = "(" . implode(",", $baris[$k1]) . ")";
 		endforeach;
@@ -160,39 +159,5 @@ function bersih($papar)
 		$sql .= implode(",", $senarai) . ";";
 
 		return $sql;//*/
-	}
-#-------------------------------------------------------------------------------------------------
-	function setBanyakValues($data)
-	{
-		$jalur = $baris = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
-		foreach ($data as $k1 => $v1): foreach ($v1 as $kunci => $nilai):
-			//echo $kunci . '<br>'; //
-			if($k1 ==0) $medan[] = $kunci;
-			$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
-		endforeach;endforeach;
-		foreach ($baris as $kk1 => $vv1):
-			$senarai[] = "(" . implode(",", $baris[$kk1]) . ")";
-		endforeach;
-		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
-
-		return array($medan,$senarai);
-	}
-#-------------------------------------------------------------------------------------------------
-	function setBanyakValues1($data)
-	{
-		$medan = $baris = null;
-		//echo '<pre>$data->'; print_r($data); echo '</pre>';
-		foreach ($data as $k1 => $v1):
-			foreach ($v1 as $kunci => $nilai):
-				//echo $kunci . '<br>'; //
-				if($k1 ==0) $medan[] = $kunci;
-				$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
-			endforeach;
-			$senarai[] = "(" . implode(",", $baris[$k1]) . ")";
-		endforeach;
-		//echo '<pre>$medan->'; print_r($medan); echo '</pre>';
-		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
-
-		return array($medan,$senarai);
 	}
 #-------------------------------------------------------------------------------------------------
