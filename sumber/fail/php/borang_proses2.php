@@ -24,7 +24,8 @@ if(isset($_POST['submit']))
 {
 	# buat data $posmen
 	unset($_POST['submit']);
-	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
+	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
+	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	//$image = $imagename = null;
 	$image=addslashes($_FILES['image']['tmp_name']);
 	$imagename=addslashes($_FILES['image']['name']);
@@ -33,7 +34,8 @@ if(isset($_POST['submit']))
 
 	# mula ulang $jadual
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
-	$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
 	echo '<pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 
 	/*if ($connect->query($sql) === TRUE) 
@@ -92,6 +94,21 @@ function bersih($papar)
 		return array($posmen,$myTable); # pulangkan nilai
 	}
 #-------------------------------------------------------------------------------------------
+	function ubahsuaiPost2($myTable)
+	{
+		$posmen = array();
+		for($kira = 0; $kira < 10; $kira++):
+			foreach ($_POST as $kekunci => $papar):
+				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
+			endforeach;
+		endfor;
+
+		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+		return array($posmen,$myTable); # pulangkan nilai
+	}
+#-------------------------------------------------------------------------------------------
 	function sql_insert_set($myTable, $data)
 	{
 		$senarai = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
@@ -131,6 +148,34 @@ function bersih($papar)
 
 		$medan = implode(",", $jalur) . "";
 		$senarai = "" . implode(",", $baris) . "";
+
+		return array($medan,$senarai);
+	}
+#-------------------------------------------------------------------------------------------------
+	function sql_insert_manyValues($myTable, $senarai)
+	{
+		list($medan,$data) = setBanyakValues($senarai);
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
+		# set sql
+		$sql  = "INSERT INTO `$myTable`\r($medan) VALUES \r";
+		$sql .= implode(",\r", $data) . ";";
+
+		return $sql;//*/
+	}
+#-------------------------------------------------------------------------------------------------
+	function setBanyakValues($data)
+	{
+		$jalur = $baris = null; //echo '<pre>$data->'; print_r($data); echo '</pre>';
+		foreach ($data as $k1 => $v1): foreach ($v1 as $kunci => $nilai):
+			//echo $kunci . '<br>'; //
+			if($k1 ==0) $jalur[] = $kunci;
+			$baris[$k1][] = ($nilai==null) ? "null" : "'$nilai'";
+		endforeach;endforeach;
+		foreach ($baris as $kk1 => $vv1):
+			$senarai[] = "(" . implode(",", $baris[$kk1]) . ")";
+		endforeach;
+		//echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';
+		$medan = implode(",", $jalur) . "";
 
 		return array($medan,$senarai);
 	}
