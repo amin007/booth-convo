@@ -1,8 +1,8 @@
 <?php
 //session_start();
-//include('config.php');
+include('config.php');
 
-echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
+//echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
 /*
 data dari borang sepatutnya macam ini_get
 Array
@@ -35,10 +35,11 @@ if(isset($_POST['submit']))
 	list($sql,$dataProsi) = insertSqlManyValuesPDO($myTable, $posmen[$myTable]);
 	//*/
 	# semak nilai debug
-	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
-	echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
+	//echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
+	//echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
 	# masuk ke DB PDO
 	$connect->tesTnsertAll($sql,$dataProsi);
+	header('location:borang2_selesai.php');
 	/*if ($connect->query($sql) === TRUE) 
 	{
 		echo"<script>alert('Data successfully add!');document.location.href='booking.php'</script>";
@@ -128,7 +129,7 @@ function setManyFiles($kira,$posmen,$myTable)
 	$sijilpmakanan=$_POST['sijilpmakanan'];
 */
 #------------------------------------------------------------------------------------------
-function bersih($papar)
+function bersihX($papar)
 {
 	# lepas lari aksara khas dalam SQL
 	//$papar = mysql_real_escape_string($papar);
@@ -265,8 +266,8 @@ function nombor($papar, $pilih = 'floor')
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		foreach ($data as $k => $v): foreach ($v as $kunci => $nilai):
 			if($k==0) $medan[] = $kunci;
-			//$kunciUtama = $kunci . '_' . $k;
-			$kunciUtama = $k . '_' . $kunci;
+			$kunciUtama = $kunci . '_' . $k;
+			//$kunciUtama = $k . '_' . $kunci;
 			$baris[$k][] = ($nilai==null) ? "null" : ":$kunciUtama";
 			$baris2[$kunciUtama] = ($nilai==null) ? 'null' : "'$nilai'";
 		endforeach; $senarai[] = '(' . implode(',', $baris[$k]) . ')';
