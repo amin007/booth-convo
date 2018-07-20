@@ -117,28 +117,6 @@ function setManyFiles($kira,$posmen,$myTable)
 	return $posmen;//*/
 }
 #------------------------------------------------------------------------------------------
-/*
-	$datecriteria=$_POST['datecriteria'];
-	$idvendor=$_POST['idvendor'];
-	$dateresult=$_POST['dateresult'];
-	$ssm=$_POST['ssm'];
-	$datessm=$_POST['datessm'];
-	$lesenberniaga=$_POST['lesenberniaga'];
-	$datelesenberniaga=$_POST['datelesenberniaga'];
-	$suntikan=$_POST['suntikan'];
-	$sijilpmakanan=$_POST['sijilpmakanan'];
-*/
-#------------------------------------------------------------------------------------------
-function bersihX($papar)
-{
-	# lepas lari aksara khas dalam SQL
-	//$papar = mysql_real_escape_string($papar);
-	# buang ruang kosong (atau aksara lain) dari mula & akhir 
-	$papar = trim($papar);
-
-	return $papar;//*/
-}
-#------------------------------------------------------------------------------------------
 function nombor($papar, $pilih = 'floor')
 {
 	if($pilih == 'round')# http://php.net/manual/en/function.round.php
