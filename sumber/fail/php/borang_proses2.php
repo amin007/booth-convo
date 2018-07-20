@@ -37,7 +37,8 @@ if(isset($_POST['submit']))
 	# semak nilai debug
 	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 	echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
-
+	# masuk ke DB PDO
+	$connect->tesTnsertAll($sql,$dataProsi);
 	/*if ($connect->query($sql) === TRUE) 
 	{
 		echo"<script>alert('Data successfully add!');document.location.href='booking.php'</script>";
