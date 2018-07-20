@@ -173,6 +173,7 @@ class DB_Pdo extends \PDO
 	 */
 	public function insertAllNew($sql, $array = array(), $fetchMode = \PDO::FETCH_ASSOC)
 	{
+		//echo '<hr>Nama function :' .__FUNCTION__ . '<hr>';
 		//echo '<hr><pre>'; print_r($sql); echo '</pre><hr>';
 		//echo '<hr><pre>array::'; print_r($array); echo '</pre><hr>';
 		
