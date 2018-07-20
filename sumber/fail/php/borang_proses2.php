@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 	//list($sql,$dataProsi) = insertSqlValuesPDO($myTable, $posmen[$myTable]);
 	# untuk banyak nilai
 	list($posmen,$myTable) = ubahsuaiPost2($myTable='test2_criteria');
-	$sql = insertSql_manyValues($myTable, $posmen[$myTable]);
+	list($sql,$dataProsi) = insertSql_manyValues($myTable, $posmen[$myTable]);
 	//list($sql,$dataProsi) = insertSqlManyValuesPDO($myTable, $posmen[$myTable]);
 	# semak nilai debug
 	//echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
@@ -217,7 +217,7 @@ function nombor($papar, $pilih = 'floor')
 		return array($sql,$data);//*/
 	}
 #-------------------------------------------------------------------------------------------------
-	function insertSql_manyValues($myTable, $data)
+	function insertSql_manyValues($myTable, $data, $baris2 = array())
 	{
 		$medan = $baris = $senarai = null;
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
@@ -234,7 +234,7 @@ function nombor($papar, $pilih = 'floor')
 		$sql .= implode(',', $medan) . ")\rVALUES \r";
 		$sql .= implode(',', $senarai) . ";";
 
-		return $sql;//*/
+		return array($sql,$baris2);//*/
 	}
 #-------------------------------------------------------------------------------------------------
 	function insertSqlManyValuesPDO($myTable, $data)
