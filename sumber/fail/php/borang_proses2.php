@@ -140,7 +140,8 @@ function nombor($papar, $pilih = 'floor')
 				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
 			endforeach;
 		endfor;
-
+		list($posmen) = setDating($posmen,$myTable,'datessm');
+		list($posmen) = setFiles($posmen,$myTable);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
