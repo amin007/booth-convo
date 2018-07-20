@@ -34,11 +34,12 @@ if(isset($_POST['submit']))
 	list($sql,$dataProsi) = insertSql_manyValues($myTable, $posmen[$myTable]);
 	//list($sql,$dataProsi) = insertSqlManyValuesPDO($myTable, $posmen[$myTable]);
 	# semak nilai debug
-	//echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 	//echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
 	# masuk ke DB PDO
-	$connect->tesTnsertAll($sql,$dataProsi);
-	header('location:borang2_selesai.php');
+	//$connect->tesTnsertAll($sql,$dataProsi);
+	//header('location:borang2_selesai.php');
 	/*if ($connect->query($sql) === TRUE) 
 	{
 		echo"<script>alert('Data successfully add!');document.location.href='booking.php'</script>";
@@ -232,7 +233,7 @@ function nombor($papar, $pilih = 'floor')
 		# set sql
 		$sql  = "INSERT INTO `$myTable`\r(";
 		$sql .= implode(',', $medan) . ")\rVALUES \r";
-		$sql .= implode(',', $senarai) . ";";
+		$sql .= implode(",\r", $senarai) . ";";
 
 		return array($sql,$baris2);//*/
 	}
