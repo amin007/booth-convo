@@ -24,13 +24,17 @@ if(isset($_POST['submit']))
 {
 	# buat data $posmen
 	unset($_POST['submit']);
-	# mula ulang $jadual
-	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
+	# untuk satu nilai sahaja
+	//list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
 	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
-	list($sql,$dataProsi) = insertSqlValuesPDO($myTable, $posmen[$myTable]);
-	/*list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
-	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);//*/
+	//list($sql,$dataProsi) = insertSqlValuesPDO($myTable, $posmen[$myTable]);
+	# untuk banyak nilai
+	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
+	//$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
+	list($sql,$dataProsi) = insertSqlManyValuesPDO($myTable, $posmen[$myTable]);
+	//*/
+	# semak nilai debug
 	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
 	echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
 
