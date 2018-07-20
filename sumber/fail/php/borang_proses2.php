@@ -1,6 +1,6 @@
 <?php
 //session_start();
-include('config.php');
+//include('config.php');
 
 echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
 /*
@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
 	//list($sql,$dataProsi) = insertSqlValuesPDO($myTable, $posmen[$myTable]);
 	# untuk banyak nilai
-	list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
+	list($posmen,$myTable) = ubahsuaiPost2($myTable='test2_criteria');
 	//$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);
 	list($sql,$dataProsi) = insertSqlManyValuesPDO($myTable, $posmen[$myTable]);
 	//*/
