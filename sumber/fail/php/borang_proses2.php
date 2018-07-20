@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
 	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
 	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
-	list($sql,$dataProsi) = sql_insert_valuesPDO($myTable, $posmen[$myTable]);
+	list($sql,$dataProsi) = insertSqlValuesPDO($myTable, $posmen[$myTable]);
 	/*list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);//*/
 	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
@@ -177,6 +177,26 @@ function nombor($papar, $pilih = 'floor')
 		$sql .= implode(",", $senarai) . ";";
 
 		return $sql;//*/
+	}
+#-------------------------------------------------------------------------------------------------
+	function insertSqlValuesPDO($myTable, $data)
+	{
+		$medan = $baris = $senarai = null; $kira = 0;
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
+		foreach ($data as $kunci => $nilai)
+		{
+			$medan[] = $kunci;
+			$baris[] = ($nilai==null) ? "null" : ':$kunci'.$kira++.'';
+		}	$senarai[] = '(' . implode(",", $baris) . ')';
+		/*echo '<pre>$medan->'; print_r($medan); echo '</pre>';
+		echo '<pre>$baris->'; print_r($baris); echo '</pre>';
+		echo '<pre>$senarai->'; print_r($senarai); echo '</pre>';//*/
+		# set sql
+		$sql  = "INSERT INTO `$myTable`\r(";
+		$sql .= implode(',', $medan) . ")\rVALUES \r";
+		$sql .= implode(',', $senarai) . ";";
+
+		return array($sql,$data);//*/
 	}
 #-------------------------------------------------------------------------------------------------
 	function sql_insert_manyValues($myTable, $data)
