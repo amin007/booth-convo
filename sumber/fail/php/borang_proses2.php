@@ -82,6 +82,39 @@ function setFiles($posmen,$myTable)
 	return $posmen;//*/
 }
 #------------------------------------------------------------------------------------------
+function setManyDating($kira,$posmen,$myTable,$medan)
+{
+	# kira tarikh
+	//$date['startDate'] = date('Y-m-d');
+	$date['startDate'] = date($posmen[$myTable][$kira][$medan]);
+	$date['endDate'] = strtotime('+400 days', strtotime($date['startDate']));
+	$date['now'] = time();//mktime();
+	$date['diffDate'] = ($date['endDate']-$date['now']) / 86400;
+	$posmen[$myTable][$kira]['tamatLesen'] = nombor($date['diffDate']);
+	# semak output
+	//echo '<pre>$date='; print_r($date); echo '</pre>';
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+	return $posmen;//*/
+}
+#------------------------------------------------------------------------------------------
+function setManyFiles($kira,$posmen,$myTable)
+{
+	//$image = $imagename = 'abc123ded456gji789';
+	# proses $_FILES
+	$imagename = addslashes($_FILES['image']['name']);
+	$image = addslashes($_FILES['image']['tmp_name']);
+	$image = file_get_contents($image);
+	$image = base64_encode($image);//*/
+	$posmen[$myTable][$kira]['image'] = $image;
+	$posmen[$myTable][$kira]['imagename'] = $imagename;
+	# semak output
+	//echo '<pre>$_FILES:'; print_r($_FILES); echo '</pre><hr>';
+	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+
+	return $posmen;//*/
+}
+#------------------------------------------------------------------------------------------
 /*
 	$datecriteria=$_POST['datecriteria'];
 	$idvendor=$_POST['idvendor'];
@@ -140,9 +173,9 @@ function nombor($papar, $pilih = 'floor')
 			foreach ($_POST as $kekunci => $papar):
 				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
 			endforeach;
+			$posmen = setManyDating($kira,$posmen,$myTable,'datessm');
+			$posmen = setManyFiles($kira,$posmen,$myTable);
 		endfor;
-		$posmen = setDating($posmen,$myTable,'datessm');
-		$posmen = setFiles($posmen,$myTable);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
