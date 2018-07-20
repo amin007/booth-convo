@@ -27,10 +27,12 @@ if(isset($_POST['submit']))
 	# mula ulang $jadual
 	list($posmen,$myTable) = ubahsuaiPost($myTable='criteria');
 	//$sql = sql_insert_set($myTable, $posmen[$myTable]);
-	$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	//$sql = sql_insert_values($myTable, $posmen[$myTable]);
+	list($sql,$dataProsi) = sql_insert_valuesPDO($myTable, $posmen[$myTable]);
 	/*list($posmen,$myTable) = ubahsuaiPost2($myTable='criteria');
 	$sql = sql_insert_manyValues($myTable, $posmen[$myTable]);//*/
 	echo '<hr><pre>$sql->:'; print_r($sql); echo '</pre><hr>';
+	echo '<hr><pre>$dataProsi->:'; print_r($dataProsi); echo '</pre><hr>';
 
 	/*if ($connect->query($sql) === TRUE) 
 	{
