@@ -63,10 +63,10 @@ function setDating($posmen,$myTable,$medan)
 #------------------------------------------------------------------------------------------
 function setFiles($posmen,$myTable)
 {
-	//$image = $imagename = null;
+	$image = $imagename = 'abc123ded456gji789';
 	# proses $_FILES
 	$imagename = addslashes($_FILES['image']['name']);
-	$image = addslashes($_FILES['image']['tmp_name']);
+	/*$image = addslashes($_FILES['image']['tmp_name']);
 	$image = file_get_contents($image);
 	$image = base64_encode($image);//*/
 	$posmen[$myTable]['image'] = $image;
@@ -131,7 +131,7 @@ function nombor($papar, $pilih = 'floor')
 	function ubahsuaiPost2($myTable)
 	{
 		$posmen = array();
-		for($kira = 0; $kira < 1; $kira++):
+		for($kira = 0; $kira < 3; $kira++):
 			foreach ($_POST as $kekunci => $papar):
 				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
 			endforeach;
