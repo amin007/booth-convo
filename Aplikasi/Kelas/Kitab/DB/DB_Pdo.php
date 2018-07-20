@@ -176,7 +176,7 @@ class DB_Pdo extends \PDO
 		//echo '<hr>Nama function :' .__FUNCTION__ . '<hr>';
 		//echo '<hr><pre>'; print_r($sql); echo '</pre><hr>';
 		//echo '<hr><pre>array::'; print_r($array); echo '</pre><hr>';
-		
+
 		$sth = $this->prepare($sql);
 		foreach ($array as $key => $value) 
 		{
@@ -189,6 +189,35 @@ class DB_Pdo extends \PDO
 		//$sth->debugDumpParams(); # papar sql balik
 		//echo "\nPDO::errorInfo()<hr><pre>"; print_r($masalah); echo '</pre>';
 		if (strpos($masalah[2], 'Unknown column') !== false) 
+			$this->bigError($masalah);
+		//*/
+	}
+#------------------------------------------------------------------------------------------------------------------
+	/**
+	 * tesTnsertAll
+	 * @param string $sql An SQL string
+	 * @param array $array Paramters to bind
+	 * @param constant $fetchMode A PDO Fetch mode
+	 * @return mixed
+	 */
+	public function tesTnsertAll($sql, $array = array(), $fetchMode = \PDO::FETCH_ASSOC)
+	{
+		echo '<hr>Nama function :' .__FUNCTION__ . '<hr>';
+		echo '<hr><pre>'; print_r($sql); echo '</pre><hr>';
+		echo '<hr><pre>array::'; print_r($array); echo '</pre><hr>';
+
+		/*$sth = $this->prepare($sql);
+		foreach ($array as $key => $value)
+		{
+			$sth->bindValue(":$key", (!empty($value) ? $value : NULL) );
+			//echo '<hr>$sth->bindValue(":' . $key . '", ' . $value . ')';
+		}	//echo '<hr>';
+
+		/*$sth->execute();
+		$masalah = $sth->errorInfo(); # semak jika ada error
+		//$sth->debugDumpParams(); # papar sql balik
+		//echo "\nPDO::errorInfo()<hr><pre>"; print_r($masalah); echo '</pre>';
+		if (strpos($masalah[2], 'Unknown column') !== false)
 			$this->bigError($masalah);
 		//*/
 	}
