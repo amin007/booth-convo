@@ -62,7 +62,7 @@ function setDating($posmen,$myTable,$medan)
 	//echo '<pre>$date='; print_r($date); echo '</pre>';
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
-	return array($posmen);//*/
+	return $posmen;//*/
 }
 #------------------------------------------------------------------------------------------
 function setFiles($posmen,$myTable)
@@ -78,7 +78,7 @@ function setFiles($posmen,$myTable)
 	# semak output
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
-	return array($posmen);//*/
+	return $posmen;//*/
 }
 #------------------------------------------------------------------------------------------
 /*
@@ -124,8 +124,8 @@ function nombor($papar, $pilih = 'floor')
 		foreach ($_POST as $kekunci => $papar):
 			$posmen[$myTable][$kekunci] = bersih($papar);
 		endforeach;
-		list($posmen) = setDating($posmen,$myTable,'datessm');
-		list($posmen) = setFiles($posmen,$myTable);
+		$posmen = setDating($posmen,$myTable,'datessm');
+		$posmen = setFiles($posmen,$myTable);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
@@ -140,8 +140,8 @@ function nombor($papar, $pilih = 'floor')
 				$posmen[$myTable][$kira][$kekunci] = bersih($papar);
 			endforeach;
 		endfor;
-		list($posmen) = setDating($posmen,$myTable,'datessm');
-		list($posmen) = setFiles($posmen,$myTable);
+		$posmen = setDating($posmen,$myTable,'datessm');
+		$posmen = setFiles($posmen,$myTable);
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
