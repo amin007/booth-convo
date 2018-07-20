@@ -76,6 +76,7 @@ function setFiles($posmen,$myTable)
 	$posmen[$myTable]['image'] = $image;
 	$posmen[$myTable]['imagename'] = $imagename;
 	# semak output
+	//echo '<pre>$_FILES:'; print_r($_FILES); echo '</pre><hr>';
 	//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
 	return $posmen;//*/
