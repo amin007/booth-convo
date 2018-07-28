@@ -40,7 +40,7 @@
 	{
 		echo '$status';
 	}*/
-	$status = 'mana datang nilai ini?';
+	$status = ' $status mana datang nilai ini?';
 ?>	
 	<td>
 		<form action="pendingbooking.php" method="post">
