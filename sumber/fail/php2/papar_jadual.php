@@ -22,18 +22,18 @@ echo "\n\t";
 	<td>
 <?php
 	$medan1 = $no . '[noSSM]';
-	$data1 = $row['ssm'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan1 . '"'
-	. ' value="' . $data1 . '">' . "\n\t";
+	. ' value="' . $row['ssm'] . '">' . "\n\t";
 	$medan2 = $no . '[status]';
-	$data2 = $row['status'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan2 . '"'
-	. ' value="' . $data2 . '">' . "\n\t";
+	. ' value="' . $row['status'] . '">' . "\n\t";
+	$submit1 = $no . '[btn][accepted]';
+	$submit2 = $no . '[btn][pending]';
 ?>
 		<span>Status = <?php echo $row['status'] ?></span><hr>
-		<button class="btn success-btn" name="accepted"
+		<button class="btn success-btn" name="<?php echo $submit1 ?>"
 		value="accepted">Approve</button>
-		<button class="btn success-btn" name="pending"
+		<button class="btn success-btn" name="<?php echo $submit2 ?>"
 		value="pending">Pending</button>
 	</td>
 	</tr>
