@@ -2,7 +2,7 @@
 	<!--<td align='center'></td></center>
 	<td align='center'></td></center>-->
 	<td align='center'><?php echo $row['idvendor'] ?></td>
-	<td align='center'><?php echo $row['3'] ?></td>
+	<td align='center'><?php echo $row['ssm'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
