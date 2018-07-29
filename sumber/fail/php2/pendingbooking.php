@@ -14,14 +14,15 @@ if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 && $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
 && $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
 {
-	echo '<br>semua semakan lepas';
+	//echo '<br>semua semakan lepas';
 	$ssm = $posmen2['noSSM'];
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
 }
 else
 {
-	echo '<br>ada yang belum lepas';
+	//echo '<br>ada yang belum lepas';
+	$sql = 'tidak berjaya update';
 }//*/
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
