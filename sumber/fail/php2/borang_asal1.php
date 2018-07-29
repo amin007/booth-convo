@@ -49,22 +49,23 @@ lesenberniaga,datelesenberniaga,expdatelesenberniaga,
 suntikan,expdatesuntikan,sijilpmakanan,
 /*image,imagename,*/ "" as image,imagename,
 status,idvendor';
+$myTable = 'test3_criteria';
 #-----------------------------------------------------------------------------------------------------------
 if($query != '')
 {
-	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
+	$select = mysqli_query($connect, "SELECT $medan FROM $myTable"
 	. " WHERE datecriteria LIKE '$query' "
 	. " OR idproduct LIKE '$query' "
 	. " OR ssm LIKE '$query' ");
 }
 elseif($noSSM != '')
 {# cari guna $_GET
-	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
+	$select = mysqli_query($connect, "SELECT $medan FROM $myTable"
 	. " WHERE ssm='$noSSM' ");
 }
 else
 {# paparkan semua data dalam mysql dulu
-	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria"
+	$select = mysqli_query($connect, "SELECT $medan FROM $myTable"
 	. "");
 }
 #-----------------------------------------------------------------------------------------------------------
