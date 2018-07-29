@@ -15,11 +15,18 @@ echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';//*/
 #----------------------------------------------------------------------------------------------------
-/*$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
-if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes" && $datelesenberniaga=="yes"
-&& $suntikan=="yes" && $sijilpmakanan=="yes")
+//$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
+if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
+&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
+&& $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
 {
-	echo '$status';
+	echo '<br>semua semakan lepas';
+	$ssm = $posmen2['noSSM'];
+	$sql = "UPDATE criteria SET status = 'accepted' WHERE ssm = $ssm";
+}
+else
+{
+	echo '<br>ada yang belum lepas';
 }//*/
 #----------------------------------------------------------------------------------------------------
 /*
