@@ -33,6 +33,7 @@
 		<input type="checkbox" name="" value="no"> No
 	</td>
 	<!--<td align='center'></td></center>-->
+	<td>
 <?php
 	if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes"
 	&& $datelesenberniaga=="yes" 
@@ -40,10 +41,8 @@
 	{
 		echo '$status';
 	}//*/
-	//$status = ' $status mana datang nilai ini?';
-?>	
-	<td>
-		<form action="pendingbooking.php" method="post">
+	//$status = ' $status mana datang nilai ini?'; ?>
+		<hr><form action="pendingbooking.php" method="post">
 			<input type="hidden" name="accepted" value="<?php echo $status ?>">
 			<button class="btn success-btn" name="send">Approve</button>
 			<button class="btn success-btn"><?php echo $status ?></button>
