@@ -12,8 +12,10 @@ $ulang = array('ssm','datessm','lesenberniaga',
 foreach($ulang as $namaMedan):
 	$name = $no . '[semak][' . $namaMedan . ']';
 	echo "\n\t" . '<td align="center">' . $row[$namaMedan] . '<br>';
-	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="yes"> Yes<br>';
-	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="no"> No';
+	//echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="yes"> Yes<br>';
+	//echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="no"> No';
+	echo "\n\t\t" . '<input type="radio" name="' . $name . '" value="yes"> Yes<br>';
+	echo "\n\t\t" . '<input type="radio" name="' . $name . '" value="no"> No';
 	echo "\n\t" . '</td>';
 endforeach;
 echo "\n\t";
