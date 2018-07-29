@@ -12,7 +12,7 @@ list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 if(isset($posmen))
 {
-	$sql = semakWujud($posmen);
+	$sql = semakWujud($posmen,$posmen2);
 	# masuk ke DB Mysqli
 	/*mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
@@ -33,9 +33,9 @@ else
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 # proses debug
-echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
-echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
-echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
+//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+//echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
 echo '<pre>$sql='; print_r($sql); echo '</pre>';
 //*/
 #----------------------------------------------------------------------------------------------------
@@ -65,19 +65,19 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 		return array($posmen,$posmen2); # pulangkan nilai
 	}
 #----------------------------------------------------------------------------------------------------
-	function semakWujud($posmen)
+	function semakWujud($posmen,$posmen2)
 	{
 		if( isset($posmen['ssm']) && isset($posmen['datessm'])
 		&& isset($posmen['lesenberniaga']) && isset($posmen['datelesenberniaga'])
 		&& isset($posmen['suntikan']) && isset($posmen['sijilpmakanan']) )
 		{
 			//echo '<br>semua $posmen wujud';
-			$sql = semakNilai($posmen);
+			$sql = semakNilai($posmen,$posmen2);
 			return $sql;
 		}
 	}
 #----------------------------------------------------------------------------------------------------
-	function semakNilai($posmen)
+	function semakNilai($posmen,$posmen2)
 	{
 		if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 		&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
