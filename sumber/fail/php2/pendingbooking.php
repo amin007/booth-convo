@@ -34,7 +34,7 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 //*/
 #----------------------------------------------------------------------------------------------------
 /*
-	//echo $select  = mysqli_query($connect,
+	//echo $select = mysqli_query($connect,
 	//"UPDATE criteria SET status = 'accepted' WHERE ssm = $ssm");
 */
 #----------------------------------------------------------------------------------------------------
