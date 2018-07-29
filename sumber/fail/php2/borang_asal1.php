@@ -60,7 +60,7 @@ if($query != '')
 elseif($noSSM != '')
 {# cari guna $_GET
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
-	. " WHERE ssm='".$_GET['ssm']."'");
+	. " WHERE ssm='$noSSM' ");
 }
 else
 {# paparkan semua data dalam mysql dulu
