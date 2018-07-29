@@ -13,6 +13,9 @@ list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 if(isset($posmen))
 {
 	$sql = semakWujud($posmen);
+	# masuk ke DB Mysqli
+	mysqli_query($connect, $sql);
+	header('location:borang_asal1.php?ssm=' . $ssm);//*/
 }
 else
 {
@@ -21,11 +24,12 @@ else
 	$status = $posmen2['status'];
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = '$status' WHERE ssm = '$ssm' ";
-}//*/
-#----------------------------------------------------------------------------------------------------
-	/*# masuk ke DB Mysqli
+	# masuk ke DB Mysqli
 	mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
+
+}//*/
+#----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 # proses debug
@@ -66,14 +70,27 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 		&& isset($posmen['lesenberniaga']) && isset($posmen['datelesenberniaga'])
 		&& isset($posmen['suntikan']) && isset($posmen['sijilpmakanan']) )
 		{
-			echo '<br>semua $posmen wujud';
-			semakNilai($posmen);
-			return $sql = 'ada';
+			//echo '<br>semua $posmen wujud';
+			$sql = semakNilai($posmen);
+			return $sql;
 		}
 		else
 			return $sql = null;
 	}
 #----------------------------------------------------------------------------------------------------
 	function semakNilai($posmen)
-	{}
+	{
+		if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
+		&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
+		&& $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
+		{
+			//echo '<br>semua semakan lepas';
+			$ssm = $posmen2['noSSM'];
+			$myTable = 'test3_criteria';
+			$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
+			return $sql;
+		}
+		else
+			return $sql = null;
+	}
 #----------------------------------------------------------------------------------------------------
