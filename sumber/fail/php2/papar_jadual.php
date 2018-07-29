@@ -41,11 +41,11 @@
 	{
 		//echo '$status';
 	}//*/
-	//$status = ' $status mana datang nilai ini?'; ?>
-		<hr><form action="pendingbooking.php" method="post">
-			<span>Status = <?php echo $row['status'] ?></span>
-			<button class="btn success-btn" name="send" value="<?php echo $status ?>">Approve</button>
-			<button class="btn success-btn"><?php echo $status ?></button>
+?>
+		<form action="pendingbooking.php" method="post">
+			<span>Status = <?php echo $row['status'] ?></span><hr>
+			<button class="btn success-btn" name="accepted"
+			value="accepted">Approve</button>
 		</form>
 <?php
 	//echo $select  = mysqli_query($connect, 
