@@ -7,7 +7,7 @@
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['4'] ?></td>
+	<td align='center'><?php echo $row['datessm'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
