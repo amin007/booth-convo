@@ -64,10 +64,9 @@ elseif($noSSM != '')
 }
 else
 {# paparkan semua data dalam mysql dulu
-	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria");
+	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria"
+	. "");
 }
-#-----------------------------------------------------------------------------------------------------------
-$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 #-----------------------------------------------------------------------------------------------------------
 if(mysqli_num_rows($select))
 {
@@ -77,12 +76,11 @@ if(mysqli_num_rows($select))
 	{
 		//$data[] = $row;
 		include 'papar_jadual.php';
-	}
-	//include 'papar_tatasusunan.php';
+	}//include 'papar_tatasusunan.php';
 }
 else
 {
-	echo '<tr><td colspan="14" align="center">No Data</td></tr>';
+	echo '<tr><td colspan="8" align="center">No Data</td></tr>';
 }
 #-----------------------------------------------------------------------------------------------------------
 ?>
