@@ -16,10 +16,12 @@ if(isset($posmen))
 	$sql = semakWujud($posmen,$posmen2);
 	//echo '<pre>$sql='; print_r($sql); echo '</pre>';
 	if($sql == null):
-		//echo '<br>sql tiada nilai';
+		$myTable = 'test3_criteria';
+		$sql = "UPDATE $myTable SET status = 'pending' WHERE ssm = '$ssm' ";
+		# masuk ke DB Mysqli
+		mysqli_query($connect, $sql);
 		header('location:borang_asal1.php?mesej=nonono&amp;ssm=' . $ssm);//*/
 	else:
-		//echo '<br>sql ada nilai';
 		# masuk ke DB Mysqli
 		mysqli_query($connect, $sql);
 		header('location:borang_asal1.php?ssm=' . $ssm);//*/
