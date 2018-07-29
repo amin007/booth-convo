@@ -78,6 +78,7 @@ if(mysqli_num_rows($select))
 	{
 		//$data[] = $row;
 		include 'papar_jadual.php';
+		$no++;
 	}//include 'papar_tatasusunan.php';
 }
 else
