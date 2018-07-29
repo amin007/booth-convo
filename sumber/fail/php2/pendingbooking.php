@@ -12,14 +12,15 @@ list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 if(isset($posmen))
 {
-	semakWujud($posmen);
+	$sql = semakWujud($posmen);
 }
 else
 {
 	//echo '<br>ada yang belum lepas';
 	$ssm = $posmen2['noSSM'];
+	$status = $posmen2['status'];
 	$myTable = 'test3_criteria';
-	$sql = "UPDATE $myTable SET status = 'pending' WHERE ssm = '$ssm' ";
+	$sql = "UPDATE $myTable SET status = '$status' WHERE ssm = '$ssm' ";
 	/*# masuk ke DB Mysqli
 	mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
@@ -40,7 +41,7 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 #----------------------------------------------------------------------------------------------------
 	function ubahsuaiPost($ceklist)
 	{
-		$posmen = $posmen2 = array();
+		$posmen = $posmen2 = null;
 		foreach($_POST as $jadual => $k1):
 			if (is_array($k1) || is_object($k1)):
 			# mula - pastikan $k1 wujud
@@ -60,18 +61,6 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 #----------------------------------------------------------------------------------------------------
 	function semakWujud($posmen)
 	{
-		if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
-		&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
-		&& $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
-		{
-			//echo '<br>semua semakan lepas';
-			$ssm = $posmen2['noSSM'];
-			$ssm = $posmen2['noSSM'];
-			$myTable = 'test3_criteria';
-			$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
-			/*# masuk ke DB Mysqli
-			mysqli_query($connect, $sql);
-			header('location:borang_asal1.php?ssm=' . $ssm);/*/
-		}
+		return $sql = null;
 	}
 #----------------------------------------------------------------------------------------------------
