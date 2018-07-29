@@ -31,5 +31,7 @@ echo "\n\t";
 		<span>Status = <?php echo $row['status'] ?></span><hr>
 		<button class="btn success-btn" name="accepted"
 		value="accepted">Approve</button>
+		<button class="btn success-btn" name="pending"
+		value="pending">Pending</button>
 	</td>
 	</tr>
