@@ -42,6 +42,8 @@ include('config.php');
 <?php
 $no = 1;
 $query = !isset($_POST['query']) ? null : $_POST['query'];
+$noSSM = !isset($_GET['ssm']) ? null : $_GET['ssm'];
+#-----------------------------------------------------------------------------------------------------------
 $medan = 'datecriteria,idproduct,dateresult,ssm,datessm,expdatessm,
 lesenberniaga,datelesenberniaga,expdatelesenberniaga,
 suntikan,expdatesuntikan,sijilpmakanan,
@@ -55,9 +57,13 @@ if($query != '')
 	. " OR idproduct LIKE '".$query."' "
 	. " OR ssm LIKE '".$query."'");
 }
+elseif($noSSM != '')
+{# cari guna $_GET
+	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
+	. " WHERE ssm='".$_GET['ssm']."'");
+}
 else
 {# paparkan semua data dalam mysql dulu
-	//$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria where ssm='".$_GET['ssm']."'");
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria");
 }
 #-----------------------------------------------------------------------------------------------------------
@@ -82,10 +88,13 @@ else
 ?>
 </table>
 <br>
-</div>
-</div>
-</div>
-</div>
+
+	</div><!-- /  class="card">
+	</div><!-- /  class="col-md-12">
+	</div><!-- /  class="row">
+	</div><!-- /  class="container-fluid">
+</div><!-- / class="content" -->
+
 <script src="./vendor/jquery/jquery.min.js"></script>
 <script src="./vendor/popper.js/popper.min.js"></script>
 <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
