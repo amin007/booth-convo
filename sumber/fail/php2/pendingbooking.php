@@ -12,22 +12,17 @@ list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 if(isset($posmen))
 {
+	$ssm = $posmen2['noSSM'];
 	$sql = semakWujud($posmen,$posmen2);
 	# masuk ke DB Mysqli
-	/*mysqli_query($connect, $sql);
-	header('location:borang_asal1.php?ssm=' . $ssm);//*/
+	//mysqli_query($connect, $sql);
+	//header('location:borang_asal1.php?ssm=' . $ssm);//*/
 }
 else
 {
 	//echo '<br>ada yang belum lepas';
 	$ssm = $posmen2['noSSM'];
-	$status = $posmen2['status'];
-	$myTable = 'test3_criteria';
-	$sql = "UPDATE $myTable SET status = '$status' WHERE ssm = '$ssm' ";
-	# masuk ke DB Mysqli
-	/*mysqli_query($connect, $sql);
-	header('location:borang_asal1.php?ssm=' . $ssm);//*/
-
+	header('location:borang_asal1.php?mesej=error&amp;ssm=' . $ssm);//*/
 }//*/
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
@@ -36,7 +31,7 @@ else
 //echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 //echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 //echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
-echo '<pre>$sql='; print_r($sql); echo '</pre>';
+//echo '<pre>$sql='; print_r($sql); echo '</pre>';
 //*/
 #----------------------------------------------------------------------------------------------------
 /*
