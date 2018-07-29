@@ -6,6 +6,7 @@ echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
 #----------------------------------------------------------------------------------------------------
 # setkan nilai awal
 $myTable = 'test3_criteria';
+#----------------------------------------------------------------------------------------------------
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 #----------------------------------------------------------------------------------------------------
 if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes" && $datelesenberniaga=="yes"
