@@ -47,11 +47,13 @@ include('config.php');
 	</tr>
 <?php
 $no = 1;
-$query = $_POST['query'];
+$query = !isset($_POST['query']) ? null : $_POST['query'];
 if($query != '')
 {
-	$select = mysqli_query($connect, "SELECT * FROM criteria WHERE datecriteria LIKE '".$query
-	."' OR idproduct LIKE '".$query."' OR ssm LIKE '".$query."'");
+	$select = mysqli_query($connect, "SELECT * FROM criteria "
+	. " WHERE datecriteria LIKE '".$query."' "
+	. " OR idproduct LIKE '".$query."' "
+	. " OR ssm LIKE '".$query."'");
 }
 else
 {# paparkan semua data dalam mysql dulu
