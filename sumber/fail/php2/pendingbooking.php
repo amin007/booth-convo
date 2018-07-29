@@ -16,11 +16,12 @@ if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 {
 	//echo '<br>semua semakan lepas';
 	$ssm = $posmen2['noSSM'];
+	$ssm = $posmen2['noSSM'];
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
-	# masuk ke DB Mysqli
+	/*# masuk ke DB Mysqli
 	mysqli_query($connect, $sql);
-	header('location:borang_asal1.php?ssm=' . $ssm);
+	header('location:borang_asal1.php?ssm=' . $ssm);/*/
 }
 else
 {
@@ -28,16 +29,16 @@ else
 	$ssm = $posmen2['noSSM'];
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = 'pending' WHERE ssm = '$ssm' ";
-	# masuk ke DB Mysqli
+	/*# masuk ke DB Mysqli
 	mysqli_query($connect, $sql);
-	header('location:borang_asal1.php?ssm=' . $ssm);
+	header('location:borang_asal1.php?ssm=' . $ssm);//*/
 }//*/
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 # proses debug
 //echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 //echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
-//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
 echo '<pre>$sql='; print_r($sql); echo '</pre>';
 //*/
 #----------------------------------------------------------------------------------------------------
