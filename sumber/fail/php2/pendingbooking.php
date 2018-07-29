@@ -2,10 +2,16 @@
 //session_start();
 include('config.php');
 
-echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
+//echo '<pre>$_POST:'; print_r($_POST); echo '</pre><hr>';
 #----------------------------------------------------------------------------------------------------
 # setkan nilai awal
 $myTable = 'test3_criteria';
+# godek data $_POST
+list($posmen,$myTable) = ubahsuaiPost($myTable);
+#----------------------------------------------------------------------------------------------------
+# proses debug
+//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 #----------------------------------------------------------------------------------------------------
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 #----------------------------------------------------------------------------------------------------
