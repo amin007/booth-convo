@@ -13,13 +13,12 @@ list($posmen,$myTable) = ubahsuaiPost($myTable);
 echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 #----------------------------------------------------------------------------------------------------
-$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
-#----------------------------------------------------------------------------------------------------
+/*$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes" && $datelesenberniaga=="yes"
 && $suntikan=="yes" && $sijilpmakanan=="yes")
 {
 	echo '$status';
-}
+}//*/
 #----------------------------------------------------------------------------------------------------
 /*
 	//echo $select  = mysqli_query($connect,
