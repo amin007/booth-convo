@@ -4,6 +4,10 @@
 	$data0 = $row['idvendor'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan0 . '"'
 	. ' value="' . $data0 . '">' . "\n\t";
+	$medan1 = $myTable . '[noSSM]';
+	$data1 = $row['ssm'];
+	echo "\n\t\t" . '<input type="hidden" name="' . $medan1 . '"'
+	. ' value="' . $data1 . '">' . "\n\t";
 	?></td>
 <?php
 $ulang = array('ssm','datessm','lesenberniaga',
