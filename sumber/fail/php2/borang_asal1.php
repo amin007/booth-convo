@@ -67,10 +67,13 @@ else
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria");
 }
 #-----------------------------------------------------------------------------------------------------------
+$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
+#-----------------------------------------------------------------------------------------------------------
 if(mysqli_num_rows($select))
 {
 	//while($row = mysqli_fetch_row($select))
-	while($row = mysqli_fetch_assoc($select))
+	//while($row = mysqli_fetch_assoc($select))
+	while($row = mysqli_fetch_array($select))
 	{
 		$data[] = $row;
 		//include 'papar_jadual.php';
@@ -82,8 +85,7 @@ else
 	echo '<tr><td colspan="14" align="center">No Data</td></tr>';
 }
 #-----------------------------------------------------------------------------------------------------------
-/*$row = array(15 => '456',3 => '456',4 => '456',6 => '456',7 => '456',9 => '456',11 => '456');
-$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
+/*$row = array(15 => '456',3 => '456',4 => '456',6 => '456',7 => '456',9 => '456',11 => '456');*/
 //*/
 include 'papar_jadual.php';
 ?>
