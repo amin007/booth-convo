@@ -10,18 +10,9 @@ $ceklist = 'semak';
 list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 #----------------------------------------------------------------------------------------------------
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
-if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
-&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
-&& $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
+if(isset($posmen))
 {
-	//echo '<br>semua semakan lepas';
-	$ssm = $posmen2['noSSM'];
-	$ssm = $posmen2['noSSM'];
-	$myTable = 'test3_criteria';
-	$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
-	/*# masuk ke DB Mysqli
-	mysqli_query($connect, $sql);
-	header('location:borang_asal1.php?ssm=' . $ssm);/*/
+	semakWujud($posmen);
 }
 else
 {
@@ -37,7 +28,7 @@ else
 #----------------------------------------------------------------------------------------------------
 # proses debug
 //echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
-//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
 echo '<pre>$sql='; print_r($sql); echo '</pre>';
 //*/
@@ -65,5 +56,22 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
 		return array($posmen,$posmen2); # pulangkan nilai
+	}
+#----------------------------------------------------------------------------------------------------
+	function semakWujud($posmen)
+	{
+		if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
+		&& $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
+		&& $posmen['suntikan']=="yes" && $posmen['sijilpmakanan']=="yes")
+		{
+			//echo '<br>semua semakan lepas';
+			$ssm = $posmen2['noSSM'];
+			$ssm = $posmen2['noSSM'];
+			$myTable = 'test3_criteria';
+			$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
+			/*# masuk ke DB Mysqli
+			mysqli_query($connect, $sql);
+			header('location:borang_asal1.php?ssm=' . $ssm);/*/
+		}
 	}
 #----------------------------------------------------------------------------------------------------
