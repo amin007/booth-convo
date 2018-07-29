@@ -9,12 +9,6 @@ $ceklist = 'semak';
 # godek data $_POST
 list($posmen,$posmen2) = ubahsuaiPost($ceklist);
 #----------------------------------------------------------------------------------------------------
-#----------------------------------------------------------------------------------------------------
-/*# proses debug
-echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
-echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
-echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';//*/
-#----------------------------------------------------------------------------------------------------
 //$ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 && $posmen['lesenberniaga']=="yes" && $posmen['datelesenberniaga']=="yes"
@@ -22,12 +16,21 @@ if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 {
 	echo '<br>semua semakan lepas';
 	$ssm = $posmen2['noSSM'];
-	$sql = "UPDATE criteria SET status = 'accepted' WHERE ssm = $ssm";
+	$myTable = 'test3_criteria';
+	$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
 }
 else
 {
 	echo '<br>ada yang belum lepas';
 }//*/
+#----------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------
+# proses debug
+//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
+echo '<pre>$sql='; print_r($sql); echo '</pre>';
+//*/
 #----------------------------------------------------------------------------------------------------
 /*
 	//echo $select  = mysqli_query($connect,
