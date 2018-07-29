@@ -31,17 +31,11 @@ include('config.php');
 	<td align="center">PRODUCT NO</td></center>-->
 	<td align="center">ID VENDOR</td>
 	<td align="center">SSM</td>
-	<td align="center"></td>
-	<td align="center">DATE OF SSM</td>
-	<td align="center"></td>
+	<td align="center">DATE&nbsp;OF&nbsp;SSM</td>
 	<td align="center">NO OF BUSINESS LICENSE</td>
-	<td align="center"></td>
 	<td align="center">DATE OF BUSINESS LICENSE</td>
-	<td align="center"></td>
 	<td align="center">DATE OF THYPOID INJECTION</td>
-	<td align="center"></td>
 	<td align="center">DATE OF FOOD HANDLING CERTIFICATE</td>
-	<td align="center"></td>
 	<!--<td align="center">PROCESS FEES</td>-->
 	<td align="center">ACTION</td>
 	</tr>
