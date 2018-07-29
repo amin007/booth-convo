@@ -4,11 +4,11 @@
 	$data0 = $row['idvendor'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan0 . '"'
 	. ' value="' . $data0 . '">' . "\n\t";//*/
-	$medan1 = 'noSSM';
+	$medan1 = $no . '[noSSM]';
 	$data1 = $row['ssm'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan1 . '"'
 	. ' value="' . $data1 . '">' . "\n\t";
-	$medan2 = 'status';
+	$medan2 = $no . '[status]';
 	$data2 = $row['status'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan2 . '"'
 	. ' value="' . $data2 . '">' . "\n\t";
@@ -18,7 +18,7 @@ $ulang = array('ssm','datessm','lesenberniaga',
 'datelesenberniaga','suntikan','sijilpmakanan');
 
 foreach($ulang as $namaMedan):
-	$name = 'semak[' . $namaMedan . ']';
+	$name = $no . '[semak][' . $namaMedan . ']';
 	echo "\n\t" . '<td align="center">' . $row[$namaMedan] . '<br>';
 	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="yes"> Yes<br>';
 	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="no"> No';
