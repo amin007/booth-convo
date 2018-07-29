@@ -1,7 +1,7 @@
 	<tr >
 	<!--<td align='center'></td></center>
 	<td align='center'></td></center>-->
-	<td align='center'><?php echo $row['15'] ?></td>
+	<td align='center'><?php echo $row['idvendor'] ?></td>
 	<td align='center'><?php echo $row['3'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
@@ -34,13 +34,13 @@
 	</td>
 	<!--<td align='center'></td></center>-->
 <?php
-	/*if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes" 
+	if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes"
 	&& $datelesenberniaga=="yes" 
-		&& $suntikan=="yes" && $sijilpmakanan=="yes")
+	&& $suntikan=="yes" && $sijilpmakanan=="yes")
 	{
 		echo '$status';
-	}*/
-	$status = ' $status mana datang nilai ini?';
+	}//*/
+	//$status = ' $status mana datang nilai ini?';
 ?>	
 	<td>
 		<form action="pendingbooking.php" method="post">
