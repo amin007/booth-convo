@@ -69,7 +69,7 @@ else
 if(mysqli_num_rows($select))
 {
 	//while($row = mysqli_fetch_row($select))
-	while($row = mysqli_fetch_array($select))
+	while($row = mysqli_fetch_assoc($select))
 	{
 		$data[] = $row;
 		//include 'papar_jadual.php';
