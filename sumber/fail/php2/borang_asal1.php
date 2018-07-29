@@ -25,6 +25,7 @@ include('config.php');
 		
 	<br>
 
+	<form action="pendingbooking.php" method="post">
 	<table id="example" class="display" border="2" align="center">
 	<tr style="font-weight:bold;">
 	<!--<td align="center">DATE CRITERIA</td></center>
@@ -85,7 +86,8 @@ else
 }
 #-----------------------------------------------------------------------------------------------------------
 ?>
-</table>
+	</table>
+	</form>
 <br>
 
 	</div><!-- /  class="card">
