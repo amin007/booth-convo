@@ -2,7 +2,7 @@
 	<td align="center"><?php echo $row['idvendor'];
 	$medan0 = $myTable . '[idvendor]';
 	$data0 = $row['idvendor'];
-	echo '<input type="hidden" name="' . $medan0 . '" '
+	echo '<input type="hidden" name="' . $medan0 . '"'
 	. ' value="' . $data0 . '">';
 	?>
 	</td>
