@@ -8,6 +8,10 @@
 	$data1 = $row['ssm'];
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan1 . '"'
 	. ' value="' . $data1 . '">' . "\n\t";
+	$medan2 = 'status';
+	$data2 = $row['status'];
+	echo "\n\t\t" . '<input type="hidden" name="' . $medan2 . '"'
+	. ' value="' . $data2 . '">' . "\n\t";
 	?></td>
 <?php
 $ulang = array('ssm','datessm','lesenberniaga',
