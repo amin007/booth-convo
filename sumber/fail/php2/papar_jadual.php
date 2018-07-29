@@ -1,38 +1,36 @@
 	<tr >
-	<!--<td align='center'></td></center>
-	<td align='center'></td></center>-->
-	<td align='center'><?php echo $row['idvendor'] ?></td>
-	<td align='center'><?php echo $row['ssm'] ?></td>
+	<td align="center"><?php echo $row['idvendor'] ?></td>
+	<td align="center"><?php echo $row['ssm'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['datessm'] ?></td>
+	<td align="center"><?php echo $row['datessm'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['lesenberniaga'] ?></td>
+	<td align="center"><?php echo $row['lesenberniaga'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['datelesenberniaga'] ?></td>
+	<td align="center"><?php echo $row['datelesenberniaga'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['suntikan'] ?></td>
+	<td align="center"><?php echo $row['suntikan'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['sijilpmakanan'] ?></td>
+	<td align="center"><?php echo $row['sijilpmakanan'] ?></td>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<!--<td align='center'></td></center>-->
+	<!--<td align="center"></td></center>-->
 	<td>
 <?php
 	if($ssm=="yes" && $datessm=="yes" && $lesenberniaga=="yes"
