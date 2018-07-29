@@ -14,9 +14,16 @@ if(isset($posmen))
 {
 	$ssm = $posmen2['noSSM'];
 	$sql = semakWujud($posmen,$posmen2);
-	# masuk ke DB Mysqli
-	//mysqli_query($connect, $sql);
-	//header('location:borang_asal1.php?ssm=' . $ssm);//*/
+	//echo '<pre>$sql='; print_r($sql); echo '</pre>';
+	if($sql == null):
+		//echo '<br>sql tiada nilai';
+		header('location:borang_asal1.php?mesej=nonono&amp;ssm=' . $ssm);//*/
+	else:
+		//echo '<br>sql ada nilai';
+		# masuk ke DB Mysqli
+		mysqli_query($connect, $sql);
+		header('location:borang_asal1.php?ssm=' . $ssm);//*/
+	endif;
 }
 else
 {
