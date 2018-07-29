@@ -14,7 +14,7 @@ if(isset($posmen))
 {
 	$sql = semakWujud($posmen);
 	# masuk ke DB Mysqli
-	mysqli_query($connect, $sql);
+	/*mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
 }
 else
@@ -25,7 +25,7 @@ else
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = '$status' WHERE ssm = '$ssm' ";
 	# masuk ke DB Mysqli
-	mysqli_query($connect, $sql);
+	/*mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
 
 }//*/
@@ -33,7 +33,7 @@ else
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 # proses debug
-//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
+echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 echo '<pre>$posmen2='; print_r($posmen2); echo '</pre>';
 echo '<pre>$sql='; print_r($sql); echo '</pre>';
@@ -74,8 +74,6 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 			$sql = semakNilai($posmen);
 			return $sql;
 		}
-		else
-			return $sql = null;
 	}
 #----------------------------------------------------------------------------------------------------
 	function semakNilai($posmen)
@@ -90,7 +88,5 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 			$sql = "UPDATE $myTable SET status = 'accepted' WHERE ssm = '$ssm' ";
 			return $sql;
 		}
-		else
-			return $sql = null;
 	}
 #----------------------------------------------------------------------------------------------------
