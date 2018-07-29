@@ -39,12 +39,12 @@
 	&& $datelesenberniaga=="yes" 
 	&& $suntikan=="yes" && $sijilpmakanan=="yes")
 	{
-		echo '$status';
+		//echo '$status';
 	}//*/
 	//$status = ' $status mana datang nilai ini?'; ?>
 		<hr><form action="pendingbooking.php" method="post">
-			<input type="hidden" name="accepted" value="<?php echo $status ?>">
-			<button class="btn success-btn" name="send">Approve</button>
+			<span>Status = <?php echo $row['status'] ?></span>
+			<button class="btn success-btn" name="send" value="<?php echo $status ?>">Approve</button>
 			<button class="btn success-btn"><?php echo $status ?></button>
 		</form>
 <?php
