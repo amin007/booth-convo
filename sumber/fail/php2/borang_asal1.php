@@ -51,8 +51,9 @@ $query = !isset($_POST['query']) ? null : $_POST['query'];
 $medan = 'datecriteria,idproduct,dateresult,ssm,datessm,expdatessm,
 lesenberniaga,datelesenberniaga,expdatelesenberniaga,
 suntikan,expdatesuntikan,sijilpmakanan,
-/*image,imagename,*/
+/*image,imagename,*/ "" as image,imagename,
 status,idvendor';
+#-----------------------------------------------------------------------------------------------------------
 if($query != '')
 {
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
@@ -65,7 +66,7 @@ else
 	//$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria where ssm='".$_GET['ssm']."'");
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria");
 }
-
+#-----------------------------------------------------------------------------------------------------------
 if(mysqli_num_rows($select))
 {
 	//while($row = mysqli_fetch_row($select))
@@ -80,6 +81,7 @@ else
 {
 	echo '<tr><td colspan="14" align="center">No Data</td></tr>';
 }
+#-----------------------------------------------------------------------------------------------------------
 /*$row = array(15 => '456',3 => '456',4 => '456',6 => '456',7 => '456',9 => '456',11 => '456');
 $ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
 //*/
