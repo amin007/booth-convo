@@ -1,10 +1,4 @@
 <?php
-# 1. laporan tahap kesilapan kod PHP
-error_reporting(E_ALL);
- 
-# 2. isytiharkan zon masa => Asia/Kuala Lumpur
-date_default_timezone_set('Asia/Kuala_Lumpur');
-
 include('config.php');
 //include("header.php");
 ?>
@@ -15,14 +9,10 @@ include('config.php');
 	<div class="col-md-12">
 	<div class="card">
 	
-	<form id="borang_pengesahan_pembayaran" name="borang_pengesahan_pembayaran" 
-	method="post" class="borang" style="padding-top:20px">
 	<fieldset>
 	<table width="750" border="0" align="center" cellpadding="3" cellspacing="1">
-	<tr>
-		<td colspan="2" align="center"><div class="sub-tajuk-kelabu">
-		VIEW QUANTITY PRODUCT</div></td>
-	</tr>
+	<tr><td colspan="2" align="center"><div class="sub-tajuk-kelabu">
+		VIEW QUANTITY PRODUCT</div></td></tr>
 	</table>
 	<center>
 		<form action="" method="POST" align="center"><br>
@@ -33,7 +23,6 @@ include('config.php');
 		</form>
 	</center>
 		
-	</form>
 	<br>
 
 	<table id="example" class="display" border="2" align="center">
@@ -58,18 +47,19 @@ include('config.php');
 	</tr>
 <?php
 $no = 1;
-/*$query = $_POST['query'];
-if($query !='')
+$query = $_POST['query'];
+if($query != '')
 {
 	$select = mysqli_query($connect, "SELECT * FROM criteria WHERE datecriteria LIKE '".$query
 	."' OR idproduct LIKE '".$query."' OR ssm LIKE '".$query."'");
 }
 else
-{
-	$select = mysqli_query($connect, "SELECT * FROM criteria where ssm='".$_GET['ssm']."'");
-}*/
+{# paparkan semua data dalam mysql dulu
+	//$select = mysqli_query($connect, "SELECT * FROM criteria where ssm='".$_GET['ssm']."'");
+	$select = mysqli_query($connect, "SELECT * FROM criteria");
+}
 
-/*if(mysqli_num_rows($select))
+if(mysqli_num_rows($select))
 {
 	while($row = mysqli_fetch_row($select))
 	{
@@ -79,17 +69,10 @@ else
 else
 {
 	echo '<tr><td colspan="14" align="center">No Data</td></tr>';
-}*/
-$row = array(
-	15 => '456',
-	3 => '456',
-	4 => '456',
-	6 => '456',
-	7 => '456',
-	9 => '456',
-	11 => '456'
-	);
+}
+/*$row = array(15 => '456',3 => '456',4 => '456',6 => '456',7 => '456',9 => '456',11 => '456');
 $ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakanan = 'yes';
+//*/
 include 'papar_jadual.php';
 ?>
 </table>
