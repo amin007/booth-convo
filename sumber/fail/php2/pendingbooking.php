@@ -25,8 +25,12 @@ if($posmen['ssm']=="yes" && $posmen['datessm']=="yes"
 else
 {
 	//echo '<br>ada yang belum lepas';
-	$sql = 'tidak berjaya update';
-	header('location:borang_asal1.php?mesej=' . $sql);
+	$ssm = $posmen2['noSSM'];
+	$myTable = 'test3_criteria';
+	$sql = "UPDATE $myTable SET status = 'pending' WHERE ssm = '$ssm' ";
+	# masuk ke DB Mysqli
+	mysqli_query($connect, $sql);
+	header('location:borang_asal1.php?ssm=' . $ssm);
 }//*/
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
