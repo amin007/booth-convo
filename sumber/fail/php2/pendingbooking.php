@@ -42,22 +42,23 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 /*
 	//echo $select = mysqli_query($connect,
 	//"UPDATE criteria SET status = 'accepted' WHERE ssm = $ssm");
+	if (is_array($k1) || is_object($k1)):
 */
 #----------------------------------------------------------------------------------------------------
 	function ubahsuaiPost($ceklist)
 	{
 		$posmen = $posmen2 = null;
-		foreach($_POST as $jadual => $k1):
-			if (is_array($k1) || is_object($k1)):
-			# mula - pastikan $k1 wujud
-				foreach($k1 as $kekunci => $papar):
-					if($jadual == $ceklist)
-						$posmen[$kekunci] = bersih($papar);
+		foreach($_POST as $key => $k1):if(isset($_POST[$key]['accepted'])):
+		foreach($k1 as $jadual => $k2):
+			if($jadual == $ceklist):
+				foreach($k2 as $kekunci => $papar):
+					$posmen[$kekunci] = bersih($papar);
 				endforeach;
 			else:
-				$posmen2[$jadual] = bersih($k1);
+				$posmen2[$jadual] = bersih($k2);
 			endif;
 		endforeach;
+		endif;endforeach;
 		//echo '<pre>$_POST='; print_r($_POST); echo '</pre>';
 		//echo '<pre>$posmen='; print_r($posmen); echo '</pre>';
 
