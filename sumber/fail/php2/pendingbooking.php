@@ -21,10 +21,11 @@ else
 	$status = $posmen2['status'];
 	$myTable = 'test3_criteria';
 	$sql = "UPDATE $myTable SET status = '$status' WHERE ssm = '$ssm' ";
+}//*/
+#----------------------------------------------------------------------------------------------------
 	/*# masuk ke DB Mysqli
 	mysqli_query($connect, $sql);
 	header('location:borang_asal1.php?ssm=' . $ssm);//*/
-}//*/
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 # proses debug
@@ -61,6 +62,18 @@ echo '<pre>$sql='; print_r($sql); echo '</pre>';
 #----------------------------------------------------------------------------------------------------
 	function semakWujud($posmen)
 	{
-		return $sql = null;
+		if( isset($posmen['ssm']) && isset($posmen['datessm'])
+		&& isset($posmen['lesenberniaga']) && isset($posmen['datelesenberniaga'])
+		&& isset($posmen['suntikan']) && isset($posmen['sijilpmakanan']) )
+		{
+			echo '<br>semua $posmen wujud';
+			semakNilai($posmen);
+			return $sql = 'ada';
+		}
+		else
+			return $sql = null;
 	}
+#----------------------------------------------------------------------------------------------------
+	function semakNilai($posmen)
+	{}
 #----------------------------------------------------------------------------------------------------
