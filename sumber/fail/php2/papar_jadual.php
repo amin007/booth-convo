@@ -5,34 +5,19 @@
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan0 . '"'
 	. ' value="' . $data0 . '">' . "\n\t";
 	?></td>
-	<td align="center">
 <?php
-	echo $row['ssm'] . '<br>';
-	$ssm = $myTable . '[ssm]';
-	echo "\n\t\t" . '<input type="checkbox" name="' . $ssm . '" value="yes"> Yes<br>';
-	echo "\n\t\t" . '<input type="checkbox" name="' . $ssm . '" value="no"> No';
-	echo "\n\t";
+$ulang = array('ssm','datessm','lesenberniaga',
+'datelesenberniaga','suntikan','sijilpmakanan');
+
+foreach($ulang as $namaMedan):
+	$name = $myTable . '[' . $namaMedan . ']';
+	echo "\n\t" . '<td align="center">' . $row[$namaMedan] . '<br>';
+	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="yes"> Yes<br>';
+	echo "\n\t\t" . '<input type="checkbox" name="' . $name . '" value="no"> No';
+	echo "\n\t" . '</td>';
+endforeach;
+echo "\n\t";
 ?>
-	</td>
-	<td align="center"><?php echo $row['datessm'] ?><br>
-		<input type="checkbox" name="" value="yes"> Yes<br>
-		<input type="checkbox" name="" value="no"> No
-	</td>
-	<td align="center"><?php echo $row['lesenberniaga'] ?><br>
-		<input type="checkbox" name="" value="yes"> Yes<br>
-		<input type="checkbox" name="" value="no"> No
-	</td>
-	<td align="center"><?php echo $row['datelesenberniaga'] ?><br>
-		<input type="checkbox" name="" value="yes"> Yes<br>
-		<input type="checkbox" name="" value="no"> No
-	</td>
-	<td align="center"><?php echo $row['suntikan'] ?><br>
-		<input type="checkbox" name="" value="yes"> Yes<br>
-		<input type="checkbox" name="" value="no"> No
-	</td>
-	<td align="center"><?php echo $row['sijilpmakanan'] ?><br>
-		<input type="checkbox" name="" value="yes"> Yes<br>
-		<input type="checkbox" name="" value="no"> No
 	</td>
 	<td>
 		<span>Status = <?php echo $row['status'] ?></span><hr>
