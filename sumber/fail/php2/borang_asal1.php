@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-//include("header.php");
+include('header1.php');
 ?>
 
 <div class="content">
@@ -36,7 +36,7 @@ include('config.php');
 	<td align="center">NO OF BUSINESS LICENSE</td>
 	<td align="center">DATE OF BUSINESS LICENSE</td>
 	<td align="center">DATE OF THYPOID INJECTION</td>
-	<td align="center">DATE OF FOOD HANDLING CERTIFICATE</td>
+	<td align="center">DATE OF FOOD<br>HANDLING CERTIFICATE</td>
 	<!--<td align="center">PROCESS FEES</td>-->
 	<td align="center">ACTION</td>
 	</tr>
