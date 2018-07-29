@@ -72,13 +72,13 @@ $ssm = $datessm = $lesenberniaga = $datelesenberniaga = $suntikan = $sijilpmakan
 if(mysqli_num_rows($select))
 {
 	//while($row = mysqli_fetch_row($select))
-	//while($row = mysqli_fetch_assoc($select))
-	while($row = mysqli_fetch_array($select))
+	while($row = mysqli_fetch_assoc($select))
+	//while($row = mysqli_fetch_array($select))
 	{
-		$data[] = $row;
-		//include 'papar_jadual.php';
+		//$data[] = $row;
+		include 'papar_jadual.php';
 	}
-	include 'papar_tatasusunan.php';
+	//include 'papar_tatasusunan.php';
 }
 else
 {
