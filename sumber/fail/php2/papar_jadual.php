@@ -27,8 +27,8 @@ echo "\n\t";
 	$medan2 = $no . '[status]';
 	echo "\n\t\t" . '<input type="hidden" name="' . $medan2 . '"'
 	. ' value="' . $row['status'] . '">' . "\n\t";
-	$submit1 = $no . '[btn][accepted]';
-	$submit2 = $no . '[btn][pending]';
+	$submit1 = $no . '[accepted]';
+	$submit2 = $no . '[pending]';
 ?>
 		<span>Status = <?php echo $row['status'] ?></span><hr>
 		<button class="btn success-btn" name="<?php echo $submit1 ?>"
