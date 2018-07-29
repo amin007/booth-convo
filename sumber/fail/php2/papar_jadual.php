@@ -17,7 +17,7 @@
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
 	</td>
-	<td align='center'><?php echo $row['7'] ?></td></center>
+	<td align='center'><?php echo $row['datelesenberniaga'] ?></td></center>
 	<td align="center">
 		<input type="checkbox" name="" value="yes"> Yes<br>
 		<input type="checkbox" name="" value="no"> No
