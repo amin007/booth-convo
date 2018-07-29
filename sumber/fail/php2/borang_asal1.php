@@ -53,9 +53,9 @@ status,idvendor';
 if($query != '')
 {
 	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
-	. " WHERE datecriteria LIKE '".$query."' "
-	. " OR idproduct LIKE '".$query."' "
-	. " OR ssm LIKE '".$query."'");
+	. " WHERE datecriteria LIKE '$query' "
+	. " OR idproduct LIKE '$query' "
+	. " OR ssm LIKE '$query' ");
 }
 elseif($noSSM != '')
 {# cari guna $_GET
