@@ -48,25 +48,33 @@ include('config.php');
 <?php
 $no = 1;
 $query = !isset($_POST['query']) ? null : $_POST['query'];
+$medan = 'datecriteria,idproduct,dateresult,ssm,datessm,expdatessm,
+lesenberniaga,datelesenberniaga,expdatelesenberniaga,
+suntikan,expdatesuntikan,sijilpmakanan,
+/*image,imagename,*/
+status,idvendor';
 if($query != '')
 {
-	$select = mysqli_query($connect, "SELECT * FROM criteria "
+	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria "
 	. " WHERE datecriteria LIKE '".$query."' "
 	. " OR idproduct LIKE '".$query."' "
 	. " OR ssm LIKE '".$query."'");
 }
 else
 {# paparkan semua data dalam mysql dulu
-	//$select = mysqli_query($connect, "SELECT * FROM criteria where ssm='".$_GET['ssm']."'");
-	$select = mysqli_query($connect, "SELECT * FROM criteria");
+	//$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria where ssm='".$_GET['ssm']."'");
+	$select = mysqli_query($connect, "SELECT $medan FROM test3_criteria");
 }
 
 if(mysqli_num_rows($select))
 {
-	while($row = mysqli_fetch_row($select))
+	//while($row = mysqli_fetch_row($select))
+	while($row = mysqli_fetch_array($select))
 	{
-		include 'papar_jadual.php';
+		$data[] = $row;
+		//include 'papar_jadual.php';
 	}
+	include 'papar_tatasusunan.php';
 }
 else
 {
